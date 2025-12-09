@@ -51,6 +51,6 @@ Carpeta que contiene recursos estáticos como hojas de estilo personalizadas, ca
 
 ## Créditos
 
-- **Desarrollador**: Daniel Molina  
+- **Desarrolladores**: Daniel Molina, Ivan cruz y Alic Barandica
 - **Datos fuente**: DANE - Gran Encuesta Integrada de Hogares (GEIH) 2024
 
