@@ -1,6 +1,6 @@
-# Dashboard de Caracterización de la Población Colombiana y Venezolana - GEIH 2024
+# Interactive Visualization and Analysis of Colombia's GEIH Data: A Shiny Application for Reproducible Demographic and Labor Market Research
 
-Este proyecto es una aplicación interactiva desarrollada por **Daniel Molina** utilizando `Shiny` y `shinydashboard`, basada en los datos de la Gran Encuesta Integrada de Hogares (GEIH) 2024 del DANE. La herramienta permite caracterizar a la población colombiana y venezolana en el país.
+Este proyecto es una aplicación interactiva desarrollada por **Daniel Molina**, **Ivan Cruz** y **Alic Barandica** utilizando `Shiny` y `shinydashboard`, basada en los datos de la Gran Encuesta Integrada de Hogares (GEIH) 2024 del DANE. La herramienta permite caracterizar a la población colombiana y venezolana en el país.
 
 👉 **[Ver la aplicación en vivo](https://jsidte-daniel-molina.shinyapps.io/shiny-app/)**
 
