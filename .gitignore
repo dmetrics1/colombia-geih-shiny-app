@@ -1,4 +1,13 @@
 .Rproj.user
 .Rhistory
 .RData
+.RDataTmp
 .Ruserdata
+
+# Credenciales — NUNCA versionar (token/secret de shinyapps.io)
+clave.R
+.Renviron
+
+# Datos pesados — se descargan del DANE y se regeneran con join_geih.R (no se versionan)
+datos/
+geih_complete.csv

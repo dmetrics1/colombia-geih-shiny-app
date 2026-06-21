@@ -39,8 +39,9 @@ Aplicación interactiva en **Shiny** para explorar la **Gran Encuesta Integrada 
 ## 📊 Datos
 
 - **Fuente:** [Gran Encuesta Integrada de Hogares (GEIH) 2024](https://microdatos.dane.gov.co) — DANE, Colombia. Microdatos de libre acceso.
-- **`geih_complete.csv`:** GEIH consolidada y limpia a partir de los archivos mensuales; es el insumo principal de los scripts de `preparacion/`. La consolidación inicial se apoyó en un proyecto previo de exploración de datos: [Alicbm/data-exploration](https://github.com/Alicbm/data-exploration).
-- **`datos/`:** archivos mensuales originales de la GEIH (insumo de la consolidación; no usados directamente por la app).
+- **Cobertura:** **año completo 2024 (12 meses)**, 8 módulos por mes.
+- **Los microdatos no se versionan en este repositorio** (son públicos, pesados y propiedad del DANE). Para reproducir el estudio, descárgalos del DANE a `datos/<mes>/` y construye el dataset consolidado con `join_geih.R` (ver [Reproducibilidad](#-reproducibilidad)). El script lee dinámicamente **todos los meses presentes** en `datos/`.
+- La consolidación inicial se apoyó en un proyecto previo de exploración de datos: [Alicbm/data-exploration](https://github.com/Alicbm/data-exploration).
 
 ## 🔁 Reproducibilidad
 
@@ -53,12 +54,24 @@ install.packages(c(
   "data.table", "DT", "viridis", "paletteer", "RColorBrewer",
   "openxlsx", "reshape2", "bit64"
 ))
+```
 
-# 3. (Opcional) Reconstruye el dataset consolidado desde los mensuales
-source("funciones/join_geih.R")
-source("preparacion/preparacion.R")
+```text
+# 3. Descarga los 12 meses de la GEIH 2024 desde el DANE
+#    (https://microdatos.dane.gov.co) y colócalos así:
+datos/
+├── enero/      (8 módulos .CSV)
+├── febrero/
+├── ...
+└── diciembre/
+```
 
-# 4. Lanza la app localmente
+```r
+# 4. Construye el dataset consolidado (lee TODOS los meses en datos/)
+source("funciones/join_geih.R")     # genera geih_complete.csv (12 meses)
+source("preparacion/preparacion.R") # prepara los indicadores
+
+# 5. Lanza la app localmente
 shiny::runApp()
 ```
 
@@ -87,8 +100,8 @@ colombia-geih-shiny-app/
 │   ├── caracterizacion_nacional.R
 │   └── caracterizacion_departamento.R
 ├── www/                   # Recursos front-end (CSS, JS)
-├── datos/                 # Módulos mensuales de la GEIH (DANE)
-├── geih_complete.csv      # GEIH consolidada (insumo de la app)
+├── datos/                 # Módulos mensuales GEIH — descargar del DANE (no versionado)
+├── geih_complete.csv      # GEIH consolidada — generada por join_geih.R (no versionado)
 ├── LICENSE                # MIT
 └── README.md
 ```
