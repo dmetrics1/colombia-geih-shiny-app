@@ -46,13 +46,13 @@ Aplicación interactiva en **Shiny** para explorar la **Gran Encuesta Integrada 
 ## 🔁 Reproducibilidad
 
 ```r
-# 1. Abre el proyecto en RStudio (colombia-geih-shiny-app.Rproj)
+# 1. Abre la carpeta del proyecto en RStudio (o ejecuta desde la raíz del repo)
 
 # 2. Instala dependencias
 install.packages(c(
   "shiny", "shinydashboard", "plotly", "ggplot2", "dplyr", "tidyr",
   "data.table", "DT", "viridis", "paletteer", "RColorBrewer",
-  "openxlsx", "reshape2", "bit64"
+  "openxlsx", "reshape2", "bit64", "scales"
 ))
 ```
 
@@ -68,12 +68,14 @@ datos/
 
 ```r
 # 4. Construye el dataset consolidado (lee TODOS los meses en datos/)
-source("funciones/join_geih.R")     # genera geih_complete.csv (12 meses)
-source("preparacion/preparacion.R") # prepara los indicadores
+source("funciones/join_geih.R")     # define geih_completed(): une módulos y apila los 12 meses
+source("preparacion/preparacion.R") # recodifica, prepara indicadores y ESCRIBE geih_complete.csv
 
-# 5. Lanza la app localmente
+# 5. Lanza la app localmente (app.R lee geih_complete.csv)
 shiny::runApp()
 ```
+
+> ℹ️ La escritura de `geih_complete.csv` ocurre en `preparacion/preparacion.R`; `join_geih.R` solo define las funciones de unión/apilado. Detalle del flujo y estructura de carpetas en **[`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md)**.
 
 ## ☁️ Despliegue
 
@@ -88,20 +90,31 @@ rsconnect::setAccountInfo(
 rsconnect::deployApp()
 ```
 
+> 🔐 Las credenciales locales (`clave.R`, `.Renviron`) están en `.gitignore`. Si un token estuvo
+> alguna vez versionado, **rótalo** en shinyapps.io (*Account → Tokens → Remove* y genera uno nuevo):
+> borrarlo del archivo no lo quita del historial de git.
+
 ## 🗂️ Estructura del repositorio
 
 ```
 colombia-geih-shiny-app/
-├── app.R                  # App Shiny principal (UI + server)
+├── app.R                  # App Shiny principal (UI + server); lee geih_complete.csv
 ├── funciones/
-│   └── join_geih.R        # Unión por llave de los módulos de la GEIH
-├── preparacion/           # Procesamiento y ponderación
-│   ├── preparacion.R
-│   ├── caracterizacion_nacional.R
-│   └── caracterizacion_departamento.R
-├── www/                   # Recursos front-end (CSS, JS)
-├── datos/                 # Módulos mensuales GEIH — descargar del DANE (no versionado)
-├── geih_complete.csv      # GEIH consolidada — generada por join_geih.R (no versionado)
+│   └── join_geih.R        # merge_month() + geih_completed(): unen los 12 meses
+├── preparacion/           # Procesamiento, recodificación y escritura del consolidado
+│   ├── preparacion.R              # → escribe geih_complete.csv
+│   ├── caracterizacion_nacional.R       # cálculos nacionales (source desde app.R)
+│   └── caracterizacion_departamento.R   # cálculos departamentales (source desde app.R)
+├── data.frame/            # Export de caracterizaciones a Excel (versionado)
+│   ├── archivos de excel.R
+│   ├── caracterizacion_poblacional.xlsx
+│   └── caracterizacion_vene_dep.xlsx
+├── www/                   # Recursos front-end (radar_style.css, id_generate.js, index)
+├── docs/
+│   └── REPRODUCIBILITY.md # Guía detallada de regeneración de datos
+├── datos/                 # 12 meses GEIH — descargar del DANE  (en .gitignore)
+├── geih_complete.csv      # GEIH consolidada — la genera preparacion.R  (en .gitignore)
+├── .gitignore
 ├── LICENSE                # MIT
 └── README.md
 ```

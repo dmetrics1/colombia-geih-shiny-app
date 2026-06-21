@@ -11,3 +11,6 @@ clave.R
 # Datos pesados — se descargan del DANE y se regeneran con join_geih.R (no se versionan)
 datos/
 geih_complete.csv
+
+# Copias de trabajo / scratch
+tes/
