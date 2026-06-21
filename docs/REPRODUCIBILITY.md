@@ -97,6 +97,29 @@ shiny::runApp()                      # app.R lee geih_complete.csv
 
 ---
 
+## 4b. Ponderación con divisor dinámico (v2)
+
+La GEIH es una **encuesta mensual**. Al sumar `FEX_C18` sobre N meses se obtiene **N veces** la
+población media mensual, así que para estimar el promedio mensual hay que **dividir por N**.
+
+> ⚠️ El código v1 dividía por un **`7` fijo** (32 veces). Con 12 meses eso **infla las cifras
+> ×12/7 ≈ 1.71** (p. ej. población 2024 saldría 88 M en vez de 51.5 M). Regla del instructivo §14:
+> nunca dividir por un número fijo.
+
+La v2 centraliza la lógica en [`R/aggregate.R`](../R/aggregate.R) con un divisor **dinámico**:
+
+```r
+n_periodos(dt)   # uniqueN(MES); o combinaciones ANIO×MES si la serie es multi-año (p. ej. 48)
+poblacion_ponderada(dt)        # sum(FEX_C18) / n_periodos(dt)
+conteo_ponderado(dt, by = ...) # personas por grupo, mismo divisor
+```
+
+- En **conteos de personas** (estado civil, educación, vivienda, salud…) se aplica el divisor.
+- En **razones** (tasa de desempleo/ocupación, porcentajes) el divisor **se cancela**: no se aplica.
+- Validado: 2024 → 51.551.004 (coincide con `tests/baseline_2024.csv`); serie 2022-2025 → 48 periodos.
+
+---
+
 ## 5. Credenciales y despliegue
 
 Las credenciales de **shinyapps.io** **nunca** se versionan. Están cubiertas por `.gitignore`

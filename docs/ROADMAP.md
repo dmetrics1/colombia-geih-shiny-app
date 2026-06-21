@@ -159,17 +159,21 @@ entre años (la GEIH tuvo rediseño ~2021; hay que confirmar códigos y nombres,
 
 ---
 
-## Fase 2 — Corregir la ponderación (`/7` → dinámico)  🔴 *crítico*
+## Fase 2 — Corregir la ponderación (`/7` → dinámico)  🔴 *crítico* — ✅ COMPLETADA
 
 **Objetivo:** que las estimaciones poblacionales sean correctas con cualquier nº de meses.
 
-- [ ] Reemplazar las **32 ocurrencias de `/ 7`** por un divisor dinámico = nº de meses distintos
-      del subconjunto (`uniqueN(MES)` por año/periodo). Centralizarlo en una sola función.
-- [ ] Validar contra la `baseline_2024.csv` de la Fase 0 (los % y tasas deben coincidir; los
-      conteos deben quedar correctos, no inflados ×12/7).
-- [ ] Documentar la lógica de ponderación en `docs/REPRODUCIBILITY.md`.
+> Ajuste de enfoque: como la Fase 1 ya está hecha, NO se parchan los 32 `/7` de los archivos
+> viejos (que la Fase 3 reemplazará). El fix se construye en la **capa central** `R/aggregate.R`,
+> que es donde vivirá la lógica tras el refactor. Cero trabajo desechable.
 
-**Entregable:** caracterizaciones con ponderación correcta y verificada.
+- [x] `R/aggregate.R`: divisor **dinámico** `n_periodos()` = meses distintos (`uniqueN(MES)`) o
+      combinaciones `ANIO×MES` en multi-año. Helpers `poblacion_ponderada()`, `conteo_ponderado()`. ✅
+- [x] Validado (`04_demo_divisor.R`): 2024 con `/7` daría **88.4 M** (×1.71 inflado); con divisor
+      dinámico da **51.551.004**, exacto a la baseline. Serie 2022-2025: `n_periodos()=48` correcto. ✅
+- [x] Lógica de ponderación documentada en `docs/REPRODUCIBILITY.md`. ✅
+
+**Entregable:** capa central de ponderación correcta y verificada (`R/aggregate.R`). ✅
 
 ---
 
