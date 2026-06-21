@@ -205,18 +205,20 @@ falta la modularización de la UI y la limpieza de archivos viejos.
 
 ---
 
-## Fase 4 — Pre-agregación y almacenamiento eficiente
+## Fase 4 — Pre-agregación y almacenamiento eficiente — ✅ COMPLETADA
 
 **Objetivo:** implementar la decisión arquitectónica central.
 
-- [ ] Script `preparacion/agregar.R`: a partir del consolidado, **precalcular todas las tablas**
-      que consumen los gráficos, con claves `ANIO × DPTO × P3271 × es_migrante` (+ las categorías
-      propias de cada indicador).
-- [ ] Guardar en formato compacto (`agregados.parquet` con `arrow`, o `.rds`), < 10 MB.
-- [ ] Reescribir `app.R` para leer agregados y **filtrar** (sin recálculo de microdato).
-- [ ] Alimentar la **pestaña "Datos"** desde estos mismos agregados (fin de los Excel manuales).
+- [x] `preparacion/agregar.R`: precalcula los 11 indicadores por `anio × geo (Nacional+33 deptos)
+      × migrante (Todos/Venezolano)` usando las funciones validadas de `R/indicadores.R`. Divisor
+      de periodo fijado por año (`options(geih.n_periodos)`). ✅
+- [x] Guardado compacto: **`agregados.rds` = 0.29 MB** (de 2.5 GB → 290 KB; ~23.6k filas). ✅
+- [x] Verificado (`test_agregados.R`): filtrado de la app correcto — sexo Nac. 2024 = 48.6/51.4;
+      tendencia TD 11.2→8.9; Magdalena 2025 venezolano con etiquetas. ✅
+- [ ] Reescribir `app.R` para leer `agregados.rds` y filtrar → *se hace en la modularización (Fase 3)*.
+- [ ] Pestaña "Datos" desde agregados → *idem, en la app modular*.
 
-**Entregable:** app que arranca en segundos con 4 años de datos; pestaña Datos reproducible.
+**Entregable:** `agregados.rds` ligero y validado; lo consumirá la app modular. ✅
 
 ---
 

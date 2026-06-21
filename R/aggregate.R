@@ -14,7 +14,14 @@ suppressMessages(library(data.table))
 # Nº de periodos mensuales distintos en los datos.
 #  - Varios años (hay ANIO): combinaciones ANIO×MES (p. ej. 48 en 2022-2025).
 #  - Un solo periodo: meses distintos (p. ej. 12 en un año).
+#
+# IMPORTANTE: para subgrupos filtrados (un depto, migrantes…) el divisor debe
+# ser el nº de meses del PERIODO COMPLETO, no los que el subgrupo aparece. Por
+# eso, al pre-agregar se fija `options(geih.n_periodos = 12)` por año y esta
+# función lo respeta; si no está fijado, se calcula del dt.
 n_periodos <- function(dt) {
+  ov <- getOption("geih.n_periodos")
+  if (!is.null(ov)) return(ov)
   stopifnot("MES" %in% names(dt))
   if ("ANIO" %in% names(dt)) uniqueN(dt[, .(ANIO, MES)]) else uniqueN(dt$MES)
 }
