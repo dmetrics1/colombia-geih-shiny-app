@@ -177,30 +177,31 @@ entre años (la GEIH tuvo rediseño ~2021; hay que confirmar códigos y nombres,
 
 ---
 
-## Fase 3 — Refactor y limpieza de código
+## Fase 3 — Refactor y limpieza de código — EN CURSO (capa de lógica ✅)
 
 **Objetivo:** un proyecto factorizado, sin duplicación ni código muerto, fácil de mantener.
 
-- [ ] **Unificar caracterizaciones:** `nacional` y `departamento` son ~90% iguales → una sola
-      función por indicador con parámetro de agrupación opcional (`by_dpto = TRUE/FALSE`). Pasa de
-      ~25 funciones a ~12.
-- [ ] **Recodificación dirigida por diccionario:** reemplazar los 8+ `replacement_map_*` y el
-      `fcase` de departamentos por la capa de mapeo construida desde `diccionario.xlsx` (Fase 1).
-      Seguir el protocolo: códigos como **texto** (sin perder `05`/`08`), **conservar original +
-      crear `*_label`** (auditable), una función `etiquetar_geih()` reusable. Aprovechar recodes
-      adicionales del protocolo (grupo de edad, posición ocupacional, rama de actividad, etc.).
-- [ ] **Modularizar la app** con Shiny modules: separar `global.R`, `ui/`, `server/` y un módulo
+- [x] **Unificar caracterizaciones:** `R/indicadores.R` — 11 funciones (una por indicador) con
+      parámetro `depto=NULL`; sirven nacional, departamental y migrante. Reemplazan las ~25 funciones
+      duplicadas con `/7`. **Validado vs baseline:** sexo 48.6/51.4, TD 10.2%, depto y migrante OK. ✅
+- [x] **Recodificación dirigida por diccionario:** `R/recodes.R` con `etiquetar_geih()` (códigos como
+      texto → columnas con nombre legible: `sexo`, `estado_civil`, `nivel_educativo`, `departamento`,
+      `grupo_edad`, …) + `es_migrante_venezolano()`. Reemplaza los 8+ `replacement_map_*` y el `fcase`. ✅
+- [x] **Tematizar plotly:** `R/plot_theme.R` (`tema_plotly()`, `PALETA`, `barra_horizontal()`) —
+      centraliza el estilo repetido en los 12 gráficos. ✅
+- [ ] **Modularizar la app** con Shiny modules: `global.R` (carga datos + `source` de `R/`), un módulo
       por pestaña, en lugar del `app.R` monolítico de ~970 líneas.
 - [ ] **Eliminar código muerto / problemas detectados:**
       - `.libPaths("/root/R/...")` (resabio de deploy) en `app.R:1`.
       - ID duplicado `level_selection` (filtro global vs pestaña Datos) → renombrar uno.
       - `print()` de depuración en el server.
       - `data.frame/archivos de excel.R` (roto, rutas absolutas, `install.packages` embebido) →
-        eliminar o reescribir como generador de agregados de la Fase 4.
-- [ ] **Tematizar plotly:** extraer el estilo repetido (fondos `#013B63`, fuentes blancas, márgenes)
-      a una función `tema_plotly()` en vez de copiarlo en cada uno de los 12 gráficos.
+        eliminar / reescribir como generador de agregados (Fase 4).
+      - `funciones/join_geih.R`, `preparacion/caracterizacion_*.R`, `preparacion.R` viejos → retirar.
 
 **Entregable:** código modular, DRY, sin dead code; `app.R` reducido a orquestación.
+**Avance:** capa de datos/lógica (`R/recodes.R`, `R/indicadores.R`, `R/plot_theme.R`) lista y validada;
+falta la modularización de la UI y la limpieza de archivos viejos.
 
 ---
 
