@@ -1,0 +1,2588 @@
+nombre_variable,codigo_categoria,categoria
+AREA,05,Medellín AM
+AREA,08,Barranquilla AM
+AREA,11,Bogotá DC
+AREA,13,Cartagena
+AREA,15,Tunja
+AREA,17,Manizales AM
+AREA,18,Florencia
+AREA,19,Popayán
+AREA,20,Valledupar
+AREA,23,Montería
+AREA,27,Quibdó
+AREA,41,Neiva
+AREA,44,Riohacha
+AREA,47,Santa Marta
+AREA,50,Villavicencio
+AREA,52,Pasto
+AREA,54,Cúcuta AM
+AREA,63,Armenia
+AREA,66,Pereira AM
+AREA,68,Bucaramanga AM
+AREA,70,Sincelejo
+AREA,73,Ibagué
+AREA,76,Cali AM
+CLASE,1,Urbano
+CLASE,2,Rural
+DPTO,05,Antioquia
+DPTO,08,Atlántico
+DPTO,11,Bogotá DC
+DPTO,13,Bolívar
+DPTO,15,Boyacá
+DPTO,17,Caldas
+DPTO,18,Caquetá
+DPTO,19,Cauca
+DPTO,20,Cesar
+DPTO,23,Córdoba
+DPTO,25,Cundinamarca
+DPTO,27,Chocó
+DPTO,41,Huila
+DPTO,44,La guajira
+DPTO,47,Magdalena
+DPTO,50,Meta
+DPTO,52,Nariño
+DPTO,54,Norte de santander
+DPTO,63,Quindio
+DPTO,66,Risaralda
+DPTO,68,Santander
+DPTO,70,Sucre
+DPTO,73,Tolima
+DPTO,76,Valle del cauca
+P3038,1,Hombres
+P3038,2,Mujeres
+P3038,3,Ambos sexos
+P3038,4,Otro ¿Cuál?
+P3039,1,Hombre
+P3039,2,Mujer
+P3039,3,Hombre trans
+P3039,4,Mujer trans
+P3039,5,Otro ¿Cuál?
+P3041,1,Pública
+P3041,2,Privada
+P3042,1,Ninguno
+P3042,10,Universitaria
+P3042,11,Especialización
+P3042,12,Maestría
+P3042,13,Doctorado
+P3042,2,Preescolar
+P3042,3,Básica primaria (1o - 5o)
+P3042,4,Básica secundaria (6o - 9o)
+P3042,5,Media académica (Bachillerato clásico)
+P3042,6,Media técnica (Bachillerato técnico)
+P3042,7,Normalista
+P3042,8,Técnica profesional
+P3042,9,Tecnológica
+P3042,99,"No sabe, no informa"
+P6050,1,Jefe (a) del hogar
+P6050,2,"Pareja, esposo(a), cónyuge, compañero(a)"
+P6050,3,"Hijo(a), hijastro(a)"
+P6050,4,Nieto(a)
+P6050,5,Otro pariente
+P6050,6,Empleado(a) del servicio doméstico y sus parientes
+P6050,7,Pensionista
+P6050,8,Trabajador
+P6050,9,Otro no pariente
+P6070,1,No esta casado(a) y vive en pareja hace menos de dos años
+P6070,2,No esta casado (a) y vive en pareja hace dos años o más
+P6070,3,Esta casado (a)
+P6070,4,Esta separado (a) o divorciado (a)
+P6070,5,Esta viudo (a)
+P6070,6,Esta soltero (a)
+P6071,1,Sí
+P6071,2,No
+P6080,1,Indígena
+P6080,2,Gitano (a) (Rom)
+P6080,3,"Raizal del archipiélago de San Andrés, Providencia y Santa Catalina"
+P6080,4,Palenquero (a) de San Basilio
+P6080,5,"Negro (a), mulato (a) (afrodescendiente), afrocolombiano(a)"
+P6080,6,Ninguno de los anteriores
+P6081,1,Sí
+P6081,2,No
+P6081,3,Fallecido
+P6083,1,Sí
+P6083,2,No
+P6083,3,Fallecida
+P6090,1,Sí
+P6090,2,No
+P6090,9,"No sabe, no informa"
+P6100,1,Contributivo (eps)?
+P6100,2,"Especial ? (fuerzas armadas, ecopetrol, universidades públicas)"
+P6100,3,Subsidiado? (eps-s)
+P6100,9,"No sabe, no informa"
+P6110,1,... paga una parte y otra la empresa o patrón
+P6110,2,Le descuentan de la pensión
+P6110,3,... paga la totalidad de la afiliación
+P6110,4,Paga completamente la empresa o patrón donde trabaja o trabajó
+P6110,5,"No paga, es beneficiario"
+P6110,6,"No sabe, no informa"
+P6160,1,Sí
+P6160,2,No
+P6170,1,Sí
+P6170,2,No
+DPTO,05,Antioquia
+DPTO,08,Atlántico
+DPTO,13,Bolívar
+DPTO,15,Boyacá
+DPTO,17,Caldas
+DPTO,18,Caquetá
+DPTO,19,Cauca
+DPTO,20,César
+DPTO,23,Córdoba
+DPTO,25,Cundinamarca
+DPTO,27,Chocó
+DPTO,41,Huila
+DPTO,44,La guajira
+DPTO,47,Magdalena
+DPTO,50,Meta
+DPTO,52,Nariño
+DPTO,54,Norte de santander
+DPTO,63,Quindío
+DPTO,66,Risaralda
+DPTO,68,Santander
+DPTO,70,Sucre
+DPTO,73,Tolima
+DPTO,76,Valle del cauca
+P4000,1,Casa
+P4000,2,Apartamento
+P4000,3,Cuarto (s) en inquilinato
+P4000,4,Cuarto (s) en otro tipo de estructura
+P4000,5,Vivienda indígena
+P4000,6,"Otra vivienda (carpa, vagón, embarcación, cueva, refugio natural, etc.)"
+P4010,1,"Ladrillo, bloque, material prefabricado, piedra"
+P4010,2,Madera pulida
+P4010,3,Adobe o tapia pisada
+P4010,4,Bahareque
+P4010,5,"Madera burda, tabla, tablón"
+P4010,6,Guadua
+P4010,7,"Caña, esterilla, otro tipo de material vegetal"
+P4010,8,"Zinc, tela, cartón, latas, desechos, plástico"
+P4010,9,Sin paredes
+P4020,1,"Tierra, arena"
+P4020,2,"Cemento, gravilla"
+P4020,3,"Madera burda, tabla, tablón, otro vegetal"
+P4020,4,"Baldosín, ladrillo, vinisol, otros materiales sintéticos"
+P4020,5,Mármol
+P4020,6,Madera pulida
+P4020,7,Alfombra o tapete de pared a pared
+P4030S1,1,Sí
+P4030S1,2,No
+P4030S1A1,0,Conexión pirata
+P4030S1A1,1,Bajo - bajo
+P4030S1A1,2,Bajo
+P4030S1A1,3,Medio - bajo
+P4030S1A1,4,Medio
+P4030S1A1,5,Medio - alto
+P4030S1A1,6,Alto
+P4030S1A1,9,No sabe o cuenta con planta eléctrica
+P4030S2,1,Sí
+P4030S2,2,No
+P4030S3,1,Sí
+P4030S3,2,No
+P4030S4,1,Sí
+P4030S4,2,No
+P4030S5,1,Sí
+P4030S5,2,No
+P5020,1,Inodoro conectado a alcantarillado
+P5020,2,Inodoro conectado a pozo séptico
+P5020,3,Inodoro sin conexión
+P5020,4,Letrina
+P5020,5,Bajamar
+P5020,6,No tiene servicio sanitario
+P5030,1,De uso exclusivo de las personas del hogar
+P5030,2,Compartido con personas de otros hogares
+P5040,1,Por recolección pública o privada
+P5040,2,"La tiran a un río, quebrada, caño o laguna"
+P5040,3,"La tiran a un patio, lote, zanja o baldío"
+P5040,4,La queman o entierran
+P5040,5,La eliminan de otra forma
+P5050,1,De acueducto por tubería
+P5050,10,Agua embotellada o en bolsa
+P5050,2,De otra fuente por tubería
+P5050,3,De pozo con bomba
+P5050,4,"De pozo sin bomba, aljibe, jagüey o barreno"
+P5050,5,Aguas lluvias
+P5050,6,"Río, quebrada, nacimiento ó manantial"
+P5050,7,De pila pública
+P5050,8,Carro tanque
+P5050,9,Aguatero
+P5070,1,En un cuarto usado solo para cocinar?
+P5070,2,En un cuarto usado también para dormir?
+P5070,3,En una sala comedor con lavaplatos?
+P5070,4,En una sala comedor sin lavaplatos?
+P5070,5,"En un patio, corredor, enramada, al aire libre?"
+P5070,6,"En ninguna parte, no preparan alimentos?"
+P5080,1,Electricidad
+P5080,2,"Petróleo, gasolina, kerosene, alcohol"
+P5080,3,Gas natural conectado a red pública
+P5080,4,Gas propano en cilindro o pipeta
+P5080,5,"Leña, madera o carbón de leña"
+P5080,6,Carbón mineral
+P5080,7,Materiales de desecho
+P5090,1,"Propia, totalmente pagada"
+P5090,2,"Propia, la están pagando"
+P5090,3,En arriendo subarriendo
+P5090,4,En usufructo
+P5090,5,Posesión sin título
+P5090,6,Propiedad colectiva
+P5090,7,Otra
+P6240,1,Trabajando
+P6240,2,Buscando trabajo
+P6240,3,Estudiando
+P6240,4,Oficios del hogar
+P6240,5,Incapacitado permanente para trabajar
+P6240,6,Otra actividad
+P6250,1,Sí
+P6250,2,No
+P6260,1,Sí
+P6260,2,No
+P6260S1,1,"Enfermedad, permiso o licencia"
+P6260S1,2,Festivos
+P6260S1,3,Vacaciones
+P6260S1,4,Capacitación
+P6260S1,5,Suspensión temporal del trabajo
+P6260S1,6,Reducción de la actividad económica o cierre de la empresa
+P6260S1,7,Razones climáticas o catástrofes naturales
+P6260S1,8,"Otro, ¿cuál?"
+P6270,1,Sí
+P6270,2,No
+P6280,1,Sí
+P6280,2,No
+P6290,1,"Pidió ayuda a familiares, amigos, colegas"
+P6290,2,"Visitó, llevó o envió hojas de vida a empresas o empleadores"
+P6290,3,"Visitó, llevó o envió hojas de vida a bolsas de empleo o intermediarios"
+P6290,4,Puso o consulto avisos clasificados
+P6290,5,Se presentó a convocatorias
+P6290,6,Hizo preparativos para iniciar un negocio
+P6290,7,Otro medio
+P6290,9,"No sabe, no informa"
+P6300,1,Sí
+P6300,2,No
+P6310,1,Ya encontró trabajo
+P6310,10,Responsabilidades familiares
+P6310,11,Problemas de salud
+P6310,12,Está estudiando
+P6310,13,Otro
+P6310,2,No hay trabajo disponible en la ciudad ó región / no encuentra trabajo en su oficio o profesión
+P6310,3,Está esperando que lo llamen o esperando temporada alta
+P6310,4,No sabe como buscarlo
+P6310,5,Está cansado de buscar
+P6310,6,Carece de la experiencia necesaria
+P6310,7,No tiene recursos para instalar un negocio
+P6310,8,Los empleadores lo consideran muy joven o muy viejo
+P6310,9,Usted se considera muy joven o muy viejo
+P6320,1,Sí
+P6320,2,No
+P6330,1,Sí
+P6330,2,No
+P6340,1,Sí
+P6340,2,No
+P6351,1,Sí
+P6351,2,No
+P3373S3,10,Antártida
+P3373S3,100,Bulgaria
+P3373S3,104,Myanmar
+P3373S3,108,Burundi
+P3373S3,112,Belarús
+P3373S3,116,Camboya
+P3373S3,12,Argelia
+P3373S3,120,Camerún
+P3373S3,124,Canadá
+P3373S3,132,Cabo Verde
+P3373S3,136,Islas Caimán
+P3373S3,140,República Centroafricana
+P3373S3,144,Sri Lanka
+P3373S3,148,Chad
+P3373S3,152,Chile
+P3373S3,156,China
+P3373S3,16,Samoa Americana
+P3373S3,162,Isla Christmas
+P3373S3,166,Islas Cocos (Keeling)
+P3373S3,170,Colombia
+P3373S3,174,Comoras
+P3373S3,175,Mayotte
+P3373S3,178,Congo
+P3373S3,180,República Democrática del Congo
+P3373S3,184,Islas Cook
+P3373S3,188,Costa Rica
+P3373S3,191,Croacia
+P3373S3,192,Cuba
+P3373S3,196,Chipre
+P3373S3,20,Andorra
+P3373S3,203,Chequia
+P3373S3,204,Benin
+P3373S3,208,Dinamarca
+P3373S3,212,Dominica
+P3373S3,214,República Dominicana
+P3373S3,218,Ecuador
+P3373S3,222,El Salvador
+P3373S3,226,Guinea Ecuatorial
+P3373S3,231,Etiopía
+P3373S3,232,Eritrea
+P3373S3,233,Estonia
+P3373S3,234,Islas Feroe
+P3373S3,238,Islas Malvinas (Falkland)
+P3373S3,239,Georgia del Sur y las Islas Sandwich del Sur
+P3373S3,24,Angola
+P3373S3,242,Fiji
+P3373S3,246,Finlandia
+P3373S3,248,Islas Åland
+P3373S3,250,Francia
+P3373S3,254,Guayana Francesa
+P3373S3,258,Polinesia Francesa
+P3373S3,260,Territorio de las Tierras Australes Francesas
+P3373S3,262,Djibouti
+P3373S3,266,Gabón
+P3373S3,268,Georgia
+P3373S3,270,Gambia
+P3373S3,275,Estado de Palestina
+P3373S3,276,Alemania
+P3373S3,28,Antigua y Barbuda
+P3373S3,288,Ghana
+P3373S3,292,Gibraltar
+P3373S3,296,Kiribati
+P3373S3,300,Grecia
+P3373S3,304,Groenlandia
+P3373S3,308,Granada
+P3373S3,31,Azerbaiyán
+P3373S3,312,Guadalupe
+P3373S3,316,Guam
+P3373S3,32,Argentina
+P3373S3,320,Guatemala
+P3373S3,324,Guinea
+P3373S3,328,Guyana
+P3373S3,332,Haití
+P3373S3,334,Islas Heard y McDonald
+P3373S3,336,Santa Sede
+P3373S3,340,Honduras
+P3373S3,344,"China, región administrativa especial de Hong Kong"
+P3373S3,348,Hungría
+P3373S3,352,Islandia
+P3373S3,356,India
+P3373S3,36,Australia
+P3373S3,360,Indonesia
+P3373S3,364,Irán
+P3373S3,368,Iraq
+P3373S3,372,Irlanda
+P3373S3,376,Israel
+P3373S3,380,Italia
+P3373S3,384,Costa de Marfil
+P3373S3,388,Jamaica
+P3373S3,392,Japón
+P3373S3,398,Kazajstán
+P3373S3,4,Afganistán
+P3373S3,40,Austria
+P3373S3,400,Jordania
+P3373S3,404,Kenya
+P3373S3,408,República Popular Democrática de Corea
+P3373S3,410,República de Corea
+P3373S3,414,Kuwait
+P3373S3,417,Kirguistán
+P3373S3,418,República Democrática Popular Lao
+P3373S3,422,Líbano
+P3373S3,426,Lesotho
+P3373S3,428,Letonia
+P3373S3,430,Liberia
+P3373S3,434,Libia
+P3373S3,438,Liechtenstein
+P3373S3,44,Bahamas
+P3373S3,440,Lituania
+P3373S3,442,Luxemburgo
+P3373S3,446,"China, región administrativa especial de Macao"
+P3373S3,450,Madagascar
+P3373S3,454,Malawi
+P3373S3,458,Malasia
+P3373S3,462,Maldivas
+P3373S3,466,Malí
+P3373S3,470,Malta
+P3373S3,474,Martinica
+P3373S3,478,Mauritania
+P3373S3,48,Bahrein
+P3373S3,480,Mauricio
+P3373S3,484,México
+P3373S3,492,Mónaco
+P3373S3,496,Mongolia
+P3373S3,498,República de Moldova
+P3373S3,499,Montenegro
+P3373S3,50,Bangladesh
+P3373S3,500,Montserrat
+P3373S3,504,Marruecos
+P3373S3,508,Mozambique
+P3373S3,51,Armenia
+P3373S3,512,Omán
+P3373S3,516,Namibia
+P3373S3,52,Barbados
+P3373S3,520,Nauru
+P3373S3,524,Nepal
+P3373S3,528,Países Bajos
+P3373S3,531,Curazao
+P3373S3,533,Aruba
+P3373S3,534,San Martín (parte Holandesa)
+P3373S3,535,"Bonaire, San Eustaquio y Saba"
+P3373S3,540,Nueva Caledonia
+P3373S3,548,Vanuatu
+P3373S3,554,Nueva Zelandia
+P3373S3,558,Nicaragua
+P3373S3,56,Bélgica
+P3373S3,562,Níger
+P3373S3,566,Nigeria
+P3373S3,570,Niue
+P3373S3,574,Isla Norfolk
+P3373S3,578,Noruega
+P3373S3,580,Islas Marianas Septentrionales
+P3373S3,581,Islas menores alejadas de Estados Unidos
+P3373S3,583,Micronesia (Estados Federados de)
+P3373S3,584,Islas Marshall
+P3373S3,585,Palau
+P3373S3,586,Pakistán
+P3373S3,591,Panamá
+P3373S3,598,Papua Nueva Guinea
+P3373S3,60,Bermuda
+P3373S3,600,Paraguay
+P3373S3,604,Perú
+P3373S3,608,Filipinas
+P3373S3,612,Pitcairn
+P3373S3,616,Polonia
+P3373S3,620,Portugal
+P3373S3,624,Guinea-Bissau
+P3373S3,626,Timor-Leste
+P3373S3,630,Puerto Rico
+P3373S3,634,Qatar
+P3373S3,638,Reunión
+P3373S3,64,Bhután
+P3373S3,642,Rumania
+P3373S3,643,Federación de Rusia
+P3373S3,646,Rwanda
+P3373S3,652,San Barthélemy
+P3373S3,654,Santa Elena
+P3373S3,659,Saint Kitts y Nevis
+P3373S3,660,Anguila
+P3373S3,662,Santa Lucía
+P3373S3,663,San Martín (parte francesa)
+P3373S3,666,San Pedro y Miquelón
+P3373S3,670,San Vicente y las Granadinas
+P3373S3,674,San Marino
+P3373S3,678,Santo Tomé y Príncipe
+P3373S3,68,Bolivia
+P3373S3,680,Sark
+P3373S3,682,Arabia Saudita
+P3373S3,686,Senegal
+P3373S3,688,Serbia
+P3373S3,690,Seychelles
+P3373S3,694,Sierra Leona
+P3373S3,70,Bosnia y Herzegovina
+P3373S3,702,Singapur
+P3373S3,703,Eslovaquia
+P3373S3,704,Viet Nam
+P3373S3,705,Eslovenia
+P3373S3,706,Somalia
+P3373S3,710,Sudáfrica
+P3373S3,716,Zimbabwe
+P3373S3,72,Botswana
+P3373S3,724,España
+P3373S3,728,Sudán del Sur
+P3373S3,729,Sudán
+P3373S3,732,Sáhara Occidental
+P3373S3,74,Isla Bouvet
+P3373S3,740,Suriname
+P3373S3,744,Islas Svalbard y Jan Mayen
+P3373S3,748,Eswatini
+P3373S3,752,Suecia
+P3373S3,756,Suiza
+P3373S3,76,Brasil
+P3373S3,760,República Árabe Siria
+P3373S3,762,Tayikistán
+P3373S3,764,Tailandia
+P3373S3,768,Togo
+P3373S3,772,Tokelau
+P3373S3,776,Tonga
+P3373S3,780,Trinidad y Tabago
+P3373S3,784,Emiratos Árabes Unidos
+P3373S3,788,Túnez
+P3373S3,792,Turquía
+P3373S3,795,Turkmenistán
+P3373S3,796,Islas Turcas y Caicos
+P3373S3,798,Tuvalu
+P3373S3,8,Albania
+P3373S3,800,Uganda
+P3373S3,804,Ucrania
+P3373S3,807,Macedonia del Norte
+P3373S3,818,Egipto
+P3373S3,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3373S3,831,Guernsey
+P3373S3,832,Jersey
+P3373S3,833,Isla de Man
+P3373S3,834,República Unida de Tanzanía
+P3373S3,84,Belice
+P3373S3,840,Estados Unidos de América
+P3373S3,850,Islas Vírgenes de los Estados Unidos
+P3373S3,854,Burkina Faso
+P3373S3,858,Uruguay
+P3373S3,86,Territorio Británico del Océano Índico
+P3373S3,860,Uzbekistán
+P3373S3,862,Venezuela
+P3373S3,876,Islas Wallis y Futuna
+P3373S3,882,Samoa
+P3373S3,887,Yemen
+P3373S3,894,Zambia
+P3373S3,90,Islas Salomón
+P3373S3,92,Islas Vírgenes Británicas
+P3373S3,96,Brunei Darussalam
+P3374S1,10,Antártida
+P3374S1,100,Bulgaria
+P3374S1,104,Myanmar
+P3374S1,108,Burundi
+P3374S1,112,Belarús
+P3374S1,116,Camboya
+P3374S1,12,Argelia
+P3374S1,120,Camerún
+P3374S1,124,Canadá
+P3374S1,132,Cabo Verde
+P3374S1,136,Islas Caimán
+P3374S1,140,República Centroafricana
+P3374S1,144,Sri Lanka
+P3374S1,148,Chad
+P3374S1,152,Chile
+P3374S1,156,China
+P3374S1,16,Samoa Americana
+P3374S1,162,Isla Christmas
+P3374S1,166,Islas Cocos (Keeling)
+P3374S1,170,Colombia
+P3374S1,174,Comoras
+P3374S1,175,Mayotte
+P3374S1,178,Congo
+P3374S1,180,República Democrática del Congo
+P3374S1,184,Islas Cook
+P3374S1,188,Costa Rica
+P3374S1,191,Croacia
+P3374S1,192,Cuba
+P3374S1,196,Chipre
+P3374S1,20,Andorra
+P3374S1,203,Chequia
+P3374S1,204,Benin
+P3374S1,208,Dinamarca
+P3374S1,212,Dominica
+P3374S1,214,República Dominicana
+P3374S1,218,Ecuador
+P3374S1,222,El Salvador
+P3374S1,226,Guinea Ecuatorial
+P3374S1,231,Etiopía
+P3374S1,232,Eritrea
+P3374S1,233,Estonia
+P3374S1,234,Islas Feroe
+P3374S1,238,Islas Malvinas (Falkland)
+P3374S1,239,Georgia del Sur y las Islas Sandwich del Sur
+P3374S1,24,Angola
+P3374S1,242,Fiji
+P3374S1,246,Finlandia
+P3374S1,248,Islas Åland
+P3374S1,250,Francia
+P3374S1,254,Guayana Francesa
+P3374S1,258,Polinesia Francesa
+P3374S1,260,Territorio de las Tierras Australes Francesas
+P3374S1,262,Djibouti
+P3374S1,266,Gabón
+P3374S1,268,Georgia
+P3374S1,270,Gambia
+P3374S1,275,Estado de Palestina
+P3374S1,276,Alemania
+P3374S1,28,Antigua y Barbuda
+P3374S1,288,Ghana
+P3374S1,292,Gibraltar
+P3374S1,296,Kiribati
+P3374S1,300,Grecia
+P3374S1,304,Groenlandia
+P3374S1,308,Granada
+P3374S1,31,Azerbaiyán
+P3374S1,312,Guadalupe
+P3374S1,316,Guam
+P3374S1,32,Argentina
+P3374S1,320,Guatemala
+P3374S1,324,Guinea
+P3374S1,328,Guyana
+P3374S1,332,Haití
+P3374S1,334,Islas Heard y McDonald
+P3374S1,336,Santa Sede
+P3374S1,340,Honduras
+P3374S1,344,"China, región administrativa especial de Hong Kong"
+P3374S1,348,Hungría
+P3374S1,352,Islandia
+P3374S1,356,India
+P3374S1,36,Australia
+P3374S1,360,Indonesia
+P3374S1,364,Irán
+P3374S1,368,Iraq
+P3374S1,372,Irlanda
+P3374S1,376,Israel
+P3374S1,380,Italia
+P3374S1,384,Costa de Marfil
+P3374S1,388,Jamaica
+P3374S1,392,Japón
+P3374S1,398,Kazajstán
+P3374S1,4,Afganistán
+P3374S1,40,Austria
+P3374S1,400,Jordania
+P3374S1,404,Kenya
+P3374S1,408,República Popular Democrática de Corea
+P3374S1,410,República de Corea
+P3374S1,414,Kuwait
+P3374S1,417,Kirguistán
+P3374S1,418,República Democrática Popular Lao
+P3374S1,422,Líbano
+P3374S1,426,Lesotho
+P3374S1,428,Letonia
+P3374S1,430,Liberia
+P3374S1,434,Libia
+P3374S1,438,Liechtenstein
+P3374S1,44,Bahamas
+P3374S1,440,Lituania
+P3374S1,442,Luxemburgo
+P3374S1,446,"China, región administrativa especial de Macao"
+P3374S1,450,Madagascar
+P3374S1,454,Malawi
+P3374S1,458,Malasia
+P3374S1,462,Maldivas
+P3374S1,466,Malí
+P3374S1,470,Malta
+P3374S1,474,Martinica
+P3374S1,478,Mauritania
+P3374S1,48,Bahrein
+P3374S1,480,Mauricio
+P3374S1,484,México
+P3374S1,492,Mónaco
+P3374S1,496,Mongolia
+P3374S1,498,República de Moldova
+P3374S1,499,Montenegro
+P3374S1,50,Bangladesh
+P3374S1,500,Montserrat
+P3374S1,504,Marruecos
+P3374S1,508,Mozambique
+P3374S1,51,Armenia
+P3374S1,512,Omán
+P3374S1,516,Namibia
+P3374S1,52,Barbados
+P3374S1,520,Nauru
+P3374S1,524,Nepal
+P3374S1,528,Países Bajos
+P3374S1,531,Curazao
+P3374S1,533,Aruba
+P3374S1,534,San Martín (parte Holandesa)
+P3374S1,535,"Bonaire, San Eustaquio y Saba"
+P3374S1,540,Nueva Caledonia
+P3374S1,548,Vanuatu
+P3374S1,554,Nueva Zelandia
+P3374S1,558,Nicaragua
+P3374S1,56,Bélgica
+P3374S1,562,Níger
+P3374S1,566,Nigeria
+P3374S1,570,Niue
+P3374S1,574,Isla Norfolk
+P3374S1,578,Noruega
+P3374S1,580,Islas Marianas Septentrionales
+P3374S1,581,Islas menores alejadas de Estados Unidos
+P3374S1,583,Micronesia (Estados Federados de)
+P3374S1,584,Islas Marshall
+P3374S1,585,Palau
+P3374S1,586,Pakistán
+P3374S1,591,Panamá
+P3374S1,598,Papua Nueva Guinea
+P3374S1,60,Bermuda
+P3374S1,600,Paraguay
+P3374S1,604,Perú
+P3374S1,608,Filipinas
+P3374S1,612,Pitcairn
+P3374S1,616,Polonia
+P3374S1,620,Portugal
+P3374S1,624,Guinea-Bissau
+P3374S1,626,Timor-Leste
+P3374S1,630,Puerto Rico
+P3374S1,634,Qatar
+P3374S1,638,Reunión
+P3374S1,64,Bhután
+P3374S1,642,Rumania
+P3374S1,643,Federación de Rusia
+P3374S1,646,Rwanda
+P3374S1,652,San Barthélemy
+P3374S1,654,Santa Elena
+P3374S1,659,Saint Kitts y Nevis
+P3374S1,660,Anguila
+P3374S1,662,Santa Lucía
+P3374S1,663,San Martín (parte francesa)
+P3374S1,666,San Pedro y Miquelón
+P3374S1,670,San Vicente y las Granadinas
+P3374S1,674,San Marino
+P3374S1,678,Santo Tomé y Príncipe
+P3374S1,68,Bolivia
+P3374S1,680,Sark
+P3374S1,682,Arabia Saudita
+P3374S1,686,Senegal
+P3374S1,688,Serbia
+P3374S1,690,Seychelles
+P3374S1,694,Sierra Leona
+P3374S1,70,Bosnia y Herzegovina
+P3374S1,702,Singapur
+P3374S1,703,Eslovaquia
+P3374S1,704,Viet Nam
+P3374S1,705,Eslovenia
+P3374S1,706,Somalia
+P3374S1,710,Sudáfrica
+P3374S1,716,Zimbabwe
+P3374S1,72,Botswana
+P3374S1,724,España
+P3374S1,728,Sudán del Sur
+P3374S1,729,Sudán
+P3374S1,732,Sáhara Occidental
+P3374S1,74,Isla Bouvet
+P3374S1,740,Suriname
+P3374S1,744,Islas Svalbard y Jan Mayen
+P3374S1,748,Eswatini
+P3374S1,752,Suecia
+P3374S1,756,Suiza
+P3374S1,76,Brasil
+P3374S1,760,República Árabe Siria
+P3374S1,762,Tayikistán
+P3374S1,764,Tailandia
+P3374S1,768,Togo
+P3374S1,772,Tokelau
+P3374S1,776,Tonga
+P3374S1,780,Trinidad y Tabago
+P3374S1,784,Emiratos Árabes Unidos
+P3374S1,788,Túnez
+P3374S1,792,Turquía
+P3374S1,795,Turkmenistán
+P3374S1,796,Islas Turcas y Caicos
+P3374S1,798,Tuvalu
+P3374S1,8,Albania
+P3374S1,800,Uganda
+P3374S1,804,Ucrania
+P3374S1,807,Macedonia del Norte
+P3374S1,818,Egipto
+P3374S1,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3374S1,831,Guernsey
+P3374S1,832,Jersey
+P3374S1,833,Isla de Man
+P3374S1,834,República Unida de Tanzanía
+P3374S1,84,Belice
+P3374S1,840,Estados Unidos de América
+P3374S1,850,Islas Vírgenes de los Estados Unidos
+P3374S1,854,Burkina Faso
+P3374S1,858,Uruguay
+P3374S1,86,Territorio Británico del Océano Índico
+P3374S1,860,Uzbekistán
+P3374S1,862,Venezuela
+P3374S1,876,Islas Wallis y Futuna
+P3374S1,882,Samoa
+P3374S1,887,Yemen
+P3374S1,894,Zambia
+P3374S1,90,Islas Salomón
+P3374S1,92,Islas Vírgenes Británicas
+P3374S1,96,Brunei Darussalam
+P3374S2,10,Antártida
+P3374S2,100,Bulgaria
+P3374S2,104,Myanmar
+P3374S2,108,Burundi
+P3374S2,112,Belarús
+P3374S2,116,Camboya
+P3374S2,12,Argelia
+P3374S2,120,Camerún
+P3374S2,124,Canadá
+P3374S2,132,Cabo Verde
+P3374S2,136,Islas Caimán
+P3374S2,140,República Centroafricana
+P3374S2,144,Sri Lanka
+P3374S2,148,Chad
+P3374S2,152,Chile
+P3374S2,156,China
+P3374S2,16,Samoa Americana
+P3374S2,162,Isla Christmas
+P3374S2,166,Islas Cocos (Keeling)
+P3374S2,170,Colombia
+P3374S2,174,Comoras
+P3374S2,175,Mayotte
+P3374S2,178,Congo
+P3374S2,180,República Democrática del Congo
+P3374S2,184,Islas Cook
+P3374S2,188,Costa Rica
+P3374S2,191,Croacia
+P3374S2,192,Cuba
+P3374S2,196,Chipre
+P3374S2,20,Andorra
+P3374S2,203,Chequia
+P3374S2,204,Benin
+P3374S2,208,Dinamarca
+P3374S2,212,Dominica
+P3374S2,214,República Dominicana
+P3374S2,218,Ecuador
+P3374S2,222,El Salvador
+P3374S2,226,Guinea Ecuatorial
+P3374S2,231,Etiopía
+P3374S2,232,Eritrea
+P3374S2,233,Estonia
+P3374S2,234,Islas Feroe
+P3374S2,238,Islas Malvinas (Falkland)
+P3374S2,239,Georgia del Sur y las Islas Sandwich del Sur
+P3374S2,24,Angola
+P3374S2,242,Fiji
+P3374S2,246,Finlandia
+P3374S2,248,Islas Åland
+P3374S2,250,Francia
+P3374S2,254,Guayana Francesa
+P3374S2,258,Polinesia Francesa
+P3374S2,260,Territorio de las Tierras Australes Francesas
+P3374S2,262,Djibouti
+P3374S2,266,Gabón
+P3374S2,268,Georgia
+P3374S2,270,Gambia
+P3374S2,275,Estado de Palestina
+P3374S2,276,Alemania
+P3374S2,28,Antigua y Barbuda
+P3374S2,288,Ghana
+P3374S2,292,Gibraltar
+P3374S2,296,Kiribati
+P3374S2,300,Grecia
+P3374S2,304,Groenlandia
+P3374S2,308,Granada
+P3374S2,31,Azerbaiyán
+P3374S2,312,Guadalupe
+P3374S2,316,Guam
+P3374S2,32,Argentina
+P3374S2,320,Guatemala
+P3374S2,324,Guinea
+P3374S2,328,Guyana
+P3374S2,332,Haití
+P3374S2,334,Islas Heard y McDonald
+P3374S2,336,Santa Sede
+P3374S2,340,Honduras
+P3374S2,344,"China, región administrativa especial de Hong Kong"
+P3374S2,348,Hungría
+P3374S2,352,Islandia
+P3374S2,356,India
+P3374S2,36,Australia
+P3374S2,360,Indonesia
+P3374S2,364,Irán
+P3374S2,368,Iraq
+P3374S2,372,Irlanda
+P3374S2,376,Israel
+P3374S2,380,Italia
+P3374S2,384,Costa de Marfil
+P3374S2,388,Jamaica
+P3374S2,392,Japón
+P3374S2,398,Kazajstán
+P3374S2,4,Afganistán
+P3374S2,40,Austria
+P3374S2,400,Jordania
+P3374S2,404,Kenya
+P3374S2,408,República Popular Democrática de Corea
+P3374S2,410,República de Corea
+P3374S2,414,Kuwait
+P3374S2,417,Kirguistán
+P3374S2,418,República Democrática Popular Lao
+P3374S2,422,Líbano
+P3374S2,426,Lesotho
+P3374S2,428,Letonia
+P3374S2,430,Liberia
+P3374S2,434,Libia
+P3374S2,438,Liechtenstein
+P3374S2,44,Bahamas
+P3374S2,440,Lituania
+P3374S2,442,Luxemburgo
+P3374S2,446,"China, región administrativa especial de Macao"
+P3374S2,450,Madagascar
+P3374S2,454,Malawi
+P3374S2,458,Malasia
+P3374S2,462,Maldivas
+P3374S2,466,Malí
+P3374S2,470,Malta
+P3374S2,474,Martinica
+P3374S2,478,Mauritania
+P3374S2,48,Bahrein
+P3374S2,480,Mauricio
+P3374S2,484,México
+P3374S2,492,Mónaco
+P3374S2,496,Mongolia
+P3374S2,498,República de Moldova
+P3374S2,499,Montenegro
+P3374S2,50,Bangladesh
+P3374S2,500,Montserrat
+P3374S2,504,Marruecos
+P3374S2,508,Mozambique
+P3374S2,51,Armenia
+P3374S2,512,Omán
+P3374S2,516,Namibia
+P3374S2,52,Barbados
+P3374S2,520,Nauru
+P3374S2,524,Nepal
+P3374S2,528,Países Bajos
+P3374S2,531,Curazao
+P3374S2,533,Aruba
+P3374S2,534,San Martín (parte Holandesa)
+P3374S2,535,"Bonaire, San Eustaquio y Saba"
+P3374S2,540,Nueva Caledonia
+P3374S2,548,Vanuatu
+P3374S2,554,Nueva Zelandia
+P3374S2,558,Nicaragua
+P3374S2,56,Bélgica
+P3374S2,562,Níger
+P3374S2,566,Nigeria
+P3374S2,570,Niue
+P3374S2,574,Isla Norfolk
+P3374S2,578,Noruega
+P3374S2,580,Islas Marianas Septentrionales
+P3374S2,581,Islas menores alejadas de Estados Unidos
+P3374S2,583,Micronesia (Estados Federados de)
+P3374S2,584,Islas Marshall
+P3374S2,585,Palau
+P3374S2,586,Pakistán
+P3374S2,591,Panamá
+P3374S2,598,Papua Nueva Guinea
+P3374S2,60,Bermuda
+P3374S2,600,Paraguay
+P3374S2,604,Perú
+P3374S2,608,Filipinas
+P3374S2,612,Pitcairn
+P3374S2,616,Polonia
+P3374S2,620,Portugal
+P3374S2,624,Guinea-Bissau
+P3374S2,626,Timor-Leste
+P3374S2,630,Puerto Rico
+P3374S2,634,Qatar
+P3374S2,638,Reunión
+P3374S2,64,Bhután
+P3374S2,642,Rumania
+P3374S2,643,Federación de Rusia
+P3374S2,646,Rwanda
+P3374S2,652,San Barthélemy
+P3374S2,654,Santa Elena
+P3374S2,659,Saint Kitts y Nevis
+P3374S2,660,Anguila
+P3374S2,662,Santa Lucía
+P3374S2,663,San Martín (parte francesa)
+P3374S2,666,San Pedro y Miquelón
+P3374S2,670,San Vicente y las Granadinas
+P3374S2,674,San Marino
+P3374S2,678,Santo Tomé y Príncipe
+P3374S2,68,Bolivia
+P3374S2,680,Sark
+P3374S2,682,Arabia Saudita
+P3374S2,686,Senegal
+P3374S2,688,Serbia
+P3374S2,690,Seychelles
+P3374S2,694,Sierra Leona
+P3374S2,70,Bosnia y Herzegovina
+P3374S2,702,Singapur
+P3374S2,703,Eslovaquia
+P3374S2,704,Viet Nam
+P3374S2,705,Eslovenia
+P3374S2,706,Somalia
+P3374S2,710,Sudáfrica
+P3374S2,716,Zimbabwe
+P3374S2,72,Botswana
+P3374S2,724,España
+P3374S2,728,Sudán del Sur
+P3374S2,729,Sudán
+P3374S2,732,Sáhara Occidental
+P3374S2,74,Isla Bouvet
+P3374S2,740,Suriname
+P3374S2,744,Islas Svalbard y Jan Mayen
+P3374S2,748,Eswatini
+P3374S2,752,Suecia
+P3374S2,756,Suiza
+P3374S2,76,Brasil
+P3374S2,760,República Árabe Siria
+P3374S2,762,Tayikistán
+P3374S2,764,Tailandia
+P3374S2,768,Togo
+P3374S2,772,Tokelau
+P3374S2,776,Tonga
+P3374S2,780,Trinidad y Tabago
+P3374S2,784,Emiratos Árabes Unidos
+P3374S2,788,Túnez
+P3374S2,792,Turquía
+P3374S2,795,Turkmenistán
+P3374S2,796,Islas Turcas y Caicos
+P3374S2,798,Tuvalu
+P3374S2,8,Albania
+P3374S2,800,Uganda
+P3374S2,804,Ucrania
+P3374S2,807,Macedonia del Norte
+P3374S2,818,Egipto
+P3374S2,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3374S2,831,Guernsey
+P3374S2,832,Jersey
+P3374S2,833,Isla de Man
+P3374S2,834,República Unida de Tanzanía
+P3374S2,84,Belice
+P3374S2,840,Estados Unidos de América
+P3374S2,850,Islas Vírgenes de los Estados Unidos
+P3374S2,854,Burkina Faso
+P3374S2,858,Uruguay
+P3374S2,86,Territorio Británico del Océano Índico
+P3374S2,860,Uzbekistán
+P3374S2,862,Venezuela
+P3374S2,876,Islas Wallis y Futuna
+P3374S2,882,Samoa
+P3374S2,887,Yemen
+P3374S2,894,Zambia
+P3374S2,90,Islas Salomón
+P3374S2,92,Islas Vírgenes Británicas
+P3374S2,96,Brunei Darussalam
+P3374S3,10,Antártida
+P3374S3,100,Bulgaria
+P3374S3,104,Myanmar
+P3374S3,108,Burundi
+P3374S3,112,Belarús
+P3374S3,116,Camboya
+P3374S3,12,Argelia
+P3374S3,120,Camerún
+P3374S3,124,Canadá
+P3374S3,132,Cabo Verde
+P3374S3,136,Islas Caimán
+P3374S3,140,República Centroafricana
+P3374S3,144,Sri Lanka
+P3374S3,148,Chad
+P3374S3,152,Chile
+P3374S3,156,China
+P3374S3,16,Samoa Americana
+P3374S3,162,Isla Christmas
+P3374S3,166,Islas Cocos (Keeling)
+P3374S3,170,Colombia
+P3374S3,174,Comoras
+P3374S3,175,Mayotte
+P3374S3,178,Congo
+P3374S3,180,República Democrática del Congo
+P3374S3,184,Islas Cook
+P3374S3,188,Costa Rica
+P3374S3,191,Croacia
+P3374S3,192,Cuba
+P3374S3,196,Chipre
+P3374S3,20,Andorra
+P3374S3,203,Chequia
+P3374S3,204,Benin
+P3374S3,208,Dinamarca
+P3374S3,212,Dominica
+P3374S3,214,República Dominicana
+P3374S3,218,Ecuador
+P3374S3,222,El Salvador
+P3374S3,226,Guinea Ecuatorial
+P3374S3,231,Etiopía
+P3374S3,232,Eritrea
+P3374S3,233,Estonia
+P3374S3,234,Islas Feroe
+P3374S3,238,Islas Malvinas (Falkland)
+P3374S3,239,Georgia del Sur y las Islas Sandwich del Sur
+P3374S3,24,Angola
+P3374S3,242,Fiji
+P3374S3,246,Finlandia
+P3374S3,248,Islas Åland
+P3374S3,250,Francia
+P3374S3,254,Guayana Francesa
+P3374S3,258,Polinesia Francesa
+P3374S3,260,Territorio de las Tierras Australes Francesas
+P3374S3,262,Djibouti
+P3374S3,266,Gabón
+P3374S3,268,Georgia
+P3374S3,270,Gambia
+P3374S3,275,Estado de Palestina
+P3374S3,276,Alemania
+P3374S3,28,Antigua y Barbuda
+P3374S3,288,Ghana
+P3374S3,292,Gibraltar
+P3374S3,296,Kiribati
+P3374S3,300,Grecia
+P3374S3,304,Groenlandia
+P3374S3,308,Granada
+P3374S3,31,Azerbaiyán
+P3374S3,312,Guadalupe
+P3374S3,316,Guam
+P3374S3,32,Argentina
+P3374S3,320,Guatemala
+P3374S3,324,Guinea
+P3374S3,328,Guyana
+P3374S3,332,Haití
+P3374S3,334,Islas Heard y McDonald
+P3374S3,336,Santa Sede
+P3374S3,340,Honduras
+P3374S3,344,"China, región administrativa especial de Hong Kong"
+P3374S3,348,Hungría
+P3374S3,352,Islandia
+P3374S3,356,India
+P3374S3,36,Australia
+P3374S3,360,Indonesia
+P3374S3,364,Irán
+P3374S3,368,Iraq
+P3374S3,372,Irlanda
+P3374S3,376,Israel
+P3374S3,380,Italia
+P3374S3,384,Costa de Marfil
+P3374S3,388,Jamaica
+P3374S3,392,Japón
+P3374S3,398,Kazajstán
+P3374S3,4,Afganistán
+P3374S3,40,Austria
+P3374S3,400,Jordania
+P3374S3,404,Kenya
+P3374S3,408,República Popular Democrática de Corea
+P3374S3,410,República de Corea
+P3374S3,414,Kuwait
+P3374S3,417,Kirguistán
+P3374S3,418,República Democrática Popular Lao
+P3374S3,422,Líbano
+P3374S3,426,Lesotho
+P3374S3,428,Letonia
+P3374S3,430,Liberia
+P3374S3,434,Libia
+P3374S3,438,Liechtenstein
+P3374S3,44,Bahamas
+P3374S3,440,Lituania
+P3374S3,442,Luxemburgo
+P3374S3,446,"China, región administrativa especial de Macao"
+P3374S3,450,Madagascar
+P3374S3,454,Malawi
+P3374S3,458,Malasia
+P3374S3,462,Maldivas
+P3374S3,466,Malí
+P3374S3,470,Malta
+P3374S3,474,Martinica
+P3374S3,478,Mauritania
+P3374S3,48,Bahrein
+P3374S3,480,Mauricio
+P3374S3,484,México
+P3374S3,492,Mónaco
+P3374S3,496,Mongolia
+P3374S3,498,República de Moldova
+P3374S3,499,Montenegro
+P3374S3,50,Bangladesh
+P3374S3,500,Montserrat
+P3374S3,504,Marruecos
+P3374S3,508,Mozambique
+P3374S3,51,Armenia
+P3374S3,512,Omán
+P3374S3,516,Namibia
+P3374S3,52,Barbados
+P3374S3,520,Nauru
+P3374S3,524,Nepal
+P3374S3,528,Países Bajos
+P3374S3,531,Curazao
+P3374S3,533,Aruba
+P3374S3,534,San Martín (parte Holandesa)
+P3374S3,535,"Bonaire, San Eustaquio y Saba"
+P3374S3,540,Nueva Caledonia
+P3374S3,548,Vanuatu
+P3374S3,554,Nueva Zelandia
+P3374S3,558,Nicaragua
+P3374S3,56,Bélgica
+P3374S3,562,Níger
+P3374S3,566,Nigeria
+P3374S3,570,Niue
+P3374S3,574,Isla Norfolk
+P3374S3,578,Noruega
+P3374S3,580,Islas Marianas Septentrionales
+P3374S3,581,Islas menores alejadas de Estados Unidos
+P3374S3,583,Micronesia (Estados Federados de)
+P3374S3,584,Islas Marshall
+P3374S3,585,Palau
+P3374S3,586,Pakistán
+P3374S3,591,Panamá
+P3374S3,598,Papua Nueva Guinea
+P3374S3,60,Bermuda
+P3374S3,600,Paraguay
+P3374S3,604,Perú
+P3374S3,608,Filipinas
+P3374S3,612,Pitcairn
+P3374S3,616,Polonia
+P3374S3,620,Portugal
+P3374S3,624,Guinea-Bissau
+P3374S3,626,Timor-Leste
+P3374S3,630,Puerto Rico
+P3374S3,634,Qatar
+P3374S3,638,Reunión
+P3374S3,64,Bhután
+P3374S3,642,Rumania
+P3374S3,643,Federación de Rusia
+P3374S3,646,Rwanda
+P3374S3,652,San Barthélemy
+P3374S3,654,Santa Elena
+P3374S3,659,Saint Kitts y Nevis
+P3374S3,660,Anguila
+P3374S3,662,Santa Lucía
+P3374S3,663,San Martín (parte francesa)
+P3374S3,666,San Pedro y Miquelón
+P3374S3,670,San Vicente y las Granadinas
+P3374S3,674,San Marino
+P3374S3,678,Santo Tomé y Príncipe
+P3374S3,68,Bolivia
+P3374S3,680,Sark
+P3374S3,682,Arabia Saudita
+P3374S3,686,Senegal
+P3374S3,688,Serbia
+P3374S3,690,Seychelles
+P3374S3,694,Sierra Leona
+P3374S3,70,Bosnia y Herzegovina
+P3374S3,702,Singapur
+P3374S3,703,Eslovaquia
+P3374S3,704,Viet Nam
+P3374S3,705,Eslovenia
+P3374S3,706,Somalia
+P3374S3,710,Sudáfrica
+P3374S3,716,Zimbabwe
+P3374S3,72,Botswana
+P3374S3,724,España
+P3374S3,728,Sudán del Sur
+P3374S3,729,Sudán
+P3374S3,732,Sáhara Occidental
+P3374S3,74,Isla Bouvet
+P3374S3,740,Suriname
+P3374S3,744,Islas Svalbard y Jan Mayen
+P3374S3,748,Eswatini
+P3374S3,752,Suecia
+P3374S3,756,Suiza
+P3374S3,76,Brasil
+P3374S3,760,República Árabe Siria
+P3374S3,762,Tayikistán
+P3374S3,764,Tailandia
+P3374S3,768,Togo
+P3374S3,772,Tokelau
+P3374S3,776,Tonga
+P3374S3,780,Trinidad y Tabago
+P3374S3,784,Emiratos Árabes Unidos
+P3374S3,788,Túnez
+P3374S3,792,Turquía
+P3374S3,795,Turkmenistán
+P3374S3,796,Islas Turcas y Caicos
+P3374S3,798,Tuvalu
+P3374S3,8,Albania
+P3374S3,800,Uganda
+P3374S3,804,Ucrania
+P3374S3,807,Macedonia del Norte
+P3374S3,818,Egipto
+P3374S3,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3374S3,831,Guernsey
+P3374S3,832,Jersey
+P3374S3,833,Isla de Man
+P3374S3,834,República Unida de Tanzanía
+P3374S3,84,Belice
+P3374S3,840,Estados Unidos de América
+P3374S3,850,Islas Vírgenes de los Estados Unidos
+P3374S3,854,Burkina Faso
+P3374S3,858,Uruguay
+P3374S3,86,Territorio Británico del Océano Índico
+P3374S3,860,Uzbekistán
+P3374S3,862,Venezuela
+P3374S3,876,Islas Wallis y Futuna
+P3374S3,882,Samoa
+P3374S3,887,Yemen
+P3374S3,894,Zambia
+P3374S3,90,Islas Salomón
+P3374S3,92,Islas Vírgenes Británicas
+P3374S3,96,Brunei Darussalam
+P3378,10,Antártida
+P3378,100,Bulgaria
+P3378,104,Myanmar
+P3378,108,Burundi
+P3378,112,Belarús
+P3378,116,Camboya
+P3378,12,Argelia
+P3378,120,Camerún
+P3378,124,Canadá
+P3378,132,Cabo Verde
+P3378,136,Islas Caimán
+P3378,140,República Centroafricana
+P3378,144,Sri Lanka
+P3378,148,Chad
+P3378,152,Chile
+P3378,156,China
+P3378,16,Samoa Americana
+P3378,162,Isla Christmas
+P3378,166,Islas Cocos (Keeling)
+P3378,170,Colombia
+P3378,174,Comoras
+P3378,175,Mayotte
+P3378,178,Congo
+P3378,180,República Democrática del Congo
+P3378,184,Islas Cook
+P3378,188,Costa Rica
+P3378,191,Croacia
+P3378,192,Cuba
+P3378,196,Chipre
+P3378,20,Andorra
+P3378,203,Chequia
+P3378,204,Benin
+P3378,208,Dinamarca
+P3378,212,Dominica
+P3378,214,República Dominicana
+P3378,218,Ecuador
+P3378,222,El Salvador
+P3378,226,Guinea Ecuatorial
+P3378,231,Etiopía
+P3378,232,Eritrea
+P3378,233,Estonia
+P3378,234,Islas Feroe
+P3378,238,Islas Malvinas (Falkland)
+P3378,239,Georgia del Sur y las Islas Sandwich del Sur
+P3378,24,Angola
+P3378,242,Fiji
+P3378,246,Finlandia
+P3378,248,Islas Åland
+P3378,250,Francia
+P3378,254,Guayana Francesa
+P3378,258,Polinesia Francesa
+P3378,260,Territorio de las Tierras Australes Francesas
+P3378,262,Djibouti
+P3378,266,Gabón
+P3378,268,Georgia
+P3378,270,Gambia
+P3378,275,Estado de Palestina
+P3378,276,Alemania
+P3378,28,Antigua y Barbuda
+P3378,288,Ghana
+P3378,292,Gibraltar
+P3378,296,Kiribati
+P3378,300,Grecia
+P3378,304,Groenlandia
+P3378,308,Granada
+P3378,31,Azerbaiyán
+P3378,312,Guadalupe
+P3378,316,Guam
+P3378,32,Argentina
+P3378,320,Guatemala
+P3378,324,Guinea
+P3378,328,Guyana
+P3378,332,Haití
+P3378,334,Islas Heard y McDonald
+P3378,336,Santa Sede
+P3378,340,Honduras
+P3378,344,"China, región administrativa especial de Hong Kong"
+P3378,348,Hungría
+P3378,352,Islandia
+P3378,356,India
+P3378,36,Australia
+P3378,360,Indonesia
+P3378,364,Irán
+P3378,368,Iraq
+P3378,372,Irlanda
+P3378,376,Israel
+P3378,380,Italia
+P3378,384,Costa de Marfil
+P3378,388,Jamaica
+P3378,392,Japón
+P3378,398,Kazajstán
+P3378,4,Afganistán
+P3378,40,Austria
+P3378,400,Jordania
+P3378,404,Kenya
+P3378,408,República Popular Democrática de Corea
+P3378,410,República de Corea
+P3378,414,Kuwait
+P3378,417,Kirguistán
+P3378,418,República Democrática Popular Lao
+P3378,422,Líbano
+P3378,426,Lesotho
+P3378,428,Letonia
+P3378,430,Liberia
+P3378,434,Libia
+P3378,438,Liechtenstein
+P3378,44,Bahamas
+P3378,440,Lituania
+P3378,442,Luxemburgo
+P3378,446,"China, región administrativa especial de Macao"
+P3378,450,Madagascar
+P3378,454,Malawi
+P3378,458,Malasia
+P3378,462,Maldivas
+P3378,466,Malí
+P3378,470,Malta
+P3378,474,Martinica
+P3378,478,Mauritania
+P3378,48,Bahrein
+P3378,480,Mauricio
+P3378,484,México
+P3378,492,Mónaco
+P3378,496,Mongolia
+P3378,498,República de Moldova
+P3378,499,Montenegro
+P3378,50,Bangladesh
+P3378,500,Montserrat
+P3378,504,Marruecos
+P3378,508,Mozambique
+P3378,51,Armenia
+P3378,512,Omán
+P3378,516,Namibia
+P3378,52,Barbados
+P3378,520,Nauru
+P3378,524,Nepal
+P3378,528,Países Bajos
+P3378,531,Curazao
+P3378,533,Aruba
+P3378,534,San Martín (parte Holandesa)
+P3378,535,"Bonaire, San Eustaquio y Saba"
+P3378,540,Nueva Caledonia
+P3378,548,Vanuatu
+P3378,554,Nueva Zelandia
+P3378,558,Nicaragua
+P3378,56,Bélgica
+P3378,562,Níger
+P3378,566,Nigeria
+P3378,570,Niue
+P3378,574,Isla Norfolk
+P3378,578,Noruega
+P3378,580,Islas Marianas Septentrionales
+P3378,581,Islas menores alejadas de Estados Unidos
+P3378,583,Micronesia (Estados Federados de)
+P3378,584,Islas Marshall
+P3378,585,Palau
+P3378,586,Pakistán
+P3378,591,Panamá
+P3378,598,Papua Nueva Guinea
+P3378,60,Bermuda
+P3378,600,Paraguay
+P3378,604,Perú
+P3378,608,Filipinas
+P3378,612,Pitcairn
+P3378,616,Polonia
+P3378,620,Portugal
+P3378,624,Guinea-Bissau
+P3378,626,Timor-Leste
+P3378,630,Puerto Rico
+P3378,634,Qatar
+P3378,638,Reunión
+P3378,64,Bhután
+P3378,642,Rumania
+P3378,643,Federación de Rusia
+P3378,646,Rwanda
+P3378,652,San Barthélemy
+P3378,654,Santa Elena
+P3378,659,Saint Kitts y Nevis
+P3378,660,Anguila
+P3378,662,Santa Lucía
+P3378,663,San Martín (parte francesa)
+P3378,666,San Pedro y Miquelón
+P3378,670,San Vicente y las Granadinas
+P3378,674,San Marino
+P3378,678,Santo Tomé y Príncipe
+P3378,68,Bolivia
+P3378,680,Sark
+P3378,682,Arabia Saudita
+P3378,686,Senegal
+P3378,688,Serbia
+P3378,690,Seychelles
+P3378,694,Sierra Leona
+P3378,70,Bosnia y Herzegovina
+P3378,702,Singapur
+P3378,703,Eslovaquia
+P3378,704,Viet Nam
+P3378,705,Eslovenia
+P3378,706,Somalia
+P3378,710,Sudáfrica
+P3378,716,Zimbabwe
+P3378,72,Botswana
+P3378,724,España
+P3378,728,Sudán del Sur
+P3378,729,Sudán
+P3378,732,Sáhara Occidental
+P3378,74,Isla Bouvet
+P3378,740,Suriname
+P3378,744,Islas Svalbard y Jan Mayen
+P3378,748,Eswatini
+P3378,752,Suecia
+P3378,756,Suiza
+P3378,76,Brasil
+P3378,760,República Árabe Siria
+P3378,762,Tayikistán
+P3378,764,Tailandia
+P3378,768,Togo
+P3378,772,Tokelau
+P3378,776,Tonga
+P3378,780,Trinidad y Tabago
+P3378,784,Emiratos Árabes Unidos
+P3378,788,Túnez
+P3378,792,Turquía
+P3378,795,Turkmenistán
+P3378,796,Islas Turcas y Caicos
+P3378,798,Tuvalu
+P3378,8,Albania
+P3378,800,Uganda
+P3378,804,Ucrania
+P3378,807,Macedonia del Norte
+P3378,818,Egipto
+P3378,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3378,831,Guernsey
+P3378,832,Jersey
+P3378,833,Isla de Man
+P3378,834,República Unida de Tanzanía
+P3378,84,Belice
+P3378,840,Estados Unidos de América
+P3378,850,Islas Vírgenes de los Estados Unidos
+P3378,854,Burkina Faso
+P3378,858,Uruguay
+P3378,86,Territorio Británico del Océano Índico
+P3378,860,Uzbekistán
+P3378,862,Venezuela
+P3378,876,Islas Wallis y Futuna
+P3378,882,Samoa
+P3378,887,Yemen
+P3378,894,Zambia
+P3378,90,Islas Salomón
+P3378,92,Islas Vírgenes Británicas
+P3378,96,Brunei Darussalam
+P3382S3,10,Antártida
+P3382S3,100,Bulgaria
+P3382S3,104,Myanmar
+P3382S3,108,Burundi
+P3382S3,112,Belarús
+P3382S3,116,Camboya
+P3382S3,12,Argelia
+P3382S3,120,Camerún
+P3382S3,124,Canadá
+P3382S3,132,Cabo Verde
+P3382S3,136,Islas Caimán
+P3382S3,140,República Centroafricana
+P3382S3,144,Sri Lanka
+P3382S3,148,Chad
+P3382S3,152,Chile
+P3382S3,156,China
+P3382S3,16,Samoa Americana
+P3382S3,162,Isla Christmas
+P3382S3,166,Islas Cocos (Keeling)
+P3382S3,170,Colombia
+P3382S3,174,Comoras
+P3382S3,175,Mayotte
+P3382S3,178,Congo
+P3382S3,180,República Democrática del Congo
+P3382S3,184,Islas Cook
+P3382S3,188,Costa Rica
+P3382S3,191,Croacia
+P3382S3,192,Cuba
+P3382S3,196,Chipre
+P3382S3,20,Andorra
+P3382S3,203,Chequia
+P3382S3,204,Benin
+P3382S3,208,Dinamarca
+P3382S3,212,Dominica
+P3382S3,214,República Dominicana
+P3382S3,218,Ecuador
+P3382S3,222,El Salvador
+P3382S3,226,Guinea Ecuatorial
+P3382S3,231,Etiopía
+P3382S3,232,Eritrea
+P3382S3,233,Estonia
+P3382S3,234,Islas Feroe
+P3382S3,238,Islas Malvinas (Falkland)
+P3382S3,239,Georgia del Sur y las Islas Sandwich del Sur
+P3382S3,24,Angola
+P3382S3,242,Fiji
+P3382S3,246,Finlandia
+P3382S3,248,Islas Åland
+P3382S3,250,Francia
+P3382S3,254,Guayana Francesa
+P3382S3,258,Polinesia Francesa
+P3382S3,260,Territorio de las Tierras Australes Francesas
+P3382S3,262,Djibouti
+P3382S3,266,Gabón
+P3382S3,268,Georgia
+P3382S3,270,Gambia
+P3382S3,275,Estado de Palestina
+P3382S3,276,Alemania
+P3382S3,28,Antigua y Barbuda
+P3382S3,288,Ghana
+P3382S3,292,Gibraltar
+P3382S3,296,Kiribati
+P3382S3,300,Grecia
+P3382S3,304,Groenlandia
+P3382S3,308,Granada
+P3382S3,31,Azerbaiyán
+P3382S3,312,Guadalupe
+P3382S3,316,Guam
+P3382S3,32,Argentina
+P3382S3,320,Guatemala
+P3382S3,324,Guinea
+P3382S3,328,Guyana
+P3382S3,332,Haití
+P3382S3,334,Islas Heard y McDonald
+P3382S3,336,Santa Sede
+P3382S3,340,Honduras
+P3382S3,344,"China, región administrativa especial de Hong Kong"
+P3382S3,348,Hungría
+P3382S3,352,Islandia
+P3382S3,356,India
+P3382S3,36,Australia
+P3382S3,360,Indonesia
+P3382S3,364,Irán
+P3382S3,368,Iraq
+P3382S3,372,Irlanda
+P3382S3,376,Israel
+P3382S3,380,Italia
+P3382S3,384,Costa de Marfil
+P3382S3,388,Jamaica
+P3382S3,392,Japón
+P3382S3,398,Kazajstán
+P3382S3,4,Afganistán
+P3382S3,40,Austria
+P3382S3,400,Jordania
+P3382S3,404,Kenya
+P3382S3,408,República Popular Democrática de Corea
+P3382S3,410,República de Corea
+P3382S3,414,Kuwait
+P3382S3,417,Kirguistán
+P3382S3,418,República Democrática Popular Lao
+P3382S3,422,Líbano
+P3382S3,426,Lesotho
+P3382S3,428,Letonia
+P3382S3,430,Liberia
+P3382S3,434,Libia
+P3382S3,438,Liechtenstein
+P3382S3,44,Bahamas
+P3382S3,440,Lituania
+P3382S3,442,Luxemburgo
+P3382S3,446,"China, región administrativa especial de Macao"
+P3382S3,450,Madagascar
+P3382S3,454,Malawi
+P3382S3,458,Malasia
+P3382S3,462,Maldivas
+P3382S3,466,Malí
+P3382S3,470,Malta
+P3382S3,474,Martinica
+P3382S3,478,Mauritania
+P3382S3,48,Bahrein
+P3382S3,480,Mauricio
+P3382S3,484,México
+P3382S3,492,Mónaco
+P3382S3,496,Mongolia
+P3382S3,498,República de Moldova
+P3382S3,499,Montenegro
+P3382S3,50,Bangladesh
+P3382S3,500,Montserrat
+P3382S3,504,Marruecos
+P3382S3,508,Mozambique
+P3382S3,51,Armenia
+P3382S3,512,Omán
+P3382S3,516,Namibia
+P3382S3,52,Barbados
+P3382S3,520,Nauru
+P3382S3,524,Nepal
+P3382S3,528,Países Bajos
+P3382S3,531,Curazao
+P3382S3,533,Aruba
+P3382S3,534,San Martín (parte Holandesa)
+P3382S3,535,"Bonaire, San Eustaquio y Saba"
+P3382S3,540,Nueva Caledonia
+P3382S3,548,Vanuatu
+P3382S3,554,Nueva Zelandia
+P3382S3,558,Nicaragua
+P3382S3,56,Bélgica
+P3382S3,562,Níger
+P3382S3,566,Nigeria
+P3382S3,570,Niue
+P3382S3,574,Isla Norfolk
+P3382S3,578,Noruega
+P3382S3,580,Islas Marianas Septentrionales
+P3382S3,581,Islas menores alejadas de Estados Unidos
+P3382S3,583,Micronesia (Estados Federados de)
+P3382S3,584,Islas Marshall
+P3382S3,585,Palau
+P3382S3,586,Pakistán
+P3382S3,591,Panamá
+P3382S3,598,Papua Nueva Guinea
+P3382S3,60,Bermuda
+P3382S3,600,Paraguay
+P3382S3,604,Perú
+P3382S3,608,Filipinas
+P3382S3,612,Pitcairn
+P3382S3,616,Polonia
+P3382S3,620,Portugal
+P3382S3,624,Guinea-Bissau
+P3382S3,626,Timor-Leste
+P3382S3,630,Puerto Rico
+P3382S3,634,Qatar
+P3382S3,638,Reunión
+P3382S3,64,Bhután
+P3382S3,642,Rumania
+P3382S3,643,Federación de Rusia
+P3382S3,646,Rwanda
+P3382S3,652,San Barthélemy
+P3382S3,654,Santa Elena
+P3382S3,659,Saint Kitts y Nevis
+P3382S3,660,Anguila
+P3382S3,662,Santa Lucía
+P3382S3,663,San Martín (parte francesa)
+P3382S3,666,San Pedro y Miquelón
+P3382S3,670,San Vicente y las Granadinas
+P3382S3,674,San Marino
+P3382S3,678,Santo Tomé y Príncipe
+P3382S3,68,Bolivia
+P3382S3,680,Sark
+P3382S3,682,Arabia Saudita
+P3382S3,686,Senegal
+P3382S3,688,Serbia
+P3382S3,690,Seychelles
+P3382S3,694,Sierra Leona
+P3382S3,70,Bosnia y Herzegovina
+P3382S3,702,Singapur
+P3382S3,703,Eslovaquia
+P3382S3,704,Viet Nam
+P3382S3,705,Eslovenia
+P3382S3,706,Somalia
+P3382S3,710,Sudáfrica
+P3382S3,716,Zimbabwe
+P3382S3,72,Botswana
+P3382S3,724,España
+P3382S3,728,Sudán del Sur
+P3382S3,729,Sudán
+P3382S3,732,Sáhara Occidental
+P3382S3,74,Isla Bouvet
+P3382S3,740,Suriname
+P3382S3,744,Islas Svalbard y Jan Mayen
+P3382S3,748,Eswatini
+P3382S3,752,Suecia
+P3382S3,756,Suiza
+P3382S3,76,Brasil
+P3382S3,760,República Árabe Siria
+P3382S3,762,Tayikistán
+P3382S3,764,Tailandia
+P3382S3,768,Togo
+P3382S3,772,Tokelau
+P3382S3,776,Tonga
+P3382S3,780,Trinidad y Tabago
+P3382S3,784,Emiratos Árabes Unidos
+P3382S3,788,Túnez
+P3382S3,792,Turquía
+P3382S3,795,Turkmenistán
+P3382S3,796,Islas Turcas y Caicos
+P3382S3,798,Tuvalu
+P3382S3,8,Albania
+P3382S3,800,Uganda
+P3382S3,804,Ucrania
+P3382S3,807,Macedonia del Norte
+P3382S3,818,Egipto
+P3382S3,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3382S3,831,Guernsey
+P3382S3,832,Jersey
+P3382S3,833,Isla de Man
+P3382S3,834,República Unida de Tanzanía
+P3382S3,84,Belice
+P3382S3,840,Estados Unidos de América
+P3382S3,850,Islas Vírgenes de los Estados Unidos
+P3382S3,854,Burkina Faso
+P3382S3,858,Uruguay
+P3382S3,86,Territorio Británico del Océano Índico
+P3382S3,860,Uzbekistán
+P3382S3,862,Venezuela
+P3382S3,876,Islas Wallis y Futuna
+P3382S3,882,Samoa
+P3382S3,887,Yemen
+P3382S3,894,Zambia
+P3382S3,90,Islas Salomón
+P3382S3,92,Islas Vírgenes Británicas
+P3382S3,96,Brunei Darussalam
+P3384,1,No había nacido
+P3384,2,En este municipio
+P3384,3,En otro Municipio
+P3384,4,En otro país
+P3384S3,10,Antártida
+P3384S3,100,Bulgaria
+P3384S3,104,Myanmar
+P3384S3,108,Burundi
+P3384S3,112,Belarús
+P3384S3,116,Camboya
+P3384S3,12,Argelia
+P3384S3,120,Camerún
+P3384S3,124,Canadá
+P3384S3,132,Cabo Verde
+P3384S3,136,Islas Caimán
+P3384S3,140,República Centroafricana
+P3384S3,144,Sri Lanka
+P3384S3,148,Chad
+P3384S3,152,Chile
+P3384S3,156,China
+P3384S3,16,Samoa Americana
+P3384S3,162,Isla Christmas
+P3384S3,166,Islas Cocos (Keeling)
+P3384S3,170,Colombia
+P3384S3,174,Comoras
+P3384S3,175,Mayotte
+P3384S3,178,Congo
+P3384S3,180,República Democrática del Congo
+P3384S3,184,Islas Cook
+P3384S3,188,Costa Rica
+P3384S3,191,Croacia
+P3384S3,192,Cuba
+P3384S3,196,Chipre
+P3384S3,20,Andorra
+P3384S3,203,Chequia
+P3384S3,204,Benin
+P3384S3,208,Dinamarca
+P3384S3,212,Dominica
+P3384S3,214,República Dominicana
+P3384S3,218,Ecuador
+P3384S3,222,El Salvador
+P3384S3,226,Guinea Ecuatorial
+P3384S3,231,Etiopía
+P3384S3,232,Eritrea
+P3384S3,233,Estonia
+P3384S3,234,Islas Feroe
+P3384S3,238,Islas Malvinas (Falkland)
+P3384S3,239,Georgia del Sur y las Islas Sandwich del Sur
+P3384S3,24,Angola
+P3384S3,242,Fiji
+P3384S3,246,Finlandia
+P3384S3,248,Islas Åland
+P3384S3,250,Francia
+P3384S3,254,Guayana Francesa
+P3384S3,258,Polinesia Francesa
+P3384S3,260,Territorio de las Tierras Australes Francesas
+P3384S3,262,Djibouti
+P3384S3,266,Gabón
+P3384S3,268,Georgia
+P3384S3,270,Gambia
+P3384S3,275,Estado de Palestina
+P3384S3,276,Alemania
+P3384S3,28,Antigua y Barbuda
+P3384S3,288,Ghana
+P3384S3,292,Gibraltar
+P3384S3,296,Kiribati
+P3384S3,300,Grecia
+P3384S3,304,Groenlandia
+P3384S3,308,Granada
+P3384S3,31,Azerbaiyán
+P3384S3,312,Guadalupe
+P3384S3,316,Guam
+P3384S3,32,Argentina
+P3384S3,320,Guatemala
+P3384S3,324,Guinea
+P3384S3,328,Guyana
+P3384S3,332,Haití
+P3384S3,334,Islas Heard y McDonald
+P3384S3,336,Santa Sede
+P3384S3,340,Honduras
+P3384S3,344,"China, región administrativa especial de Hong Kong"
+P3384S3,348,Hungría
+P3384S3,352,Islandia
+P3384S3,356,India
+P3384S3,36,Australia
+P3384S3,360,Indonesia
+P3384S3,364,Irán
+P3384S3,368,Iraq
+P3384S3,372,Irlanda
+P3384S3,376,Israel
+P3384S3,380,Italia
+P3384S3,384,Costa de Marfil
+P3384S3,388,Jamaica
+P3384S3,392,Japón
+P3384S3,398,Kazajstán
+P3384S3,4,Afganistán
+P3384S3,40,Austria
+P3384S3,400,Jordania
+P3384S3,404,Kenya
+P3384S3,408,República Popular Democrática de Corea
+P3384S3,410,República de Corea
+P3384S3,414,Kuwait
+P3384S3,417,Kirguistán
+P3384S3,418,República Democrática Popular Lao
+P3384S3,422,Líbano
+P3384S3,426,Lesotho
+P3384S3,428,Letonia
+P3384S3,430,Liberia
+P3384S3,434,Libia
+P3384S3,438,Liechtenstein
+P3384S3,44,Bahamas
+P3384S3,440,Lituania
+P3384S3,442,Luxemburgo
+P3384S3,446,"China, región administrativa especial de Macao"
+P3384S3,450,Madagascar
+P3384S3,454,Malawi
+P3384S3,458,Malasia
+P3384S3,462,Maldivas
+P3384S3,466,Malí
+P3384S3,470,Malta
+P3384S3,474,Martinica
+P3384S3,478,Mauritania
+P3384S3,48,Bahrein
+P3384S3,480,Mauricio
+P3384S3,484,México
+P3384S3,492,Mónaco
+P3384S3,496,Mongolia
+P3384S3,498,República de Moldova
+P3384S3,499,Montenegro
+P3384S3,50,Bangladesh
+P3384S3,500,Montserrat
+P3384S3,504,Marruecos
+P3384S3,508,Mozambique
+P3384S3,51,Armenia
+P3384S3,512,Omán
+P3384S3,516,Namibia
+P3384S3,52,Barbados
+P3384S3,520,Nauru
+P3384S3,524,Nepal
+P3384S3,528,Países Bajos
+P3384S3,531,Curazao
+P3384S3,533,Aruba
+P3384S3,534,San Martín (parte Holandesa)
+P3384S3,535,"Bonaire, San Eustaquio y Saba"
+P3384S3,540,Nueva Caledonia
+P3384S3,548,Vanuatu
+P3384S3,554,Nueva Zelandia
+P3384S3,558,Nicaragua
+P3384S3,56,Bélgica
+P3384S3,562,Níger
+P3384S3,566,Nigeria
+P3384S3,570,Niue
+P3384S3,574,Isla Norfolk
+P3384S3,578,Noruega
+P3384S3,580,Islas Marianas Septentrionales
+P3384S3,581,Islas menores alejadas de Estados Unidos
+P3384S3,583,Micronesia (Estados Federados de)
+P3384S3,584,Islas Marshall
+P3384S3,585,Palau
+P3384S3,586,Pakistán
+P3384S3,591,Panamá
+P3384S3,598,Papua Nueva Guinea
+P3384S3,60,Bermuda
+P3384S3,600,Paraguay
+P3384S3,604,Perú
+P3384S3,608,Filipinas
+P3384S3,612,Pitcairn
+P3384S3,616,Polonia
+P3384S3,620,Portugal
+P3384S3,624,Guinea-Bissau
+P3384S3,626,Timor-Leste
+P3384S3,630,Puerto Rico
+P3384S3,634,Qatar
+P3384S3,638,Reunión
+P3384S3,64,Bhután
+P3384S3,642,Rumania
+P3384S3,643,Federación de Rusia
+P3384S3,646,Rwanda
+P3384S3,652,San Barthélemy
+P3384S3,654,Santa Elena
+P3384S3,659,Saint Kitts y Nevis
+P3384S3,660,Anguila
+P3384S3,662,Santa Lucía
+P3384S3,663,San Martín (parte francesa)
+P3384S3,666,San Pedro y Miquelón
+P3384S3,670,San Vicente y las Granadinas
+P3384S3,674,San Marino
+P3384S3,678,Santo Tomé y Príncipe
+P3384S3,68,Bolivia
+P3384S3,680,Sark
+P3384S3,682,Arabia Saudita
+P3384S3,686,Senegal
+P3384S3,688,Serbia
+P3384S3,690,Seychelles
+P3384S3,694,Sierra Leona
+P3384S3,70,Bosnia y Herzegovina
+P3384S3,702,Singapur
+P3384S3,703,Eslovaquia
+P3384S3,704,Viet Nam
+P3384S3,705,Eslovenia
+P3384S3,706,Somalia
+P3384S3,710,Sudáfrica
+P3384S3,716,Zimbabwe
+P3384S3,72,Botswana
+P3384S3,724,España
+P3384S3,728,Sudán del Sur
+P3384S3,729,Sudán
+P3384S3,732,Sáhara Occidental
+P3384S3,74,Isla Bouvet
+P3384S3,740,Suriname
+P3384S3,744,Islas Svalbard y Jan Mayen
+P3384S3,748,Eswatini
+P3384S3,752,Suecia
+P3384S3,756,Suiza
+P3384S3,76,Brasil
+P3384S3,760,República Árabe Siria
+P3384S3,762,Tayikistán
+P3384S3,764,Tailandia
+P3384S3,768,Togo
+P3384S3,772,Tokelau
+P3384S3,776,Tonga
+P3384S3,780,Trinidad y Tabago
+P3384S3,784,Emiratos Árabes Unidos
+P3384S3,788,Túnez
+P3384S3,792,Turquía
+P3384S3,795,Turkmenistán
+P3384S3,796,Islas Turcas y Caicos
+P3384S3,798,Tuvalu
+P3384S3,8,Albania
+P3384S3,800,Uganda
+P3384S3,804,Ucrania
+P3384S3,807,Macedonia del Norte
+P3384S3,818,Egipto
+P3384S3,826,Reino Unido de Gran Bretaña e Irlanda del Norte
+P3384S3,831,Guernsey
+P3384S3,832,Jersey
+P3384S3,833,Isla de Man
+P3384S3,834,República Unida de Tanzanía
+P3384S3,84,Belice
+P3384S3,840,Estados Unidos de América
+P3384S3,850,Islas Vírgenes de los Estados Unidos
+P3384S3,854,Burkina Faso
+P3384S3,858,Uruguay
+P3384S3,86,Territorio Británico del Océano Índico
+P3384S3,860,Uzbekistán
+P3384S3,862,Venezuela
+P3384S3,876,Islas Wallis y Futuna
+P3384S3,882,Samoa
+P3384S3,887,Yemen
+P3384S3,894,Zambia
+P3384S3,90,Islas Salomón
+P3384S3,92,Islas Vírgenes Británicas
+P3384S3,96,Brunei Darussalam
+P3386,1,Trabajo
+P3386,10,Adquisición de vivienda propia
+P3386,12,Otro
+P3386,2,Estudio
+P3386,3,Salud
+P3386,4,Amenaza o riesgo para su vida o integridad física ocasionada por conflicto armado o grupos armados
+P3386,5,"Amenaza o riesgo para su vida o integridad física por violencia NO asociada al conflicto armado (inseguridad, delincuencia común)"
+P3386,6,Desastres naturales
+P3386,7,Conformación de un nuevo hogar
+P3386,8,Acompañar a otros miembros del hogar
+P3386,9,Motivos culturales asociados a grupos étnicos
+DPTO,05,Antioquia
+DPTO,13,Bolívar
+DPTO,15,Boyacá
+DPTO,17,Caldas
+DPTO,18,Caquetá
+DPTO,19,Cauca
+DPTO,20,Cesar
+DPTO,23,Córdoba
+DPTO,25,Cundinamarca
+DPTO,27,Chocó
+DPTO,41,Huila
+DPTO,44,Guajira
+DPTO,47,Magdalena
+DPTO,50,Meta
+DPTO,52,Nariño
+DPTO,54,Norte de Santander
+DPTO,63,Quindío
+DPTO,66,Risaralda
+DPTO,68,Santander
+DPTO,70,Sucre
+DPTO,73,Tolima
+DPTO,76,Valle del cauca
+DSCY,1,Sí
+DSCY,2,No
+DSI,1,Desocupados
+P1519,1,Sí
+P1519,2,No
+P1883,1,Fondo privado
+P1883,2,Colpensiones
+P1883,3,"Regímenes especiales (FFMM, Ecopetrol etc)"
+P1883,4,"Fondo Subsidiado (Prosperar,etc.)"
+P3074,1,Esta semana
+P3074,2,En los próximos 15 días
+P3074,3,Dentro del próximo mes
+P3074,4,Dentro de los próximos 3 meses
+P3074,5,No antes de 3 meses
+P7280,1,Obrero o empleado de empresa particular
+P7280,2,Obrero o empleado del gobierno
+P7280,3,Empleado doméstico
+P7280,4,Trabajador por cuenta propia
+P7280,5,Patrón o empleador
+P7280,6,Trabajador familiar sin remuneración
+P7280,7,Trabajador sin remuneración en empresas de otros hogares
+P7280,8,Jornalero o peón
+P7280,9,Otro
+P7350,1,Obrero o empleado de empresa particular
+P7350,2,Obrero o empleado del gobierno
+P7350,3,Empleado doméstico
+P7350,4,Trabajador por cuenta propia
+P7350,5,Patrón o empleador
+P7350,6,Trabajador familiar sin remuneración
+P7350,7,Trabajador sin remuneración en empresas o negocios de otros hogares
+P7350,8,Jornalero o peón
+P7350,9,Otro
+P7360,1,Trabajaba solo
+P7360,2,2 a 3 personas
+P7360,3,4 a 5 personas
+P7360,4,6 a 10 personas
+P7360,5,11 a 19 personas
+P7360,6,20 a 30 personas
+P7360,7,31 a 50 personas
+P7360,8,51 a 100 personas
+P7360,9,101 o más personas
+P7422,1,Sí
+P7422,2,No
+P7430,1,Si
+P7430,2,No
+P7450,1,Por despido
+P7450,2,Para dedicarse a estudiar
+P7450,3,Responsabilidades familiares
+P7450,4,Enfermedad o accidente
+P7450,5,Jubilación o retiro
+P7450,6,Condiciones de trabajo insatisfactorias
+P7450,7,Cierre o dificultades de la empresa
+P7450,8,Trabajo temporal terminado
+P7450,9,Otro
+P9460,1,Sí
+P9460,2,No
+P9460,9,"No sabe, no informa"
+AREA,05,Medellín AM
+AREA,08,Barranquilla AM
+AREA,11,Bogotá DC
+AREA,13,Cartagena
+AREA,17,Manizales AM
+AREA,23,Montería
+AREA,50,Villavicencio
+AREA,52,Pasto
+AREA,54,Cúcuta AM
+AREA,66,Pereira AM
+AREA,68,Bucaramanga AM
+AREA,73,Ibagué
+AREA,76,Cali AM
+DPTO,05,Antioquia
+DPTO,08,Atlántico
+DPTO,11,"Bogotá, d.C."
+DPTO,13,Bolívar
+DPTO,17,Caldas
+DPTO,23,Córdoba
+DPTO,50,Meta
+DPTO,52,Nariño
+DPTO,54,Norte de santander
+DPTO,66,Risaralda
+DPTO,68,Santander
+DPTO,73,Tolima
+DPTO,76,Valle del cauca
+OCI,1,Población ocupada
+P1800,1,Sí
+P1800,2,No
+P1802,1,"A una sola empresa, negocio, hogar o intermediario"
+P1802,2,"A varias empresas, negocios, hogares o intermediarios"
+P1802,3,Directamente al público
+P1802,4,"No sabe, no informa"
+P1805,1,Sí
+P1805,2,No
+P1879,1,No encontró trabajo como asalariado
+P1879,10,Considera que no tiene los estudios necesarios
+P1879,11,Otro ¿Cuál?
+P1879,2,Por despido
+P1879,3,Más independencia
+P1879,4,Horario de trabajo más flexible
+P1879,5,Se considera muy joven o muy viejo
+P1879,6,Empezó su empresa o negocio
+P1879,7,Trabaja en un negocio familiar
+P1879,8,Mayor nivel de ingreso
+P1879,9,Por tradición familiar
+P1880,1,Terminó su contrato
+P1880,10,Renunció para empezar su propio negocio
+P1880,11,Renunció por motivos de salud
+P1880,12,Renunció para estudiar
+P1880,13,Otra ¿cuál?
+P1880,2,Por quiebra o cierre de la empresa
+P1880,3,Condiciones laborales insatisfactorias
+P1880,4,Porque se jubiló
+P1880,5,Lo despidieron
+P1880,6,Por su edad
+P1880,7,Reducción de personal
+P1880,8,Renunció porque deseaba un empleo con mejores ingresos
+P1880,9,"Renunció por razones personales (matrimonio, embarazo, responsabilidades familiares)"
+P1881,1,Bus intermunicipal
+P1881,10,Caballo
+P1881,11,Moto
+P1881,12,Mototaxi
+P1881,13,Bicicleta
+P1881,14,No se desplaza
+P1881,15,Otro ¿cuál?
+P1881,2,Bus urbano
+P1881,3,A pie
+P1881,4,Metro
+P1881,5,"Transporte articulado (Transmilenio, MIO y otros)"
+P1881,6,Taxi
+P1881,7,Transporte de la empresa
+P1881,8,Automóvil de uso particular
+P1881,9,"Lancha, planchón, canoa"
+P3045S1,1,Si
+P3045S1,2,No
+P3045S1,9,"No sabe, no informa"
+P3045S2,1,Si
+P3045S2,2,No
+P3045S2,9,"No sabe, no informa"
+P3045S3,1,Si
+P3045S3,2,No
+P3045S3,9,"No sabe, no informa"
+P3046,1,Si
+P3046,2,No
+P3046,9,"No sabe, no informa"
+P3047,1,Usted
+P3047,2,Usted y sus socios
+P3047,3,Quien lo contrató
+P3047,4,Su cliente o proveedor principal
+P3048,1,Usted
+P3048,2,Usted y sus socios
+P3048,3,Quien lo contrató
+P3048,4,Su cliente o proveedor principal
+P3049,1,Usted
+P3049,2,Usted y sus socios
+P3049,3,Quien lo contrató
+P3049,4,Su cliente o proveedor principal
+P3054,1,Si
+P3054,2,No
+P3054,9,"No sabe, no informa"
+P3055,1,Si
+P3055,2,No
+P3055,9,"No sabe, no informa"
+P3056,1,"Producción, compra y venta de mercancías o prestación de servicios"
+P3056,2,"Producción / extracción (agricultura, pesca, minas, etc.) de bienes agropecuarios"
+P3063,1,Si
+P3063,2,No
+P3063,9,"No sabe, no informa"
+P3064,1,Si
+P3064,2,No
+P3064,9,"No sabe, no informa"
+P3065,1,Si
+P3065,2,No
+P3065,9,"No sabe, no informa"
+P3066,1,Si
+P3066,2,No
+P3066,9,"No sabe, no informa"
+P3067,1,Si
+P3067,2,No
+P3067S1,1,Si
+P3067S1,2,No
+P3068,1,Si
+P3068,2,No
+P3068,9,"No sabe, no informa"
+P3069,1,Trabaja solo
+P3069,10,201 o más personas
+P3069,2,2 a 3 personas
+P3069,3,4 a 5 personas
+P3069,4,6 a 10 personas
+P3069,5,11 a 19 personas
+P3069,6,20 a 30 personas
+P3069,7,31 a 50 personas
+P3069,8,51 a 100 personas
+P3069,9,101 a 200 personas
+P3363,1,"Pidió ayuda a familiares, amigos, colegas"
+P3363,2,"Visitó, llevó o envió hojas de vida a empresas o empleadores"
+P3363,3,"Hizo uso de los servicios de agencias o bolsas de empleo, Cajas de Compensación Familiar, SENA, Entes Territoriales (Servicio Público de Empleo - SPE)"
+P3363,4,Puso o consultó avisos clasificados
+P3363,5,Se presentó a convocatorias
+P3363,6,Otro medio
+P3363,9,"No sabe, no informa"
+P3364,1,Si
+P3364,2,No
+P3364,9,"No sabe, no informa"
+P3365,1,Si
+P3365,2,No
+P3365,9,"No sabe, no informa"
+P514,1,Si
+P514,2,No
+P515,1,Sí
+P515,2,No
+P6400,1,Si
+P6400,2,No
+P6400,9,"No sabe, no informa"
+P6410,1,Una empresa de servicios temporales
+P6410,2,Una cooperativa de trabajo asociado
+P6410,3,Una empresa asociativa de trabajo
+P6410,4,Otra
+P6422,1,Sí
+P6422,2,No
+P6424S1,1,Sí
+P6424S1,2,No
+P6424S2,1,Sí
+P6424S2,2,No
+P6424S3,1,Sí
+P6424S3,2,No
+P6430,1,Obrero o empleado de empresa particular
+P6430,2,Obrero o empleado del gobierno
+P6430,3,Empleado doméstico
+P6430,4,Trabajador por cuenta propia
+P6430,5,Patrón o empleador
+P6430,6,Trabajador familiar sin remuneración
+P6430,7,Trabajador sin remuneración en empresas o negocios de otros hogares
+P6430,8,Jornalero o peón
+P6430,9,"Otro,"
+P6440,1,Sí
+P6440,2,No
+P6450,1,Verbal
+P6450,2,Escrito
+P6450,3,"No sabe, no informa"
+P6460,1,A término indefinido
+P6460,2,A término fijo
+P6460,3,"No sabe, no informa"
+P6510,1,Sí
+P6510,2,No
+P6510,9,"No sabe, no informa"
+P6510S2,1,Sí
+P6510S2,2,No
+P6545,1,Sí
+P6545,2,No
+P6545,9,"No sabe, no informa"
+P6545S2,1,Sí
+P6545S2,2,No
+P6580,1,Sí
+P6580,2,No
+P6580,9,"No sabe, no informa"
+P6580S2,1,Sí
+P6580S2,2,No
+P6585S1,1,Sí
+P6585S1,2,No
+P6585S1,9,"No sabe, no informa"
+P6585S1A2,1,Sí
+P6585S1A2,2,No
+P6585S2,1,Sí
+P6585S2,2,No
+P6585S2,9,"No sabe, no informa"
+P6585S2A2,1,Sí
+P6585S2A2,2,No
+P6585S3,1,Si
+P6585S3,2,No
+P6585S3,9,"No sabe, no informa"
+P6585S3A2,1,Sí
+P6585S3A2,2,No
+P6585S4,1,Sí
+P6585S4,2,No
+P6585S4,9,"No sabe, no informa"
+P6585S4A2,1,Sí
+P6585S4A2,2,No
+P6590,1,Sí
+P6590,2,No
+P6590,9,"No sabe, no informa"
+P6600,1,Sí
+P6600,2,No
+P6600,9,"No sabe, no informa"
+P6610,1,Sí
+P6610,2,No
+P6610,9,"No sabe, no informa"
+P6620,1,Sí
+P6620,2,No
+P6620,9,"No sabe, no informa"
+P6630S1,1,Sí
+P6630S1,2,No
+P6630S2,1,Sí
+P6630S2,2,No
+P6630S3,1,Sí
+P6630S3,2,No
+P6630S4,1,Sí
+P6630S4,2,No
+P6630S6,1,Sí
+P6630S6,2,No
+P6640,1,Sí
+P6640,2,No
+P6765,1,Trabajó por honorarios o prestación de servicios?
+P6765,2,Trabajó por obra?
+P6765,3,"Trabajó por piezas o a destajo? (satélite, maquila, etc)"
+P6765,4,Trabajó por comisión únicamente?
+P6765,5,Trabajó vendiendo por catálogo?
+P6765,6,"Trabajó en su oficio? (plomero, taxista, doméstica por días etc)"
+P6765,7,"Tiene un negocio de industria, comercio, servicios o una finca?"
+P6765,8,"Otro,"
+P6775,1,Sí
+P6775,2,No
+P6775,3,No aplica
+P6775,4,No sabe
+P6780,1,Ocasional? (de vez en cuando)
+P6780,2,"Estacional? (en ciertas épocas del año, cosechas, temporadas)"
+P6780,3,Permanente?
+P6780,4,"Otro?,"
+P6810,1,Es lo único que ha conseguido pero quiere trabajar más horas
+P6810,2,Es la jornada que se ajusta a sus necesidades
+P6810,3,"Otra,"
+P6830,1,"Enfermedad, permiso o licencia"
+P6830,2,Festivos
+P6830,3,Vacaciones
+P6830,4,Capacitación
+P6830,5,Suspensión o terminación del empleo
+P6830,6,Reducción de la actividad económica de la empresa
+P6830,7,"Otro,"
+P6880,1,En esta vivienda
+P6880,10,En una mina o cantera
+P6880,11,"Otro,"
+P6880,2,En otras viviendas
+P6880,3,En kiosco - caseta
+P6880,4,En un vehículo
+P6880,5,De puerta en puerta
+P6880,6,Sitio al descubierto en la calle (ambulante y estacionario)
+P6880,7,"Local fijo, oficina, fábrica, etc."
+P6880,8,"En el campo o área rural, mar o río"
+P6880,9,En una obra en construcción
+P6915,1,Es afiliado como cotizante a un régimen contributivo de salud (eps)
+P6915,10,No lo ha considerado
+P6915,11,No tiene recursos
+P6915,12,"Otro,"
+P6915,2,Es afiliado a un régimen subsidiado de salud
+P6915,3,Es beneficiario de un afiliado
+P6915,4,Con ahorros personales
+P6915,5,Con ayudas de los hijos o familiares
+P6915,6,Con otro tipo de seguro o cubrimiento
+P6915,7,Pidiendo dinero prestado
+P6915,8,Vendería su vivienda o bienes del hogar
+P6915,9,Empeñaría bienes del hogar
+P6920,1,Sí
+P6920,2,No
+P6920,3,Ya es pensionado
+P6930,1,Fondo privado?
+P6930,2,"Iss, cajanal?"
+P6930,3,"Regímenes especiales (ffmm, ecopetrol etc)?"
+P6930,4,"Fondo subsidiado (prosperar,etc.)?"
+P6940,1,...paga una parte y otra la empresa o patrón
+P6940,2,... paga la totalidad de la afiliación
+P6940,3,Paga completamente la empresa ó patrón
+P6940,4,No paga
+P6990,1,Sí
+P6990,2,No
+P6990,9,"No sabe, no informa"
+P7020,1,Sí
+P7020,2,No
+P7028,1,Obrero o empleado de empresa particular?
+P7028,2,Obrero o empleado del gobierno?
+P7028,3,Empleado doméstico?
+P7028,4,Trabajador por cuenta propia?
+P7028,5,Patrón o empleador?
+P7028,6,Trabajador familiar sin remuneración?
+P7028,7,Trabajador sin remuneración en empresas o negocios de otros hogares?
+P7028,8,Jornalero o peón?
+P7028,9,"Otro,"
+P7040,1,Sí
+P7040,2,No
+P7050,1,Obrero o empleado de empresa particular
+P7050,2,Obrero o empleado del gobierno
+P7050,3,Empleado doméstico
+P7050,4,Trabajador por cuenta propia
+P7050,5,Patrón o empleador
+P7050,6,Trabajador familiar sin remuneración
+P7050,7,Trabajador sin remuneración en empresas o negocios de otros hogares
+P7050,8,Jornalero o peón
+P7050,9,"Otro,"
+P7075,1,Trabaja solo
+P7075,2,2 a 5 personas
+P7075,3,6 a 10 personas
+P7075,4,11 y más personas
+P7077,1,En su vivienda
+P7077,2,En otras viviendas
+P7077,3,En kiosko - caseta
+P7077,4,En un vehículo
+P7077,5,De puerta en puerta
+P7077,6,Sitio al descubierto en la calle
+P7077,7,"Local fijo, oficina, fábrica, etc."
+P7077,8,En el campo o área rural
+P7090,1,Sí
+P7090,2,No
+P7110,1,Sí
+P7110,2,No
+P7120,1,Sí
+P7120,2,No
+P7130,1,Sí
+P7130,2,No
+P7140S1,1,Sí
+P7140S1,2,No
+P7140S2,1,Sí
+P7140S2,2,No
+P7140S3,1,Sí
+P7140S3,2,No
+P7140S4,1,Sí
+P7140S4,2,No
+P7140S5,1,Sí
+P7140S5,2,No
+P7140S6,1,Sí
+P7140S6,2,No
+P7140S7,1,Sí
+P7140S7,2,No
+P7140S8,1,Sí
+P7140S8,2,No
+P7140S9,1,Sí
+P7140S9,2,No
+P7150,1,Sí
+P7150,2,No
+P7160,1,Sí
+P7160,2,No
+P7160,9,"No sabe, no informa"
+P7170S1,1,Si
+P7170S1,2,No
+P7170S5,1,Si
+P7170S5,2,No
+P7170S6,1,Si
+P7170S6,2,No
+P7180,1,Sí
+P7180,2,No
+P7240,1,Cesantías?
+P7240,10,"Otros,"
+P7240,2,Ahorros personales?
+P7240,3,Ayudas de hijos o familiares?
+P7240,4,Indemnización o similar?
+P7240,5,No lo ha considerado?
+P7240,6,Vendería su vivienda o bienes del hogar?
+P7240,7,Empeñaría bienes del hogar?
+P7240,8,No tendría recursos?
+P7240,9,Solicitaría dinero prestado?
+P9440,1,Sí
+P9440,2,No
+P9450,1,Sí
+P9450,2,No
+P9450,9,"No sabe, no informa"
+P3091,1,Si
+P3091,2,No
+P3092,1,Si
+P3092,2,No
+P3093,1,Si
+P3093,2,No
+CLASE,1,Urbano
+CLASE,2,Rural
+DPTO,05,Antioquia
+DPTO,08,Atlántico
+DPTO,13,Bolívar
+DPTO,15,Boyacá
+DPTO,17,Caldas
+DPTO,18,Caquetá
+DPTO,19,Cauca
+DPTO,20,Cesar
+DPTO,23,Córdoba
+DPTO,25,Cundinamarca
+DPTO,27,Chocó
+DPTO,41,Huila
+DPTO,44,La guajira
+DPTO,47,Magdalena
+DPTO,50,Meta
+DPTO,52,Nariño
+DPTO,54,Norte de santander
+DPTO,63,Quindio
+DPTO,66,Risaralda
+DPTO,68,Santander
+DPTO,70,Sucre
+DPTO,73,Tolima
+DPTO,76,Valle del cauca
+P7495,1,Sí
+P7495,2,No
+P7500S1,1,Sí
+P7500S1,2,No
+P7500S1,9,"No sabe, no informa"
+P7500S2,1,Sí
+P7500S2,2,No
+P7500S2,9,"No sabe, no informa"
+P7500S3,1,Sí
+P7500S3,2,No
+P7500S3,9,"No sabe, no informa"
+P7505,1,Si
+P7505,2,No
+P750S1,1,Si
+P750S1,2,No
+P750S1,9,"No sabe, no informa"
+P750S2,1,Si
+P750S2,2,No
+P750S2,9,"No sabe, no informa"
+P750S3,1,Si
+P750S3,2,No
+P750S3,9,"No sabe, no informa"
+P7510S1,1,Sí
+P7510S1,2,No
+P7510S1,9,"No sabe, no informa"
+P7510S2,1,Sí
+P7510S2,2,No
+P7510S2,9,"No sabe, no informa"
+P7510S3,1,Sí
+P7510S3,2,No
+P7510S3,9,"No sabe, no informa"
+P7510S5,1,Sí
+P7510S5,2,No
+P7510S5,9,"No sabe, no informa"
+P7510S6,1,Sí
+P7510S6,2,No
+P7510S6,9,"No sabe, no informa"
+P7510S7,1,Sí
+P7510S7,2,No
+P7510S7,9,"No sabe, no informa"
+P5090,1,"Propia, totalmente pagada"
+P5090,2,"Propia, la están pagando"
+P5090,3,En arriendo o subarriendo
+P5090,4,En usufructo
+P5090,5,Posesión sin titulo (ocupante de hecho) ó propiedad colectiva
+P5090,6,"Otra, ¿cuál?___________________"

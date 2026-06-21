@@ -24,4 +24,5 @@ historial**: las credenciales siguen siendo recuperables.
    con `git filter-repo` o BFG, seguido de `git push --force`. Reescribe hashes; coordinar antes de
    hacerlo. Si el token ya fue rotado, el riesgo del histórico queda neutralizado aunque no se purgue.
 
-> Estado: **token aún no rotado** (acción del usuario). Una vez rotado, marcar esta sección como resuelta.
+> Estado: **token aún no rotado** (acción del usuario). **Programado para la Fase 8 (despliegue)**,
+> justo antes de publicar la app v2 mejorada. Una vez rotado, marcar esta sección como resuelta.

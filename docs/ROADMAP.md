@@ -140,26 +140,22 @@ La app queda **funcional al final de cada fase** (refactor incremental).
 
 ---
 
-## Fase 1 — Datos 2022–2025: ingesta y validación de continuidad
+## Fase 1 — Datos 2022–2025: ingesta y validación de continuidad — ✅ COMPLETADA
 
 **Objetivo:** incorporar los 4 años (ya consolidados) y verificar que las variables son comparables
 entre años (la GEIH tuvo rediseño ~2021; hay que confirmar códigos y nombres, instructivo §17).
 
-> Los datos ya están en el proyecto como `datos/geih_2022..2025.csv` (no hace falta descargar ni
-> hacer merge mensual). Esta fase es **ingesta + validación estructural + estandarización**.
+- [x] `preparacion/cargar_anios.R`: lee los 4 CSV (selección de 40 vars de análisis), **añade `ANIO`**,
+      apila con `rbindlist(fill = TRUE)`. Verificado: las 40 vars están en los 4 años. ✅
+- [x] **Procesar `diccionario.xlsx`** (`03_diccionario.R`): 676 vars, 188 mapeables → capa de mapeo
+      (códigos como texto) `mapeos_variables.rds` + `diccionario_categorias.csv`. Cobertura del
+      dashboard completa salvo `P3271` (mapa explícito) y `DPTO`/`AREA` (mapa de 33 deptos). ✅
+- [x] **Continuidad entre años** (`01_validar_continuidad.R`): 502 columnas comunes; 28 vars clave y
+      5 de migración presentes en los 4 años; diferencias solo en módulos especiales no usados. ✅
+- [x] **Sanity check de la serie** (`02_resumen_anual.R`): 12 meses/año; población 50.5→52.1 M,
+      desempleo 11.2→8.9 %, migrantes venez. ~2.0–2.3 M — todo coherente con DANE. ✅
 
-- [ ] `preparacion/cargar_anios.R`: leer los 4 CSV, **añadir columna `ANIO`**, apilar con
-      `rbindlist(fill = TRUE)` (conservar `MES`).
-- [ ] **Procesar `diccionario.xlsx`** (protocolo): tabla maestra limpia + mapa `variable→{código:categoría}`
-      (códigos como **texto**) + metadatos + **reporte de cobertura** (`docs/reporte_cobertura_diccionario.md`).
-- [ ] **Verificar continuidad entre años** (riesgo real): comparar columnas presentes por año,
-      confirmar `FEX_C18`, `MES`, `DPTO`, sexo `P3271`, edad `P6040`, y las variables de migración
-      `P3373S3`/`P3374S1`/`P3386` (¿existen en los 4 años?). Documentar diferencias.
-- [ ] Controles de calidad: nº de registros y de meses (`uniqueN(MES)`) por año, % de NA por variable
-      clave, rangos válidos, duplicados de llave.
-
-**Entregable:** `cargar_anios.R` + capa de mapeo del diccionario + reporte de validación
-(`docs/data_continuity.md`).
+**Entregable:** `cargar_anios.R` + capa de mapeo + reporte `docs/data_continuity.md`. ✅
 
 ---
 
