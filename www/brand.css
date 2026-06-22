@@ -335,4 +335,8 @@ table.dataTable tbody tr:hover td{background:rgba(6,182,212,.06)!important;}
   /* Filtros apilados (los KPIs se mantienen en grilla 2 por fila) */
   .filtros-row{flex-direction:column; align-items:stretch;}
   .filtros-row > div{min-width:0;} .filtro-clear{margin-top:6px;}
+  /* Botones de descarga a la izquierda cuando la columna se apila */
+  .datos-dl{justify-content:flex-start; margin-top:4px;}
 }
+/* Tabla de Datos: scroll horizontal limpio en móvil */
+.dataTables_wrapper .dataTables_scrollBody{-webkit-overflow-scrolling:touch;}

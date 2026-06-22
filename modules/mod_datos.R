@@ -55,7 +55,7 @@ datosServer <- function(id, ctx) {
       d <- tabla_data()
       validate(need(nrow(d) > 0, "Sin datos para esta selección"))
       DT::datatable(d, rownames = FALSE, class = "display compact",
-                    options = list(pageLength = 12, dom = "tip"))
+                    options = list(pageLength = 12, dom = "tip", scrollX = TRUE))
     })
 
     nombre_arch <- function(ext) paste0("geih_", input$tabla, "_", ctx()$anio, ".", ext)
