@@ -209,10 +209,25 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 /* Fallback para <select> nativo (sin selectize) */
 select.form-control option{background:var(--s2)!important; color:var(--t-body)!important;}
 
-/* DataTable ------------------------------------------------------------ */
-.dataTables_wrapper{color:var(--t-body);}
-table.dataTable tbody td{color:var(--t-body);}
-table.dataTable thead th{color:var(--t-title);border-color:var(--card-border)!important;}
+/* DataTable (tema oscuro) ---------------------------------------------- */
+.dataTables_wrapper{color:var(--t-body); margin-top:6px;}
+table.dataTable{background:transparent!important; border-collapse:collapse!important;}
+table.dataTable thead th,table.dataTable thead td{
+  color:var(--t-title)!important; border-bottom:1px solid var(--card-border)!important;
+  font-weight:700;}
+table.dataTable tbody tr{background:transparent!important;}
+table.dataTable tbody td{color:var(--t-body)!important; border-top:1px solid rgba(255,255,255,.04)!important;}
+table.dataTable.compact tbody td{padding:6px 10px;}
+table.dataTable tbody tr:hover td{background:rgba(6,182,212,.06)!important;}
+.dataTables_wrapper .dataTables_info,.dataTables_wrapper .dataTables_paginate{color:var(--t-muted)!important;}
+.dataTables_wrapper .dataTables_paginate .paginate_button{color:var(--t-muted)!important; border:0!important;}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+  background:var(--primary)!important; color:#fff!important; border-radius:8px!important;}
+
+/* Botones de descarga de la pestaña Datos */
+.datos-dl{display:flex; gap:10px; justify-content:flex-end; align-items:flex-end; height:100%; padding-bottom:2px;}
+.datos-dl .btn-limpiar .fa{margin-right:6px; color:var(--cyan);}
 
 /* Scrollbar ------------------------------------------------------------ */
 ::-webkit-scrollbar{width:10px;height:10px;}

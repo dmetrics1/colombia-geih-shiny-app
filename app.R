@@ -24,8 +24,8 @@ ui <- dashboardPage(
       menuItem("Vivienda", tabName = "vivienda", icon = icon("house")),
       menuItem("Salud", tabName = "salud", icon = icon("heart-pulse")),
       menuItem("Migración", tabName = "migracion", icon = icon("plane-arrival")),
-      menuItem("Tendencias", tabName = "tendencias", icon = icon("chart-line"))
-      # Datos -> siguiente
+      menuItem("Tendencias", tabName = "tendencias", icon = icon("chart-line")),
+      menuItem("Datos", tabName = "datos", icon = icon("table"))
     ),
     div(class = "sidebar-footer",
         div(class = "sb-actions",
@@ -43,7 +43,7 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=5")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=6")
     ),
     div(class = "card-panel filtros",
         div(class = "panel-head",
@@ -70,7 +70,8 @@ ui <- dashboardPage(
       tabItem(tabName = "vivienda", viviendaUI("viv")),
       tabItem(tabName = "salud", saludUI("sal")),
       tabItem(tabName = "migracion", migracionUI("mig")),
-      tabItem(tabName = "tendencias", tendenciasUI("ten"))
+      tabItem(tabName = "tendencias", tendenciasUI("ten")),
+      tabItem(tabName = "datos", datosUI("dat"))
     )
   )
 )
@@ -118,6 +119,7 @@ server <- function(input, output, session) {
   saludServer("sal", ctx)
   migracionServer("mig", ctx)
   tendenciasServer("ten", ctx)
+  datosServer("dat", ctx)
 }
 
 shinyApp(ui, server)
