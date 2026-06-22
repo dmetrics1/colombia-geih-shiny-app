@@ -12,6 +12,10 @@ suppressMessages(library(data.table))
 # Filtra por departamento si se indica.
 .filtra <- function(dt, depto) if (is.null(depto)) dt else dt[departamento == depto]
 
+# Restringe a JEFES de hogar (P6050 == 1): 1 registro por hogar.
+# Necesario para indicadores de vivienda/hogar (no contar por persona).
+.hogares <- function(dt) dt[P6050 == 1]
+
 # 1. Pirámide poblacional (grupo_edad × sexo)
 piramide <- function(dt, depto = NULL) {
   dt <- .filtra(dt, depto)
@@ -68,23 +72,41 @@ tipo_trabajo <- function(dt, depto = NULL) {
   conteo_ponderado(dt[!is.na(posicion_ocupacional)], by = "posicion_ocupacional")[order(-personas)]
 }
 
-# 8. Tipo de vivienda (tenencia)
+# --- Indicadores de VIVIENDA/HOGAR (a nivel de hogar = jefe, no persona) -----
+
+# 8. Tenencia de la vivienda (por hogar)
 tipo_vivienda <- function(dt, depto = NULL) {
-  dt <- .filtra(dt, depto)
+  dt <- .hogares(.filtra(dt, depto))
   conteo_ponderado(dt[!is.na(tenencia_vivienda)], by = "tenencia_vivienda")[order(-personas)]
 }
 
-# 9. Condiciones del hogar: % con acceso a cada servicio público
+# 9. Condiciones del hogar: % de HOGARES con acceso a cada servicio público
 condiciones_hogar <- function(dt, depto = NULL) {
-  dt <- .filtra(dt, depto)
+  h <- .hogares(.filtra(dt, depto))
   servicios <- c(electricidad = "P4030S1_lbl", gas = "P4030S2_lbl",
                  alcantarillado = "P4030S3_lbl", acueducto = "P4030S5_lbl")
   rbindlist(lapply(names(servicios), function(s) {
     col <- servicios[[s]]
-    tot <- dt[!is.na(get(col)), sum(PT * FEX_C18, na.rm = TRUE)]
-    si  <- dt[get(col) == "Sí",  sum(PT * FEX_C18, na.rm = TRUE)]
+    tot <- h[!is.na(get(col)), sum(FEX_C18, na.rm = TRUE)]
+    si  <- h[get(col) == "Sí",  sum(FEX_C18, na.rm = TRUE)]
     data.table(servicio = s, porcentaje = round(si / tot * 100, 1))
   }))
+}
+
+# 9b. Material de paredes y pisos (por hogar)
+material_paredes <- function(dt, depto = NULL) {
+  dt <- .hogares(.filtra(dt, depto))
+  conteo_ponderado(dt[!is.na(material_paredes)], by = "material_paredes")[order(-personas)]
+}
+material_pisos <- function(dt, depto = NULL) {
+  dt <- .hogares(.filtra(dt, depto))
+  conteo_ponderado(dt[!is.na(material_pisos)], by = "material_pisos")[order(-personas)]
+}
+
+# 9c. Servicio sanitario (por hogar)
+sanitario <- function(dt, depto = NULL) {
+  dt <- .hogares(.filtra(dt, depto))
+  conteo_ponderado(dt[!is.na(sanitario_tipo)], by = "sanitario_tipo")[order(-personas)]
 }
 
 # 10. Acceso a salud

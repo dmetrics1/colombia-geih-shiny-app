@@ -14,6 +14,9 @@ TABLAS_DATOS <- c(
   "Tipo de trabajo"        = "tipo_trabajo",
   "Tenencia de vivienda"   = "tipo_vivienda",
   "Servicios del hogar"    = "condiciones_hogar",
+  "Material de paredes"    = "material_paredes",
+  "Material del piso"      = "material_pisos",
+  "Servicio sanitario"     = "sanitario",
   "Acceso a salud"         = "acceso_salud",
   "Afiliación a salud"     = "afiliacion_salud",
   "Motivos de migración"   = "motivos_migracion"

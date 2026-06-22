@@ -18,8 +18,9 @@ VARS_ANALISIS <- c(
   "P3042","P6170","INGLABO",
   # Mercado laboral
   "OCI","DSI","PT","FT","PET","P6430","P6880","P6920","RAMA2D_R4",
-  # Vivienda y hogar
+  # Vivienda y hogar (P6050 = parentesco, para identificar jefe de hogar)
   "P5090","P4030S1","P4030S2","P4030S3","P4030S5","P6008","P70",
+  "P4010","P4020","P5020","P5030",
   # Salud
   "P6090","P6100",
   # Migración

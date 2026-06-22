@@ -39,6 +39,14 @@ suppressMessages(library(data.table))
                 "6"="Desastres","7"="Nuevo hogar","8"="Acompañar hogar","9"="Motivos culturales",
                 "10"="Vivienda propia","12"="Otro")
 .map_sino  <- c("1"="Sí","2"="No")
+.map_pared <- c("1"="Ladrillo/bloque/prefab.","2"="Madera pulida","3"="Adobe/tapia pisada",
+                "4"="Bahareque","5"="Madera burda","6"="Guadua","7"="Caña/vegetal",
+                "8"="Zinc/desechos/plástico","9"="Sin paredes")
+.map_piso  <- c("1"="Tierra/arena","2"="Cemento/gravilla","3"="Madera burda",
+                "4"="Baldosa/ladrillo/vinilo","5"="Mármol","6"="Madera pulida","7"="Alfombra")
+.map_sanit <- c("1"="Inodoro a alcantarillado","2"="Inodoro a pozo séptico","3"="Inodoro sin conexión",
+                "4"="Letrina","5"="Bajamar","6"="Sin servicio sanitario")
+.map_sanit_uso <- c("1"="Exclusivo del hogar","2"="Compartido")
 
 # Aplica un mapeo (código->etiqueta) creando una columna nueva si la cruda existe.
 .recode <- function(dt, cruda, nueva, mapa) {
@@ -57,6 +65,10 @@ etiquetar_geih <- function(dt) {
   .recode(dt, "P6430",   "posicion_ocupacional", .map_ocup)
   .recode(dt, "P5090",   "tenencia_vivienda",    .map_viv)
   .recode(dt, "P3386",   "motivo_migracion",     .map_migra)
+  .recode(dt, "P4010",   "material_paredes",     .map_pared)
+  .recode(dt, "P4020",   "material_pisos",       .map_piso)
+  .recode(dt, "P5020",   "sanitario_tipo",       .map_sanit)
+  .recode(dt, "P5030",   "sanitario_uso",        .map_sanit_uso)
   for (s in c("P4030S1","P4030S2","P4030S3","P4030S5"))
     .recode(dt, s, paste0(s, "_lbl"), .map_sino)
 

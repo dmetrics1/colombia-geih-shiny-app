@@ -26,6 +26,9 @@ INDICADORES <- list(
   tipo_trabajo      = tipo_trabajo,
   tipo_vivienda     = tipo_vivienda,
   condiciones_hogar = condiciones_hogar,
+  material_paredes  = material_paredes,
+  material_pisos    = material_pisos,
+  sanitario         = sanitario,
   acceso_salud      = acceso_salud,
   afiliacion_salud  = afiliacion_salud,
   motivos_migracion = motivos_migracion
