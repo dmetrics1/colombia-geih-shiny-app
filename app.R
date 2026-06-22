@@ -42,7 +42,7 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=7")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=8")
     ),
     div(class = "card-panel filtros",
         div(class = "panel-head",
