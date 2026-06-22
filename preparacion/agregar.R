@@ -56,6 +56,20 @@ for (anio in ANIOS) {
         res <- tryCatch(INDICADORES[[nm]](sub), error = function(e) NULL)
         push(nm, res, anio, g, mig)
       }
+      # Serie TRIMESTRAL (para tendencias de Mercado Laboral y Migración)
+      st <- tryCatch({
+        s <- copy(sub)[, trimestre := ceiling(MES / 3)]
+        s <- s[, .(
+          ocupados    = sum(OCI * FEX_C18, na.rm = TRUE),
+          desocupados = sum(DSI * FEX_C18, na.rm = TRUE),
+          pet         = sum((P6040 >= 15) * FEX_C18, na.rm = TRUE),
+          fex         = sum(FEX_C18, na.rm = TRUE),
+          nmes        = uniqueN(MES)
+        ), by = trimestre]
+        s[, personas := fex / nmes]   # población promedio mensual del trimestre
+        s[]
+      }, error = function(e) NULL)
+      push("serie_trim", st, anio, g, mig)
     }
   }
   options(geih.n_periodos = NULL)

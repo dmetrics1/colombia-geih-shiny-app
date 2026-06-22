@@ -14,8 +14,7 @@ saludUI <- function(id) {
       column(7, div(class = "card-panel",
                     div(class = "card-title", "Tipo de afiliación al sistema"),
                     plotlyOutput(ns("afiliacion"), height = "430px")))
-    ),
-    fluidRow(column(12, tendencia_card(ns("tendencia"), "Acceso a salud 2022–2025")))
+    )
   )
 }
 
@@ -35,13 +34,6 @@ saludServer <- function(id, ctx) {
         kpi_box("Régimen contributivo", fmt_pct(contrib)),
         kpi_box("Régimen subsidiado", fmt_pct(subsid))
       )
-    })
-
-    output$tendencia <- renderPlotly({
-      s <- AGG$acceso_salud[geo == ctx()$geo & migrante == ctx()$migrante][
-        , .(valor = sum(personas[acceso_salud == "Sí"]) / sum(personas) * 100), by = anio]
-      validate(need(nrow(s) > 1, "Sin serie temporal"))
-      grafico_tendencia(s, es_pct = TRUE, etiqueta = "% Acceso")
     })
 
     # Acceso a salud (dona)

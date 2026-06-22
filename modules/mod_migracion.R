@@ -16,7 +16,7 @@ migracionUI <- function(id) {
                     div(class = "card-title", "Migrantes por sexo"),
                     plotlyOutput(ns("sexo"), height = "430px")))
     ),
-    fluidRow(column(12, tendencia_card(ns("tendencia"), "Migrantes venezolanos 2022–2025")))
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Migrantes venezolanos 2022–2025 (trimestral)")))
   )
 }
 
@@ -38,11 +38,21 @@ migracionServer <- function(id, ctx) {
       )
     })
 
+    # Tendencia trimestral de migrantes venezolanos
     output$tendencia <- renderPlotly({
-      s <- AGG$sexo[geo == ctxm()$geo & migrante == "Venezolano"][
-        , .(valor = sum(personas)), by = anio]
+      s <- AGG$serie_trim[geo == ctxm()$geo & migrante == "Venezolano"]
       validate(need(nrow(s) > 1, "Sin serie temporal"))
-      grafico_tendencia(s, es_pct = FALSE, etiqueta = "Migrantes")
+      s <- s[order(anio, trimestre)]
+      s[, periodo := anio + (trimestre - 1) / 4]
+      plot_ly(s, x = ~periodo, y = ~personas, type = "scatter", mode = "lines+markers",
+              fill = "tozeroy", fillcolor = "rgba(6,182,212,0.10)",
+              line = list(color = BRAND$cyan, width = 3), marker = list(color = BRAND$cyan, size = 6),
+              text = vapply(s$personas, fmt_num, character(1)),
+              hovertemplate = "%{text}<extra>Migrantes</extra>") %>%
+        aplicar_tema(xaxis = list(title = "", tickmode = "array", tickvals = ANIOS,
+                                  ticktext = as.character(ANIOS)),
+                     yaxis = list(title = "Personas", tickformat = ".2s"),
+                     margin = list(l = 58, r = 16, t = 10, b = 28)) %>% sin_barra()
     })
 
     output$motivos <- renderPlotly({

@@ -15,7 +15,8 @@ laboralUI <- function(id) {
                     div(class = "card-title", "Tipo de trabajo"),
                     plotlyOutput(ns("tipo"), height = "420px")))
     ),
-    fluidRow(column(12, tendencia_card(ns("tendencia"), "Tasa de desempleo 2022–2025")))
+    fluidRow(column(12, tendencia_card(ns("tendencia"),
+                    "Tasas laborales 2022–2025 (TGP · TO · TD, trimestral)")))
   )
 }
 
@@ -34,11 +35,30 @@ laboralServer <- function(id, ctx) {
       )
     })
 
+    # Tendencia trimestral: TGP, TO, TD (estilo DANE)
     output$tendencia <- renderPlotly({
-      s <- AGG$laboral[geo == ctx()$geo & migrante == ctx()$migrante][
-        , .(valor = sum(desocupados) / sum(fuerza_trabajo) * 100), by = anio]
+      s <- AGG$serie_trim[geo == ctx()$geo & migrante == ctx()$migrante]
       validate(need(nrow(s) > 1, "Sin serie temporal"))
-      grafico_tendencia(s, es_pct = TRUE, etiqueta = "Desempleo")
+      s <- s[order(anio, trimestre)]
+      s[, periodo := anio + (trimestre - 1) / 4]
+      s[, tgp := (ocupados + desocupados) / pet * 100]
+      s[, to  := ocupados / pet * 100]
+      s[, td  := desocupados / (ocupados + desocupados) * 100]
+      eje_x <- list(title = "", tickmode = "array", tickvals = ANIOS,
+                    ticktext = as.character(ANIOS), gridcolor = BRAND$grid)
+      plot_ly(s, x = ~periodo) %>%
+        add_trace(y = ~tgp, name = "Participación (TGP)", type = "scatter", mode = "lines+markers",
+                  line = list(color = BRAND$primary, width = 2.5), marker = list(color = BRAND$primary, size = 6),
+                  hovertemplate = "TGP: %{y:.1f}%<extra></extra>") %>%
+        add_trace(y = ~to, name = "Ocupación (TO)", type = "scatter", mode = "lines+markers",
+                  line = list(color = BRAND$cyan, width = 2.5), marker = list(color = BRAND$cyan, size = 6),
+                  hovertemplate = "TO: %{y:.1f}%<extra></extra>") %>%
+        add_trace(y = ~td, name = "Desempleo (TD)", type = "scatter", mode = "lines+markers",
+                  line = list(color = "#94A3B8", width = 2.5), marker = list(color = "#94A3B8", size = 6),
+                  hovertemplate = "TD: %{y:.1f}%<extra></extra>") %>%
+        aplicar_tema(xaxis = eje_x, yaxis = list(title = "%", ticksuffix = "%"),
+                     legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.16),
+                     margin = list(l = 50, r = 20, t = 34, b = 28)) %>% sin_barra()
     })
 
     # Tasas de desempleo y ocupación por sexo
