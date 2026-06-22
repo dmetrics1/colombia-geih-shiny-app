@@ -13,8 +13,7 @@ Dashboard interactivo en **Shiny** para explorar la **Gran Encuesta Integrada de
 y venezolana** en demografía, educación, mercado laboral, vivienda, salud y migración, a nivel
 **nacional y departamental**, con **eje temporal 2022–2025**.
 
-> **🚀 App publicada (v1, 2024) →** [jsidte-daniel-molina.shinyapps.io/shiny-app](https://jsidte-daniel-molina.shinyapps.io/shiny-app/)
-> · **v2 (2022–2025)** en la rama `feature/v2-2022-2025`, pendiente de redesplegar.
+> **🚀 App en vivo (v2, 2022–2025) →** [jsidte-daniel-molina.shinyapps.io/shiny-app](https://jsidte-daniel-molina.shinyapps.io/shiny-app/)
 > **📄 Artículo publicado →** *Communications in Computer and Information Science*, Springer (R Day 2025, Medellín) · **[DOI](https://doi.org/10.1007/978-3-032-18455-9_8)**
 
 > 🛠️ Desarrollado por **Daniel Molina Barrios**. El software es el artefacto de un artículo de
