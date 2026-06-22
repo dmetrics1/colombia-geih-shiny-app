@@ -84,12 +84,21 @@ Rscript tests/auditoria_valores.R   # agregados == microdato + coherencia intern
 ## 6. Credenciales y despliegue
 
 Las credenciales de **shinyapps.io** **nunca** se versionan (`clave.R`, `.Renviron` en `.gitignore`);
-se leen de variables de entorno. Ver [`SECURITY_TODO.md`](SECURITY_TODO.md) — **rotación de token
-pendiente** antes de redesplegar.
+se leen de variables de entorno. Ver [`SECURITY_TODO.md`](SECURITY_TODO.md).
+
+El despliegue usa una **lista blanca de archivos** (`appFiles`): solo sube la app (~0.6 MB) y nunca
+`datos/` (~2.5 GB). Un `deployApp()` sin filtro intentaría empaquetar los microdatos y fallaría.
 
 ```r
 rsconnect::setAccountInfo(name = Sys.getenv("SHINYAPPS_NAME"),
                           token = Sys.getenv("SHINYAPPS_TOKEN"),
                           secret = Sys.getenv("SHINYAPPS_SECRET"))
-rsconnect::deployApp()
+
+rsconnect::deployApp(
+  appName  = "shiny-app",
+  appFiles = c("app.R", "global.R", "agregados.rds",
+               list.files("R",       full.names = TRUE),
+               list.files("modules", full.names = TRUE),
+               list.files("www",     full.names = TRUE)),
+  forceUpdate = TRUE)
 ```

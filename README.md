@@ -44,6 +44,11 @@ y venezolana** en demografía, educación, mercado laboral, vivienda, salud y mi
 - **Enfoque migratorio:** caracterización de la población venezolana y sus motivos de migración.
 - **Exportación:** tablas descargables en CSV y Excel.
 - **Identidad visual de marca** "Premium Dark Tech" (tema oscuro, paleta azul→cian, tipografía Inter).
+- **Diseño responsive (móvil y escritorio):** en pantallas pequeñas el menú lateral se convierte
+  en un panel deslizable (drawer) con botón hamburguesa, los KPIs se reorganizan en grilla 2×2 y
+  las tablas ofrecen desplazamiento horizontal.
+- **Microinteracciones:** las tarjetas y gráficos aparecen con una animación *reveal-on-scroll*
+  (respeta `prefers-reduced-motion`).
 
 ## 📊 Datos
 
@@ -152,10 +157,21 @@ shiny-app/
 rsconnect::setAccountInfo(name = Sys.getenv("SHINYAPPS_NAME"),
                           token = Sys.getenv("SHINYAPPS_TOKEN"),
                           secret = Sys.getenv("SHINYAPPS_SECRET"))
-rsconnect::deployApp()
+
+# Subir SOLO los archivos de la app (~0.6 MB). La lista blanca evita empaquetar
+# datos/ (~2.5 GB) y el resto de carpetas auxiliares.
+rsconnect::deployApp(
+  appName  = "shiny-app",
+  appFiles = c("app.R", "global.R", "agregados.rds",
+               list.files("R",       full.names = TRUE),
+               list.files("modules", full.names = TRUE),
+               list.files("www",     full.names = TRUE)),
+  forceUpdate = TRUE)
 ```
+> ⚠️ Usa siempre `appFiles` (lista blanca). Un `deployApp()` sin filtro intenta subir `datos/`
+> y el bundle se dispara a cientos de MB.
 > 🔐 Las credenciales (`clave.R`, `.Renviron`) están en `.gitignore`. Ver
-> [`docs/SECURITY_TODO.md`](docs/SECURITY_TODO.md) (rotación de token pendiente).
+> [`docs/SECURITY_TODO.md`](docs/SECURITY_TODO.md).
 
 ## 📑 Cita
 
