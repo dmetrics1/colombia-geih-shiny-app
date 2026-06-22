@@ -43,8 +43,15 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=9")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=10"),
+      tags$script(HTML(
+        "$(document).on('click', '.sidebar-menu a', function(){ document.body.classList.remove('sidebar-open'); });"))
     ),
+    # Móvil: botón hamburguesa + fondo para abrir/cerrar el menú (drawer)
+    tags$a(class = "mobile-toggle", title = "Menú",
+           onclick = "document.body.classList.toggle('sidebar-open')", icon("bars")),
+    div(class = "sidebar-backdrop",
+        onclick = "document.body.classList.remove('sidebar-open')"),
     conditionalPanel(
       condition = "input.tabs != 'inicio'",
     div(class = "card-panel filtros",
