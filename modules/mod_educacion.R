@@ -30,11 +30,14 @@ educacionServer <- function(id, ctx) {
       ing_u <- di[nivel_educativo == "Universitaria", ingreso]
       da <- filtrar("alfabetismo", ctx())
       analf <- if (nrow(da)) sum(da[alfabetismo == "No", personas]) / sum(da$personas) * 100 else NA
+      media <- c("Media académica", "Media técnica", "Normalista", "Técnica prof.",
+                 "Tecnológica", "Universitaria", "Especialización", "Maestría", "Doctorado")
+      pct_media <- sum(d[nivel_educativo %in% media, personas]) / sum(d$personas) * 100
       kpi_row(
+        kpi_box("Educación media o más", fmt_pct(pct_media), "bachiller o superior"),
         kpi_box("Educación superior", fmt_pct(pct_sup), "universitaria o más"),
         kpi_box("Analfabetismo", fmt_pct(analf), "población 15+ años"),
-        kpi_box("Ingreso universitario", fmt_pesos(ing_u), "promedio mensual"),
-        kpi_box("Personas", fmt_num(sum(d$personas)))
+        kpi_box("Ingreso universitario", fmt_pesos(ing_u), "promedio mensual")
       )
     })
 
