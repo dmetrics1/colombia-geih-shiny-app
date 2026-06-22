@@ -322,10 +322,11 @@ table.dataTable tbody tr:hover td{background:rgba(6,182,212,.06)!important;}
   .kpi-row .row::before, .kpi-row .row::after{display:none!important;}
   .kpi-row .row > [class*="col-"]{width:auto!important; max-width:none!important;
     padding:0!important; margin:0!important; display:block;}
-  .kpi-row .kpi{height:100%; margin-bottom:0; padding:13px 14px; justify-content:flex-start;}
-  .kpi .kpi-value{font-size:clamp(20px,6.2vw,30px);}
-  .kpi .kpi-label{font-size:10.5px; letter-spacing:.3px;}
-  .kpi .kpi-sub{font-size:10px;} .kpi .kpi-delta{font-size:11px;}
+  .kpi-row .kpi{height:100%; margin-bottom:0; padding:16px 15px; justify-content:center;}
+  .kpi .kpi-label{font-size:11px; letter-spacing:.3px; line-height:1.25; min-height:2.5em;
+    display:flex; align-items:flex-end;}
+  .kpi .kpi-value{font-size:clamp(23px,7vw,32px); margin-top:6px;}
+  .kpi .kpi-sub{font-size:10.5px; margin-top:6px;} .kpi .kpi-delta{font-size:11px;}
   .hero{padding-top:6px;} .hero-title{font-size:clamp(26px,8vw,40px);}
   .panel-title{font-size:21px;} .landing{padding:0;}
 }
