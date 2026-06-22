@@ -316,17 +316,21 @@ table.dataTable tbody tr:hover td{background:rgba(6,182,212,.06)!important;}
   body.sidebar-open .mobile-toggle{display:none!important;}
   /* Contenido a todo el ancho */
   .content-wrapper,.right-side{margin-left:0!important; padding:64px 12px 18px!important;}
-  /* KPIs en grilla 2 por fila */
-  .kpi-row .row{display:grid!important; grid-template-columns:1fr 1fr; gap:12px;}
+  /* KPIs en grilla 2 por fila, compactos */
+  .kpi-row .row{display:grid!important; grid-template-columns:1fr 1fr; gap:10px;}
+  /* sin celdas fantasma del clearfix de Bootstrap (::before/::after) */
+  .kpi-row .row::before, .kpi-row .row::after{display:none!important;}
   .kpi-row .row > [class*="col-"]{width:auto!important; max-width:none!important;
     padding:0!important; margin:0!important; display:block;}
-  .kpi-row .kpi{height:100%; margin-bottom:0;}
+  .kpi-row .kpi{height:100%; margin-bottom:0; padding:13px 14px; justify-content:flex-start;}
+  .kpi .kpi-value{font-size:clamp(20px,6.2vw,30px);}
+  .kpi .kpi-label{font-size:10.5px; letter-spacing:.3px;}
+  .kpi .kpi-sub{font-size:10px;} .kpi .kpi-delta{font-size:11px;}
   .hero{padding-top:6px;} .hero-title{font-size:clamp(26px,8vw,40px);}
   .panel-title{font-size:21px;} .landing{padding:0;}
 }
 @media (max-width:600px){
-  /* Filtros apilados y KPIs en 1 columna */
+  /* Filtros apilados (los KPIs se mantienen en grilla 2 por fila) */
   .filtros-row{flex-direction:column; align-items:stretch;}
   .filtros-row > div{min-width:0;} .filtro-clear{margin-top:6px;}
-  .kpi-row .row{grid-template-columns:1fr!important;}
 }

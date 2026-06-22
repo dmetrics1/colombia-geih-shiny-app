@@ -43,7 +43,7 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=10"),
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=12"),
       tags$script(HTML(paste(
         "$(document).on('click', '.mobile-toggle', function(e){ e.preventDefault(); document.body.classList.toggle('sidebar-open'); });",
         "$(document).on('click', '.sidebar-backdrop, .sidebar-menu a', function(){ document.body.classList.remove('sidebar-open'); });",
