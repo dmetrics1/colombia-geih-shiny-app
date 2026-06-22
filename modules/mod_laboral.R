@@ -7,6 +7,8 @@ laboralUI <- function(id) {
   ns <- NS(id)
   tagList(
     uiOutput(ns("kpis")),
+    fluidRow(column(12, tendencia_card(ns("tendencia"),
+                    "Tasas laborales 2022–2025 (TGP · TO · TD, trimestral)"))),
     fluidRow(
       column(5, div(class = "card-panel",
                     div(class = "card-title", "Tasas por sexo"),
@@ -22,9 +24,7 @@ laboralUI <- function(id) {
       column(5, div(class = "card-panel",
                     div(class = "card-title", "Ingreso laboral por sexo"),
                     plotlyOutput(ns("brecha"), height = "430px")))
-    ),
-    fluidRow(column(12, tendencia_card(ns("tendencia"),
-                    "Tasas laborales 2022–2025 (TGP · TO · TD, trimestral)")))
+    )
   )
 }
 

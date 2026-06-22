@@ -27,14 +27,22 @@ demografiaUI <- function(id) {
 demografiaServer <- function(id, ctx) {
   moduleServer(id, function(input, output, session) {
 
-    # KPIs
+    # KPIs: población total + estructura de edad
     output$kpis <- renderUI({
-      d <- filtrar("sexo", ctx())
-      if (!nrow(d)) return(NULL)
+      ds <- filtrar("sexo", ctx())
+      dp <- filtrar("piramide", ctx())
+      if (!nrow(ds) || !nrow(dp)) return(NULL)
+      ag <- dp[, .(p = sum(personas)), by = grupo_edad]
+      tot   <- sum(ag$p)
+      menor <- sum(ag[grupo_edad %in% c("0-4", "5-9", "10-14"), p])
+      mayor <- sum(ag[grupo_edad %in% c("65-69", "70-74", "75-79", "80-84", "85+"), p])
+      activa <- tot - menor - mayor
+      dep <- (menor + mayor) / activa * 100
       kpi_row(
-        kpi_box("Población", fmt_num(sum(d$personas)), "promedio mensual"),
-        kpi_box("Hombres", fmt_pct(d[sexo == "Hombre", pct])),
-        kpi_box("Mujeres", fmt_pct(d[sexo == "Mujer", pct]))
+        kpi_box("Población", fmt_num(sum(ds$personas)), "promedio mensual"),
+        kpi_box("Menores de 15", fmt_pct(menor / tot * 100), "de la población"),
+        kpi_box("Adultos mayores (65+)", fmt_pct(mayor / tot * 100)),
+        kpi_box("Razón de dependencia", format(round(dep, 1)), "por 100 en edad activa")
       )
     })
 
