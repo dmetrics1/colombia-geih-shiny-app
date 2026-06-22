@@ -1,139 +1,95 @@
-# Guía de reproducibilidad
+# Guía de reproducibilidad — v2 (2022–2025)
 
-Este repositorio es **liviano por diseño**: versiona únicamente el código. Los microdatos de la
-GEIH (`datos/`) y el consolidado (`geih_complete.csv`) están en [`.gitignore`](../.gitignore) y se
-**regeneran** desde los microdatos públicos del DANE. Así el repo permanece limpio, clonable y
-reproducible desde fuentes públicas — el estándar para el artefacto de un artículo científico.
+El repositorio versiona **solo el código** y los **agregados ligeros** (`agregados.rds`). Los
+microdatos de la GEIH (`datos/geih_AAAA.csv`, ~2.5 GB) están en [`.gitignore`](../.gitignore) y se
+**descargan del DANE**. Toda la cadena es reproducible desde fuentes públicas.
 
 ---
 
 ## 1. Requisitos
 
-- **R 4.0+** (probado con `data.table`, `shiny`, `plotly`).
-- Dependencias:
+- **R 4.5+**. Dependencias:
 
 ```r
-install.packages(c(
-  "shiny", "shinydashboard", "plotly", "ggplot2", "dplyr", "tidyr",
-  "data.table", "DT", "viridis", "paletteer", "RColorBrewer",
-  "openxlsx", "reshape2", "bit64", "scales"
-))
+install.packages(c("shiny", "shinydashboard", "plotly", "data.table",
+                   "DT", "openxlsx", "readxl"))
 ```
-
----
 
 ## 2. Descargar los microdatos del DANE
 
-1. Entra a **[microdatos.dane.gov.co](https://microdatos.dane.gov.co)** y busca la
-   **Gran Encuesta Integrada de Hogares (GEIH) 2024**.
-2. Descarga los **12 meses** del año (enero a diciembre), cada mes con sus módulos en formato CSV.
-3. Colócalos en `datos/<mes>/` usando nombres de mes en minúscula y en español:
+1. En **[microdatos.dane.gov.co](https://microdatos.dane.gov.co)**, busca la **GEIH** y descarga
+   los años **2022, 2023, 2024 y 2025** (consolidados por año).
+2. Colócalos como:
 
 ```
 datos/
-├── enero/
-│   ├── Caracteristicas generales (Personas).CSV
-│   ├── Ocupados.CSV
-│   ├── Desocupados.CSV
-│   ├── Vivienda y hogares.CSV
-│   └── ...  (resto de módulos del mes)
-├── febrero/
-│   └── ...
-├── ...
-└── diciembre/
-    └── ...
+├── geih_2022.csv
+├── geih_2023.csv
+├── geih_2024.csv
+└── geih_2025.csv
 ```
 
-> **Cómo se leen las carpetas.** `geih_completed()` recorre **todas las subcarpetas presentes**
-> en `datos/` con `list.dirs(...)` y, dentro de cada mes, une **todos los `*.csv`** con
-> `list.files(...)`. No hay una lista fija de meses ni de módulos: el pipeline procesa lo que
-> encuentre. Si solo colocas algunos meses, el consolidado tendrá solo esos meses.
+Cada archivo trae las ~520 columnas de la GEIH (todas las personas/hogares del año), incluido el
+factor de expansión `FEX_C18` y la variable de mes `MES`.
 
----
-
-## 3. El pipeline de consolidación
+## 3. Pipeline de datos
 
 ```
-datos/<mes>/*.csv
-      │
-      │  funciones/join_geih.R
-      │  ├─ merge_month(month)   → une los módulos de UN mes por las llaves
-      │  │                          DIRECTORIO, SECUENCIA_P, ORDEN, HOGAR, FEX_C18
-      │  └─ geih_completed()     → apila (rbindlist) los 12 meses en un solo data.table
-      ▼
-preparacion/preparacion.R
-      ├─ recodifica departamentos (DPTO → nombre), variables y categorías
-      └─ fwrite(...) ───────────► geih_complete.csv      ← ¡aquí se ESCRIBE el archivo!
-      ▼
-app.R
-      ├─ fread("geih_complete.csv")
-      └─ source(caracterizacion_nacional.R / _departamento.R) → UI + server
+datos/geih_AAAA.csv
+   │  preparacion/cargar_anios.R   cargar_serie(): lee los 4 CSV, selecciona ~45 variables,
+   │                               añade ANIO y los apila (rbindlist).
+   │  R/recodes.R                  etiquetar_geih(): recodifica códigos → etiquetas legibles
+   │                               (departamento, sexo, nivel educativo, rama, materiales…).
+   │  R/indicadores.R              calcula cada indicador en su UNIDAD correcta (persona/hogar/
+   │                               vivienda), ponderado por FEX_C18.
+   │  R/aggregate.R                ponderación: n_periodos() = nº real de meses (divisor dinámico).
+   ▼
+preparacion/agregar.R  ──►  agregados.rds   (tabla por indicador, clave: anio × geo × migrante;
+                                             + serie_trim trimestral para tendencias)
+   ▼
+app.R / global.R  ──►  la app solo LEE y FILTRA agregados.rds (sin microdato en memoria)
 ```
 
-> ⚠️ **Importante:** En `funciones/join_geih.R` la línea `fwrite(...)` está **comentada** a
-> propósito; ese script solo *define* las funciones de unión y apilado. **Quien escribe
-> `geih_complete.csv` en disco es `preparacion/preparacion.R`** (`fwrite(geih1, "geih_complete.csv", sep = "\t")`).
-
-### Ejecución
+### Regenerar los agregados
 
 ```r
-# Desde la raíz del repositorio
-source("funciones/join_geih.R")      # define merge_month() y geih_completed()
-source("preparacion/preparacion.R")  # recodifica y ESCRIBE geih_complete.csv
-shiny::runApp()                      # app.R lee geih_complete.csv
+# Desde la raíz del repo (R 4.5)
+source("preparacion/agregar.R")   # sourcea aggregate/recodes/indicadores/cargar_anios y
+                                  # escribe agregados.rds (~0.4 MB). Tarda ~4–5 min (lee 2.5 GB).
 ```
 
----
-
-## 4. Notas operativas
-
-- **Llaves de unión:** `DIRECTORIO`, `SECUENCIA_P`, `ORDEN`, `HOGAR`, `FEX_C18`. En cada `merge`
-  se conservan las columnas comunes (`.x`) y se descartan las duplicadas (`.y`).
-- **Factor de expansión:** `FEX_C18` se usa como llave y como ponderador para las estimaciones
-  poblacionales; no lo elimines de los módulos.
-- **Tamaño:** el consolidado de 12 meses ronda ~90 MB. Por eso no se versiona.
-- **Separador:** `geih_complete.csv` se escribe con tabulador (`sep = "\t"`); `fread` lo
-  autodetecta al leerlo en `app.R`.
-
----
-
-## 4b. Ponderación con divisor dinámico (v2)
-
-La GEIH es una **encuesta mensual**. Al sumar `FEX_C18` sobre N meses se obtiene **N veces** la
-población media mensual, así que para estimar el promedio mensual hay que **dividir por N**.
-
-> ⚠️ El código v1 dividía por un **`7` fijo** (32 veces). Con 12 meses eso **infla las cifras
-> ×12/7 ≈ 1.71** (p. ej. población 2024 saldría 88 M en vez de 51.5 M). Regla del instructivo §14:
-> nunca dividir por un número fijo.
-
-La v2 centraliza la lógica en [`R/aggregate.R`](../R/aggregate.R) con un divisor **dinámico**:
+### Lanzar la app
 
 ```r
-n_periodos(dt)   # uniqueN(MES); o combinaciones ANIO×MES si la serie es multi-año (p. ej. 48)
-poblacion_ponderada(dt)        # sum(FEX_C18) / n_periodos(dt)
-conteo_ponderado(dt, by = ...) # personas por grupo, mismo divisor
+shiny::runApp()   # global.R carga agregados.rds y los módulos
 ```
 
-- En **conteos de personas** (estado civil, educación, vivienda, salud…) se aplica el divisor.
-- En **razones** (tasa de desempleo/ocupación, porcentajes) el divisor **se cancela**: no se aplica.
-- Validado: 2024 → 51.551.004 (coincide con `tests/baseline_2024.csv`); serie 2022-2025 → 48 periodos.
+## 4. Ponderación y unidad de análisis (reglas clave)
 
----
+- **Factor de expansión:** siempre `FEX_C18`. Los conteos se expresan como **promedio mensual**:
+  `Σ FEX_C18 / n_meses` (divisor = nº real de meses del periodo, p. ej. 12 en un año). En **tasas
+  y porcentajes** el divisor se cancela.
+- **Unidad por indicador:**
+  - **Persona** — demografía, educación, salud, mercado laboral, migración.
+  - **Hogar** (`P6050 == 1`, jefe de hogar) — tenencia, servicios, materiales, sanitario.
+  - **Vivienda** (`P6050 == 1 & HOGAR == 1`, 1 por `DIRECTORIO`) — conteo de viviendas.
+- Detalle por indicador en [`INDICADORES.md`](INDICADORES.md).
 
-## 5. Credenciales y despliegue
-
-Las credenciales de **shinyapps.io** **nunca** se versionan. Están cubiertas por `.gitignore`
-(`clave.R`, `.Renviron`) y se leen de variables de entorno:
+## 5. Validación
 
 ```r
-rsconnect::setAccountInfo(
-  name   = Sys.getenv("SHINYAPPS_NAME"),
-  token  = Sys.getenv("SHINYAPPS_TOKEN"),
-  secret = Sys.getenv("SHINYAPPS_SECRET")
-)
+Rscript tests/auditoria_valores.R   # agregados == microdato + coherencia interna + rangos DANE
+```
+
+## 6. Credenciales y despliegue
+
+Las credenciales de **shinyapps.io** **nunca** se versionan (`clave.R`, `.Renviron` en `.gitignore`);
+se leen de variables de entorno. Ver [`SECURITY_TODO.md`](SECURITY_TODO.md) — **rotación de token
+pendiente** antes de redesplegar.
+
+```r
+rsconnect::setAccountInfo(name = Sys.getenv("SHINYAPPS_NAME"),
+                          token = Sys.getenv("SHINYAPPS_TOKEN"),
+                          secret = Sys.getenv("SHINYAPPS_SECRET"))
 rsconnect::deployApp()
 ```
-
-> 🔐 **Seguridad:** si un token estuvo alguna vez en el historial de git o en un archivo
-> versionado, **rótalo** en shinyapps.io (*Account → Tokens → Remove* y genera uno nuevo).
-> Borrarlo del archivo no lo elimina del historial.

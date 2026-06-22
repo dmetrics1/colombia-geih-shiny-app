@@ -1,5 +1,11 @@
 # Roadmap — Colombia GEIH Shiny App v2
 
+> ✅ **Registro histórico.** La v2 (2022–2025) está **entregada**: datos multi-año, arquitectura de
+> pre-agregación, refactor modular, diseño de marca, hoja de inicio, indicadores ampliados y
+> auditoría de valores. Pendiente operativo: rotar token y redesplegar (ver `SECURITY_TODO.md`).
+> Documentación de referencia: [`README.md`](../README.md) · [`INDICADORES.md`](INDICADORES.md) ·
+> [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md). Este documento conserva el plan por fases original.
+
 Plan por fases para llevar el proyecto a un nivel superior: **datos GEIH 2022–2025 con eje
 temporal**, código refactorizado y limpio, arquitectura escalable y un diseño moderno.
 
