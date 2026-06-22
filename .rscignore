@@ -1,0 +1,15 @@
+# Archivos que NO se suben a shinyapps.io (la app solo necesita
+# app.R, global.R, R/, modules/, www/ y agregados.rds)
+datos/
+metodologia_geih/
+docs/
+tests/
+preparacion/
+.git/
+.Rproj.user/
+shiny-app.Rproj
+.rprofile
+clave.R
+.Renviron
+README.md
+LICENSE
