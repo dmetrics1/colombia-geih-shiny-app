@@ -14,3 +14,7 @@ geih_complete.csv
 
 # Copias de trabajo / scratch
 tes/
+
+# Artefactos locales de desarrollo / preview (rutas específicas de la máquina)
+.claude/launch.json
+tests/_*.R

@@ -1,46 +1,63 @@
 ############################################################
-# R/plot_theme.R — Tema visual centralizado para plotly
-#
-# Extrae el estilo repetido en los 12 gráficos de app.R
-# (fondo #013B63, fuentes blancas en negrita, márgenes) a
-# una sola función reutilizable.
+# R/plot_theme.R — Tema visual de marca para plotly
+# Identidad "Premium Dark Tech" de Daniel Molina.
+# (Tokens espejo de personal_landing/colores_paleta.md)
 ############################################################
 suppressMessages(library(plotly))
 
-# Paleta azul secuencial del dashboard.
-PALETA <- c("#B4D4DAFF","#A9D2DCFF","#9ECFDDFF","#93CDDFFF","#86CAE1FF",
-            "#7AC7E2FF","#76C1DFFF","#72BCDCFF","#6EB6D9FF","#6AB1D6FF",
-            "#64AAD2FF","#5BA2CCFF","#529AC6FF","#4993C0FF","#3F8BBAFF",
-            "#3885B6FF","#3281B5FF","#2D7DB4FF","#2678B3FF","#1F74B1FF",
-            "#1C6FAEFF","#1C6AA8FF","#1C65A3FF","#1C5F9EFF","#1C5A99FF")
-COLOR_FONDO   <- "#013B63"
-COLOR_SEXO    <- c(Hombre = PALETA[10], Mujer = PALETA[20])
+# --- Tokens de marca --------------------------------------------------------
+BRAND <- list(
+  bg          = "#0A0E1A",
+  surface_1   = "#0F1729",
+  surface_alt = "#131C31",
+  surface_2   = "#18233C",
+  surface_3   = "#202D4E",
+  violet      = "#1E40AF",
+  primary     = "#2563EB",
+  cyan        = "#06B6D4",
+  accent      = "#10B981",
+  text_title  = "#F9FAFB",
+  text_body   = "#E5E7EB",
+  text_muted  = "#9CA3AF",
+  grid        = "rgba(255,255,255,0.06)",
+  zero        = "rgba(255,255,255,0.14)"
+)
+FUENTE <- "Inter, system-ui, -apple-system, sans-serif"
 
-# Fuente blanca en negrita (reutilizada en ejes/leyenda).
-.fuente_blanca <- function(size = 12) list(size = size, color = "white", family = "bold")
+# Paleta secuencial del gradiente de marca (violet -> primary -> cyan)
+PALETA   <- colorRampPalette(c(BRAND$violet, BRAND$primary, BRAND$cyan))(9)
+paleta_n <- function(n) colorRampPalette(c(BRAND$violet, BRAND$primary, BRAND$cyan))(max(n, 2))
 
-# Aplica el tema común a un gráfico plotly.
-#   x_title, y_title: títulos de ejes (opcionales).
-#   x_format: formato de ticks del eje X (p. ej. ",", ".0%").
-tema_plotly <- function(p, x_title = "", y_title = "",
-                        x_format = NULL, x_range = NULL, margin_l = 120) {
-  p %>% layout(
-    xaxis = list(title = x_title, tickformat = x_format, range = x_range,
-                 tickfont = .fuente_blanca(), titlefont = .fuente_blanca(14)),
-    yaxis = list(title = y_title, automargin = TRUE,
-                 tickfont = .fuente_blanca(), titlefont = .fuente_blanca(14)),
-    legend = list(font = .fuente_blanca()),
-    plot_bgcolor  = COLOR_FONDO,
-    paper_bgcolor = COLOR_FONDO,
-    margin = list(l = margin_l, r = 40, t = 30, b = 40)
+# Colores por sexo
+COLOR_SEXO <- c(Hombre = BRAND$primary, Mujer = BRAND$cyan)
+
+# Compatibilidad: fondo usado por módulos antiguos (ahora transparente)
+COLOR_FONDO <- "rgba(0,0,0,0)"
+
+.f <- function(color = BRAND$text_body, size = 12) list(family = FUENTE, color = color, size = size)
+
+# Aplica el tema de marca a un gráfico plotly.
+# xaxis/yaxis: listas con overrides puntuales (se fusionan con el estilo base).
+aplicar_tema <- function(p, xaxis = list(), yaxis = list(),
+                         legend = list(), margin = list(l = 80, r = 24, t = 16, b = 40),
+                         barmode = NULL) {
+  base_x <- list(gridcolor = BRAND$grid, zerolinecolor = BRAND$zero, zerolinewidth = 1,
+                 linecolor = BRAND$grid, tickfont = .f(BRAND$text_muted), titlefont = .f(BRAND$text_body, 13))
+  base_y <- list(gridcolor = BRAND$grid, zerolinecolor = BRAND$zero,
+                 tickfont = .f(BRAND$text_body), titlefont = .f(BRAND$text_body, 13), automargin = TRUE)
+  layout(p,
+    font          = .f(),
+    xaxis         = modifyList(base_x, xaxis),
+    yaxis         = modifyList(base_y, yaxis),
+    legend        = modifyList(list(font = .f(), bgcolor = "rgba(0,0,0,0)"), legend),
+    barmode       = barmode,
+    plot_bgcolor  = "rgba(0,0,0,0)",
+    paper_bgcolor = "rgba(0,0,0,0)",
+    margin        = margin,
+    hoverlabel    = list(font = list(family = FUENTE, color = "#fff"),
+                         bgcolor = BRAND$surface_2, bordercolor = BRAND$cyan)
   )
 }
 
-# Barra horizontal estándar (personas por categoría).
-barra_horizontal <- function(data, x, y, color = NULL) {
-  plot_ly(data, x = x, y = y, color = color, colors = PALETA,
-          type = "bar", orientation = "h",
-          text = ~format(round(x, 0), big.mark = ","), textposition = "auto",
-          textfont = .fuente_blanca(14), hoverinfo = "text",
-          marker = list(line = list(color = "black", width = 1)))
-}
+# Quita la barra de herramientas de plotly (look más limpio).
+sin_barra <- function(p) config(p, displayModeBar = FALSE)

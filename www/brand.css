@@ -1,0 +1,201 @@
+/* ============================================================
+   brand.css — Identidad "Premium Dark Tech" de Daniel Molina
+   Override de shinydashboard hacia estética Fintech Dashboard.
+   ============================================================ */
+:root{
+  --bg:#0A0E1A; --s1:#0F1729; --s1alt:#131C31; --s2:#18233C; --s3:#202D4E;
+  --violet:#1E40AF; --primary:#2563EB; --cyan:#06B6D4; --accent:#10B981;
+  --t-title:#F9FAFB; --t-body:#E5E7EB; --t-muted:#9CA3AF;
+  --card-border:rgba(255,255,255,.06);
+  --grad:linear-gradient(135deg,#1E40AF 0%,#2563EB 50%,#06B6D4 100%);
+  --radius:14px; --shadow:0 15px 35px rgba(0,0,0,.35);
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+/* Base ----------------------------------------------------------------- */
+body,.wrapper,.content-wrapper,.right-side{
+  background:var(--bg)!important; color:var(--t-body);
+  font-family:var(--font)!important;
+}
+.content-wrapper{background:
+  radial-gradient(1200px 600px at 80% -10%, rgba(6,182,212,.08), transparent 60%),
+  radial-gradient(900px 500px at -10% 10%, rgba(37,99,235,.10), transparent 55%),
+  var(--bg)!important;}
+*{font-family:var(--font);}
+h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
+
+/* Header --------------------------------------------------------------- */
+.main-header .logo{
+  background:var(--s1)!important; color:var(--t-title)!important;
+  font-family:var(--font)!important; font-weight:800; letter-spacing:.3px;
+  font-size:17px; line-height:50px; white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis; text-align:left; padding:0 14px!important;
+  border-bottom:1px solid var(--card-border);
+}
+.main-header .navbar{background:var(--s1)!important; border-bottom:1px solid var(--card-border);}
+.main-header .navbar .sidebar-toggle{color:var(--t-muted)!important;}
+.main-header .navbar .sidebar-toggle:hover{color:var(--cyan)!important; background:transparent!important;}
+.skin-blue .main-header .logo:hover{background:var(--s1)!important;}
+
+/* Subrayado de gradiente PEGADO al header (el header es fixed -> no se mueve) */
+.main-header{position:relative;}
+.main-header:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;
+  background:var(--grad);opacity:.95;}
+
+/* Sidebar -------------------------------------------------------------- */
+.main-sidebar,.left-side{background:var(--s1)!important; border-right:1px solid var(--card-border);}
+
+/* Menú estilo "píldora" redondeada (ocupa el medio y scrollea si es largo) */
+.sidebar-menu{padding:6px 0; flex:1 1 auto; overflow-y:auto; overflow-x:hidden;}
+.sidebar-menu>li{margin:5px 12px;}
+.sidebar-menu>li>a{
+  color:var(--t-muted)!important; font-weight:600; font-size:14.5px;
+  border-radius:12px!important; padding:12px 14px!important;
+  display:flex; align-items:center; gap:12px;
+  border:1px solid transparent!important; transition:all .15s ease;
+}
+.sidebar-menu>li>a .fa,.sidebar-menu>li>a .glyphicon,.sidebar-menu>li>a svg{
+  color:var(--t-muted); font-size:16px; width:20px; text-align:center; margin:0;}
+.sidebar-menu>li:hover>a{background:var(--s2)!important; color:var(--t-title)!important;}
+.sidebar-menu>li:hover>a .fa{color:var(--t-body);}
+.sidebar-menu>li.active>a{
+  background:linear-gradient(135deg, var(--primary), var(--cyan))!important;
+  border:1px solid transparent!important; color:#fff!important;
+  box-shadow:0 8px 22px rgba(6,182,212,.28);
+}
+.sidebar-menu>li.active>a .fa{color:#fff;}
+
+/* Cabecera de marca: logo solo arriba, texto centrado debajo */
+.sb-brand{display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:4px; padding:24px 16px 16px;}
+.sb-logo{width:62px; max-width:62px; opacity:.97; margin-bottom:8px;}
+.sb-title{color:var(--t-title); font-weight:800; font-size:17px; line-height:1.2;}
+.sb-tag{color:var(--t-muted); font-size:10.5px; letter-spacing:2.5px; text-transform:uppercase; margin-top:2px;}
+.sb-divider{height:1px; background:var(--card-border); margin:6px 18px;}
+.sb-section{color:var(--t-muted); font-size:11px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; padding:10px 22px 6px;}
+
+/* Footer: fila de botones (LinkedIn, GitHub, modo) — siempre al fondo */
+.sidebar-footer{flex:0 0 auto; margin-top:auto; padding:14px 18px 18px; background:var(--s1);
+  border-top:1px solid var(--card-border);}
+.sb-actions{display:flex; gap:10px; justify-content:space-between;}
+.sb-act{flex:1; height:44px; display:flex; align-items:center; justify-content:center;
+  border-radius:12px; background:var(--s2); border:1px solid var(--card-border);
+  color:var(--t-muted)!important; font-size:16px; transition:all .15s ease; cursor:pointer;}
+.sb-act:hover{color:var(--cyan)!important; border-color:rgba(6,182,212,.45); background:var(--s3);}
+.sidebar-collapse .sb-title,.sidebar-collapse .sb-tag,.sidebar-collapse .sb-section,
+.sidebar-collapse .sb-divider,.sidebar-collapse .sidebar-footer{display:none;}
+
+/* Estado colapsado: solo iconos, centrados; ocultar footer */
+.sidebar-collapse .sidebar-menu>li>a{justify-content:center; padding:12px 0!important;}
+.sidebar-collapse .brand-sub,.sidebar-collapse .sidebar-footer{display:none;}
+.sidebar-collapse .brand-logo img{width:70%;}
+
+/* === Sin header: sidebar FLOTANTE de tope a tope ====================== */
+.main-header{display:none!important;}
+.main-sidebar{
+  position:fixed!important;
+  top:16px!important; left:16px!important;
+  height:calc(100vh - 32px)!important;
+  min-height:0!important; max-height:calc(100vh - 32px)!important;
+  border-radius:22px!important;
+  border:1px solid var(--card-border)!important;
+  box-shadow:0 20px 50px rgba(0,0,0,.55)!important;
+  overflow:hidden!important;
+  background:var(--s1)!important;
+}
+/* El panel es una columna fija: marca / menú (scrollea) / footer (siempre abajo) */
+.sidebar{padding-top:6px!important; height:100%!important; min-height:0!important;
+  display:flex!important; flex-direction:column; position:relative;}
+/* El contenido sube (no hay header) y respeta el panel flotante */
+.content-wrapper,.right-side{
+  margin-left:266px!important; margin-top:0!important; padding-top:16px!important;
+  min-height:100vh;
+}
+.main-sidebar .sidebar-footer{border-radius:0 0 22px 22px;}
+
+/* Botón de colapsar dentro del sidebar */
+.sb-toggle{position:absolute; top:14px; right:14px; width:34px; height:34px; z-index:5;
+  display:flex; align-items:center; justify-content:center; border-radius:10px;
+  border:1px solid var(--card-border); background:var(--s2); color:var(--t-muted);
+  cursor:pointer; transition:all .15s ease;}
+.sb-toggle:hover{color:var(--cyan); border-color:rgba(6,182,212,.45);}
+
+/* Colapsado: panel angosto, sigue flotando, toggle centrado */
+.sidebar-collapse .content-wrapper,.sidebar-collapse .right-side{margin-left:90px!important;}
+.sidebar-collapse .main-sidebar{width:58px!important;}
+.sidebar-collapse .sb-toggle{right:auto; left:50%; transform:translateX(-50%); top:12px;}
+
+/* Tarjetas (card-panel) y boxes --------------------------------------- */
+.card-panel,.box{
+  background:var(--s1alt)!important; border:1px solid var(--card-border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+  padding:16px 18px; margin-bottom:22px; position:relative;
+}
+/* Borde superior degradado con sus propias esquinas redondeadas
+   (así no hace falta overflow:hidden, que recortaba los dropdowns). */
+.card-panel:before,.box:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad);opacity:.9;border-radius:var(--radius) var(--radius) 0 0;}
+.card-title{color:var(--t-title); font-weight:700; font-size:16px; margin:2px 0 12px;
+  display:flex; align-items:center; gap:8px;}
+.card-title:before{content:"";width:8px;height:8px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 10px var(--cyan);}
+.box{padding:0;}
+.box-header{border:0!important; padding:14px 18px 4px;}
+.box-header .box-title{color:var(--t-title)!important; font-weight:700; font-size:15px;}
+.box-body{padding:8px 18px 16px;}
+
+/* KPIs ---------------------------------------------------------------- */
+.kpi{background:var(--s1alt);border:1px solid var(--card-border);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.kpi:before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--grad);}
+.kpi .kpi-label{color:var(--t-muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;}
+.kpi .kpi-value{color:var(--cyan);font-size:30px;font-weight:800;line-height:1.1;margin-top:4px;}
+.kpi .kpi-delta{font-size:12px;font-weight:600;margin-top:2px;}
+.kpi .up{color:var(--accent);} .kpi .down{color:#F87171;}
+
+/* Inputs --------------------------------------------------------------- */
+.form-control,.selectize-input,
+.shiny-input-container .form-control{
+  background:var(--s2)!important; color:var(--t-body)!important;
+  border:1px solid var(--card-border)!important; border-radius:10px!important;
+  box-shadow:none!important;
+}
+.selectize-input.focus,.form-control:focus{border-color:var(--cyan)!important;
+  box-shadow:0 0 0 2px rgba(6,182,212,.25)!important;}
+.selectize-input>.item,.selectize-input>input{color:var(--t-body)!important;}
+.control-label,label{color:var(--t-body)!important; font-weight:600;}
+
+/* Fila de filtros compacta (4 en una línea) */
+.filtros .form-group{margin-bottom:0!important;}
+.filtros .shiny-input-container{width:100%!important;}
+.filtros .control-label{font-size:13px; margin-bottom:4px;}
+.selectize-control .selectize-input:after{border-color:var(--t-muted) transparent transparent!important;}
+
+/* Menú desplegable de opciones (el que no se veía) */
+.selectize-dropdown,.selectize-dropdown.form-control{
+  background:var(--s2)!important; border:1px solid var(--card-border)!important;
+  border-radius:10px!important; box-shadow:var(--shadow)!important; z-index:9999!important;
+}
+.selectize-dropdown .option,
+.selectize-dropdown [data-selectable]{
+  color:var(--t-body)!important; background:transparent!important; padding:8px 12px;
+}
+.selectize-dropdown .option:hover,
+.selectize-dropdown .option.active,
+.selectize-dropdown [data-selectable].active{
+  background:var(--primary)!important; color:#fff!important;
+}
+/* Fallback para <select> nativo (sin selectize) */
+select.form-control option{background:var(--s2)!important; color:var(--t-body)!important;}
+
+/* DataTable ------------------------------------------------------------ */
+.dataTables_wrapper{color:var(--t-body);}
+table.dataTable tbody td{color:var(--t-body);}
+table.dataTable thead th{color:var(--t-title);border-color:var(--card-border)!important;}
+
+/* Scrollbar ------------------------------------------------------------ */
+::-webkit-scrollbar{width:10px;height:10px;}
+::-webkit-scrollbar-track{background:var(--s1);}
+::-webkit-scrollbar-thumb{background:var(--s3);border-radius:8px;}
+::-webkit-scrollbar-thumb:hover{background:var(--primary);}
