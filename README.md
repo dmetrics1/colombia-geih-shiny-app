@@ -22,6 +22,18 @@ y venezolana** en demografía, educación, mercado laboral, vivienda, salud y mi
 
 ---
 
+## 📸 Capturas
+
+| Hoja de inicio | Demografía |
+|:---:|:---:|
+| ![Inicio](docs/screenshots/inicio.png) | ![Demografía](docs/screenshots/demografia.png) |
+
+**Mercado laboral**
+
+![Mercado laboral](docs/screenshots/mercado-laboral.png)
+
+---
+
 ## ✨ Funcionalidades
 
 - **Hoja de inicio** institucional (objetivo, metodología, guía de uso).
