@@ -15,6 +15,14 @@ laboralUI <- function(id) {
                     div(class = "card-title", "Tipo de trabajo"),
                     plotlyOutput(ns("tipo"), height = "420px")))
     ),
+    fluidRow(
+      column(7, div(class = "card-panel",
+                    div(class = "card-title", "Rama de actividad económica"),
+                    plotlyOutput(ns("rama"), height = "430px"))),
+      column(5, div(class = "card-panel",
+                    div(class = "card-title", "Ingreso laboral por sexo"),
+                    plotlyOutput(ns("brecha"), height = "430px")))
+    ),
     fluidRow(column(12, tendencia_card(ns("tendencia"),
                     "Tasas laborales 2022–2025 (TGP · TO · TD, trimestral)")))
   )
@@ -26,11 +34,13 @@ laboralServer <- function(id, ctx) {
     output$kpis <- renderUI({
       d <- filtrar("laboral", ctx())
       if (!nrow(d)) return(NULL)
-      td <- sum(d$desocupados) / sum(d$fuerza_trabajo) * 100
-      to <- sum(d$ocupados) / sum(d$pet) * 100
+      td  <- sum(d$desocupados) / sum(d$fuerza_trabajo) * 100
+      to  <- sum(d$ocupados) / sum(d$pet) * 100
+      tgp <- sum(d$fuerza_trabajo) / sum(d$pet) * 100
       kpi_row(
-        kpi_box("Tasa de desempleo", fmt_pct(td)),
-        kpi_box("Tasa de ocupación", fmt_pct(to)),
+        kpi_box("Tasa de participación", fmt_pct(tgp), "TGP"),
+        kpi_box("Tasa de ocupación", fmt_pct(to), "TO"),
+        kpi_box("Tasa de desempleo", fmt_pct(td), "TD"),
         kpi_box("Ocupados", fmt_num(sum(d$ocupados)), "promedio mensual")
       )
     })
@@ -77,6 +87,40 @@ laboralServer <- function(id, ctx) {
         aplicar_tema(xaxis = list(title = ""), yaxis = list(title = "%", ticksuffix = "%"),
                      legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.12),
                      margin = list(l = 50, r = 20, t = 28, b = 30), barmode = "group") %>% sin_barra()
+    })
+
+    # Rama de actividad económica (ocupados)
+    output$rama <- renderPlotly({
+      d <- filtrar("rama_economica", ctx())[order(personas)]
+      validate(need(nrow(d) > 0, "Sin datos para esta selección"))
+      plot_ly(x = d$personas, y = factor(d$rama_actividad, levels = d$rama_actividad),
+              type = "bar", orientation = "h",
+              marker = list(color = d$personas,
+                            colorscale = list(c(0, BRAND$violet), c(1, BRAND$cyan)), line = list(width = 0)),
+              text = format(round(d$personas), big.mark = ","), textposition = "auto",
+              textfont = list(color = "#fff", family = FUENTE),
+              hovertemplate = "%{y}: %{x:,.0f} ocupados<extra></extra>") %>%
+        aplicar_tema(xaxis = list(title = "Ocupados"), yaxis = list(title = ""),
+                     margin = list(l = 185, r = 20, t = 10, b = 36)) %>% sin_barra()
+    })
+
+    # Ingreso laboral medio por sexo (brecha salarial de género)
+    output$brecha <- renderPlotly({
+      d <- filtrar("ingreso_sexo", ctx())
+      validate(need(nrow(d) >= 2, "Sin datos para esta selección"))
+      ih <- d[sexo == "Hombre", ingreso]; im <- d[sexo == "Mujer", ingreso]
+      brecha <- (ih - im) / ih * 100
+      plot_ly(d, x = ~sexo, y = ~ingreso, type = "bar",
+              marker = list(color = unname(COLOR_SEXO[d$sexo])),
+              text = ~paste0("$", format(round(ingreso), big.mark = ",")), textposition = "outside",
+              textfont = list(color = BRAND$text_body, family = FUENTE),
+              hovertemplate = "%{x}: $%{y:,.0f}<extra></extra>") %>%
+        aplicar_tema(xaxis = list(title = ""), yaxis = list(title = "Ingreso medio (COP)", tickformat = ".2s"),
+                     margin = list(l = 60, r = 16, t = 36, b = 28)) %>%
+        layout(annotations = list(text = paste0("Brecha de género: ", round(brecha, 1), "%"),
+                                  x = 0.5, xref = "paper", y = 1.12, yref = "paper", showarrow = FALSE,
+                                  font = list(color = BRAND$cyan, size = 14, family = FUENTE))) %>%
+        sin_barra()
     })
 
     # Tipo de trabajo (posición ocupacional)

@@ -43,6 +43,12 @@ educacion <- function(dt, depto = NULL) {
   conteo_ponderado(dt[!is.na(nivel_educativo)], by = "nivel_educativo")[order(-personas)]
 }
 
+# 4b. Alfabetismo en población de 15 años y más (P6160)
+alfabetismo <- function(dt, depto = NULL) {
+  dt <- .filtra(dt, depto)
+  conteo_ponderado(dt[P6040 >= 15 & !is.na(alfabetismo)], by = "alfabetismo")[order(-personas)]
+}
+
 # 5. Ingreso laboral medio por nivel educativo (media PONDERADA)
 ingreso_educacion <- function(dt, depto = NULL) {
   dt <- .filtra(dt, depto)
@@ -70,6 +76,19 @@ laboral <- function(dt, depto = NULL) {
 tipo_trabajo <- function(dt, depto = NULL) {
   dt <- .filtra(dt, depto)
   conteo_ponderado(dt[!is.na(posicion_ocupacional)], by = "posicion_ocupacional")[order(-personas)]
+}
+
+# 7b. Rama de actividad económica (solo ocupados)
+rama_economica <- function(dt, depto = NULL) {
+  dt <- .filtra(dt, depto)
+  conteo_ponderado(dt[OCI == 1 & !is.na(rama_actividad)], by = "rama_actividad")[order(-personas)]
+}
+
+# 7c. Ingreso laboral medio por sexo (brecha salarial de género; ponderado, ocupados)
+ingreso_sexo <- function(dt, depto = NULL) {
+  dt <- .filtra(dt, depto)
+  dt[OCI == 1 & !is.na(INGLABO) & !is.na(sexo),
+     .(ingreso = sum(INGLABO * FEX_C18, na.rm = TRUE) / sum(FEX_C18, na.rm = TRUE)), by = sexo]
 }
 
 # --- Indicadores de VIVIENDA/HOGAR (a nivel de hogar = jefe, no persona) -----

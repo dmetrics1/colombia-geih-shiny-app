@@ -69,8 +69,28 @@ etiquetar_geih <- function(dt) {
   .recode(dt, "P4020",   "material_pisos",       .map_piso)
   .recode(dt, "P5020",   "sanitario_tipo",       .map_sanit)
   .recode(dt, "P5030",   "sanitario_uso",        .map_sanit_uso)
+  .recode(dt, "P6160",   "alfabetismo",          .map_sino)   # 1=Sí lee/escribe, 2=No
   for (s in c("P4030S1","P4030S2","P4030S3","P4030S5"))
     .recode(dt, s, paste0(s, "_lbl"), .map_sino)
+
+  # Rama de actividad económica (CIIU Rev.4 a 2 dígitos -> ~13 sectores)
+  if ("RAMA2D_R4" %in% names(dt)) {
+    dt[, rama_actividad := fcase(
+      RAMA2D_R4 <= 3,                  "Agro, caza y pesca",
+      RAMA2D_R4 %in% c(5:9, 35:39),    "Minería, energía y agua",
+      RAMA2D_R4 %in% 10:33,            "Industria manufacturera",
+      RAMA2D_R4 %in% 41:43,            "Construcción",
+      RAMA2D_R4 %in% 45:47,            "Comercio y reparación",
+      RAMA2D_R4 %in% 49:53,            "Transporte y almacenamiento",
+      RAMA2D_R4 %in% 55:56,            "Alojamiento y comida",
+      RAMA2D_R4 %in% 58:63,            "Información y comunicaciones",
+      RAMA2D_R4 %in% 64:66,            "Financieras y seguros",
+      RAMA2D_R4 %in% 68:82,            "Inmobiliarias y profesionales",
+      RAMA2D_R4 %in% 84:88,            "Admin. pública, educación y salud",
+      RAMA2D_R4 >= 90,                 "Arte, recreación y otros servicios",
+      default = NA_character_
+    )]
+  }
 
   # Grupo de edad quinquenal (para pirámide poblacional)
   if ("P6040" %in% names(dt)) {

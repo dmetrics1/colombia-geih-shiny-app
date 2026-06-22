@@ -75,6 +75,7 @@ Notación: **U** = unidad (P=persona, H=hogar). Todos ponderados por `FEX_C18` s
 |---|---|---|---|
 | Nivel educativo alcanzado | `P3042` | P | `Σ FEX/n_meses` por nivel |
 | Ingreso laboral por nivel | `INGLABO`, `P3042` | P | media **ponderada**: `Σ(INGLABO×FEX)/Σ FEX` por nivel |
+| **Analfabetismo** (KPI) | `P6160`, `P6040` | P | `% de 15+ que NO sabe leer/escribir` (P6160==2) |
 
 ### Mercado laboral  *(unidad: persona)*
 | Indicador | Variable(s) | U | Cálculo |
@@ -84,6 +85,8 @@ Notación: **U** = unidad (P=persona, H=hogar). Todos ponderados por `FEX_C18` s
 | Tasa de ocupación (TO) | `OCI`, `P6040` | P | `OC / PET × 100`, `PET = P6040≥15` |
 | Tasa de participación (TGP) | `OCI`, `DSI`, `P6040` | P | `(OC+DS) / PET × 100` (en la serie trimestral) |
 | Tipo de trabajo (posición ocupacional) | `P6430` | P | `Σ FEX/n_meses` por categoría |
+| **Rama de actividad económica** | `RAMA2D_R4` | P (ocupados) | `Σ FEX/n_meses` por sector (CIIU 2 díg → ~13 ramas), solo `OCI==1` |
+| **Ingreso laboral por sexo (brecha)** | `INGLABO`,`P3271` | P (ocupados) | media ponderada por sexo; brecha `(IH−IM)/IH × 100` |
 | Serie trimestral TGP·TO·TD | `OCI`,`DSI`,`P6040`,`MES` | P | por `ANIO × trimestre` (`serie_trim`) |
 
 ### Vivienda  *(unidad: HOGAR — jefe `P6050==1`)*
@@ -128,26 +131,20 @@ datos/geih_AAAA.csv → cargar_anios.R (apila + selecciona) → etiquetar_geih (
 
 ---
 
-## 5. Indicadores propuestos (alto valor, por incorporar)
+## 5. Indicadores propuestos (alto valor, pendientes de incorporar)
 
 Evaluados sobre la metodología; **todas las variables están disponibles 2022–2025**.
+*(Ya incorporados: Rama de actividad, Brecha salarial de género, Analfabetismo y TGP-KPI — ver §3.)*
 
 | # | Indicador | Pestaña | Variable(s) | Unidad | Valor | Cálculo propuesto |
 |---|---|---|---|---|---|---|
-| 1 | **Rama de actividad económica** | Laboral | `RAMA2D_R4` | P (ocupados) | ⭐⭐⭐ | distribución de ocupados por sector (CIIU 2 díg → ~13 ramas) |
-| 2 | **Brecha salarial de género** | Laboral | `INGLABO`,`P3271` | P (ocupados) | ⭐⭐⭐ | ingreso medio ponderado H vs M; brecha `(IH−IM)/IH` |
-| 3 | **Tasa de participación (TGP)** como KPI | Laboral | `OCI`,`DSI`,`P6040` | P | ⭐⭐ | `(OC+DS)/PET×100` (ya se calcula en la serie) |
-| 4 | **Jefatura femenina de hogar** | Demografía | `P6050`,`P3271` | H | ⭐⭐⭐ | `% de hogares con jefa mujer` (jefe==1 & sexo==Mujer) |
-| 5 | **Tasa de analfabetismo** | Educación | `P6160`,`P6040` | P | ⭐⭐⭐ | `% de 15+ que no sabe leer/escribir` (P6160==2) |
-| 6 | **Asistencia escolar** | Educación | `P6170`,`P6040` | P | ⭐⭐ | `% de 5–24 años que asiste a estab. educativo` |
-| 7 | **Cotización a pensión** | Salud/Laboral | `P6920` | P (ocupados) | ⭐⭐ | `% de ocupados que cotiza` (proxy de formalidad/seguridad social) |
-| 8 | **Horas trabajadas** | Laboral | `P6800` | P (ocupados) | ⭐⭐ | promedio de horas semanales (ponderado) |
-| 9 | **Razón de dependencia** | Demografía | `P6040` | P | ⭐⭐ | `(pob<15 + pob≥65)/pob 15–64 × 100` |
-| 10 | **Informalidad laboral** | Laboral | (derivada: tamaño empresa / seg. social) | P | ⭐⭐⭐ | requiere definir metodología DANE (tamaño ≤5 ó cotización) |
+| 1 | **Jefatura femenina de hogar** | Demografía | `P6050`,`P3271` | H | ⭐⭐⭐ | `% de hogares con jefa mujer` (jefe==1 & sexo==Mujer) |
+| 2 | **Asistencia escolar** | Educación | `P6170`,`P6040` | P | ⭐⭐ | `% de 5–24 años que asiste a estab. educativo` |
+| 3 | **Cotización a pensión** | Salud/Laboral | `P6920` | P (ocupados) | ⭐⭐ | `% de ocupados que cotiza` (proxy de formalidad/seguridad social) |
+| 4 | **Horas trabajadas** | Laboral | `P6800` | P (ocupados) | ⭐⭐ | promedio de horas semanales (ponderado) |
+| 5 | **Razón de dependencia** | Demografía | `P6040` | P | ⭐⭐ | `(pob<15 + pob≥65)/pob 15–64 × 100` |
+| 6 | **Informalidad laboral** | Laboral | (derivada: tamaño empresa / seg. social) | P | ⭐⭐⭐ | requiere definir metodología DANE (tamaño ≤5 ó cotización) |
 
-**Recomendación prioritaria (mayor valor / menor esfuerzo):** #1 Rama de actividad, #2 Brecha
-salarial de género, #4 Jefatura femenina de hogar, #5 Analfabetismo (y #3 TGP como KPI, casi gratis).
-El #10 (informalidad) es muy valioso pero requiere decidir la definición operativa.
-
-> Nota: variables de población campesina, LGBTI y discapacidad existen solo en 2022–2023 (no en
+> El #6 (informalidad) es muy valioso pero requiere decidir la definición operativa.
+> Variables de población campesina, LGBTI y discapacidad existen solo en 2022–2023 (no en
 > 2024–2025), por lo que **no** se proponen para series comparables.

@@ -15,7 +15,7 @@ VARS_ANALISIS <- c(
   # Demografía
   "P6040","P3271","P6070","P6050",
   # Educación e ingreso
-  "P3042","P6170","INGLABO",
+  "P3042","P6170","P6160","INGLABO",
   # Mercado laboral
   "OCI","DSI","PT","FT","PET","P6430","P6880","P6920","RAMA2D_R4",
   # Vivienda y hogar (P6050 = parentesco, para identificar jefe de hogar)
