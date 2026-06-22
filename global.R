@@ -32,3 +32,5 @@ filtrar <- function(indic, ctx) {
 source("modules/mod_demografia.R")
 source("modules/mod_educacion.R")
 source("modules/mod_laboral.R")
+source("modules/mod_vivienda.R")
+source("modules/mod_salud.R")

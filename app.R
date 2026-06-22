@@ -20,8 +20,10 @@ ui <- dashboardPage(
       id = "tabs",
       menuItem("Demografía", tabName = "demografia", icon = icon("users")),
       menuItem("Educación", tabName = "educacion", icon = icon("graduation-cap")),
-      menuItem("Mercado laboral", tabName = "laboral", icon = icon("briefcase"))
-      # Vivienda, Salud, Migración, Tendencias, Datos -> siguiente
+      menuItem("Mercado laboral", tabName = "laboral", icon = icon("briefcase")),
+      menuItem("Vivienda", tabName = "vivienda", icon = icon("house")),
+      menuItem("Salud", tabName = "salud", icon = icon("heart-pulse"))
+      # Migración, Tendencias, Datos -> siguiente
     ),
     div(class = "sidebar-footer",
         div(class = "sb-actions",
@@ -62,7 +64,9 @@ ui <- dashboardPage(
     tabItems(
       tabItem(tabName = "demografia", demografiaUI("demo")),
       tabItem(tabName = "educacion", educacionUI("edu")),
-      tabItem(tabName = "laboral", laboralUI("lab"))
+      tabItem(tabName = "laboral", laboralUI("lab")),
+      tabItem(tabName = "vivienda", viviendaUI("viv")),
+      tabItem(tabName = "salud", saludUI("sal"))
     )
   )
 )
@@ -106,6 +110,8 @@ server <- function(input, output, session) {
   demografiaServer("demo", ctx)
   educacionServer("edu", ctx)
   laboralServer("lab", ctx)
+  viviendaServer("viv", ctx)
+  saludServer("sal", ctx)
 }
 
 shinyApp(ui, server)
