@@ -20,7 +20,8 @@ demografiaUI <- function(id) {
       column(12, div(class = "card-panel",
                      div(class = "card-title", "Estado civil"),
                      plotlyOutput(ns("civil"), height = "360px")))
-    )
+    ),
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Población 2022–2025")))
   )
 }
 
@@ -36,6 +37,14 @@ demografiaServer <- function(id, ctx) {
         kpi_box("Hombres", fmt_pct(d[sexo == "Hombre", pct])),
         kpi_box("Mujeres", fmt_pct(d[sexo == "Mujer", pct]))
       )
+    })
+
+    # Tendencia de población 2022-2025
+    output$tendencia <- renderPlotly({
+      s <- AGG$sexo[geo == ctx()$geo & migrante == ctx()$migrante][
+        , .(valor = sum(personas)), by = anio]
+      validate(need(nrow(s) > 1, "Sin serie temporal"))
+      grafico_tendencia(s, es_pct = FALSE, etiqueta = "Población")
     })
 
     # Pirámide poblacional (hombres a la derecha, mujeres a la izquierda)

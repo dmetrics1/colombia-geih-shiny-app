@@ -24,7 +24,6 @@ ui <- dashboardPage(
       menuItem("Vivienda", tabName = "vivienda", icon = icon("house")),
       menuItem("Salud", tabName = "salud", icon = icon("heart-pulse")),
       menuItem("Migración", tabName = "migracion", icon = icon("plane-arrival")),
-      menuItem("Tendencias", tabName = "tendencias", icon = icon("chart-line")),
       menuItem("Datos", tabName = "datos", icon = icon("table"))
     ),
     div(class = "sidebar-footer",
@@ -70,7 +69,6 @@ ui <- dashboardPage(
       tabItem(tabName = "vivienda", viviendaUI("viv")),
       tabItem(tabName = "salud", saludUI("sal")),
       tabItem(tabName = "migracion", migracionUI("mig")),
-      tabItem(tabName = "tendencias", tendenciasUI("ten")),
       tabItem(tabName = "datos", datosUI("dat"))
     )
   )
@@ -118,7 +116,6 @@ server <- function(input, output, session) {
   viviendaServer("viv", ctx)
   saludServer("sal", ctx)
   migracionServer("mig", ctx)
-  tendenciasServer("ten", ctx)
   datosServer("dat", ctx)
 }
 

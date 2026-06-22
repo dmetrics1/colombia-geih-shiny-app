@@ -14,7 +14,8 @@ educacionUI <- function(id) {
       column(6, div(class = "card-panel",
                     div(class = "card-title", "Ingreso laboral por nivel educativo"),
                     plotlyOutput(ns("ingreso"), height = "440px")))
-    )
+    ),
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Educación superior 2022–2025")))
   )
 }
 
@@ -33,6 +34,14 @@ educacionServer <- function(id, ctx) {
         kpi_box("Ingreso universitario", fmt_pesos(ing_u), "promedio mensual"),
         kpi_box("Personas", fmt_num(sum(d$personas)))
       )
+    })
+
+    output$tendencia <- renderPlotly({
+      sup <- c("Universitaria", "Especialización", "Maestría", "Doctorado")
+      s <- AGG$educacion[geo == ctx()$geo & migrante == ctx()$migrante][
+        , .(valor = sum(personas[nivel_educativo %in% sup]) / sum(personas) * 100), by = anio]
+      validate(need(nrow(s) > 1, "Sin serie temporal"))
+      grafico_tendencia(s, es_pct = TRUE, etiqueta = "% Ed. superior")
     })
 
     output$nivel <- renderPlotly({

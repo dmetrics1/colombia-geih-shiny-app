@@ -14,7 +14,8 @@ viviendaUI <- function(id) {
       column(5, div(class = "card-panel",
                     div(class = "card-title", "Servicios públicos del hogar"),
                     plotlyOutput(ns("servicios"), height = "430px")))
-    )
+    ),
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Vivienda propia 2022–2025")))
   )
 }
 
@@ -34,6 +35,14 @@ viviendaServer <- function(id, ctx) {
         kpi_box("En arriendo", fmt_pct(arriendo / tot * 100)),
         kpi_box("Con acueducto", fmt_pct(acue))
       )
+    })
+
+    output$tendencia <- renderPlotly({
+      propia <- c("Propia, pagada", "Propia, pagando")
+      s <- AGG$tipo_vivienda[geo == ctx()$geo & migrante == ctx()$migrante][
+        , .(valor = sum(personas[tenencia_vivienda %in% propia]) / sum(personas) * 100), by = anio]
+      validate(need(nrow(s) > 1, "Sin serie temporal"))
+      grafico_tendencia(s, es_pct = TRUE, etiqueta = "% Propia")
     })
 
     output$tenencia <- renderPlotly({

@@ -14,7 +14,8 @@ laboralUI <- function(id) {
       column(7, div(class = "card-panel",
                     div(class = "card-title", "Tipo de trabajo"),
                     plotlyOutput(ns("tipo"), height = "420px")))
-    )
+    ),
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Tasa de desempleo 2022–2025")))
   )
 }
 
@@ -31,6 +32,13 @@ laboralServer <- function(id, ctx) {
         kpi_box("Tasa de ocupación", fmt_pct(to)),
         kpi_box("Ocupados", fmt_num(sum(d$ocupados)), "promedio mensual")
       )
+    })
+
+    output$tendencia <- renderPlotly({
+      s <- AGG$laboral[geo == ctx()$geo & migrante == ctx()$migrante][
+        , .(valor = sum(desocupados) / sum(fuerza_trabajo) * 100), by = anio]
+      validate(need(nrow(s) > 1, "Sin serie temporal"))
+      grafico_tendencia(s, es_pct = TRUE, etiqueta = "Desempleo")
     })
 
     # Tasas de desempleo y ocupación por sexo

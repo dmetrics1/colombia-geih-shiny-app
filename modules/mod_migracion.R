@@ -15,7 +15,8 @@ migracionUI <- function(id) {
       column(5, div(class = "card-panel",
                     div(class = "card-title", "Migrantes por sexo"),
                     plotlyOutput(ns("sexo"), height = "430px")))
-    )
+    ),
+    fluidRow(column(12, tendencia_card(ns("tendencia"), "Migrantes venezolanos 2022–2025")))
   )
 }
 
@@ -35,6 +36,13 @@ migracionServer <- function(id, ctx) {
         kpi_box("Mujeres", fmt_pct(ds[sexo == "Mujer", pct])),
         kpi_box("Principal motivo", motivo)
       )
+    })
+
+    output$tendencia <- renderPlotly({
+      s <- AGG$sexo[geo == ctxm()$geo & migrante == "Venezolano"][
+        , .(valor = sum(personas)), by = anio]
+      validate(need(nrow(s) > 1, "Sin serie temporal"))
+      grafico_tendencia(s, es_pct = FALSE, etiqueta = "Migrantes")
     })
 
     output$motivos <- renderPlotly({
