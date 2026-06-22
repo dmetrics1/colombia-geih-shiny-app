@@ -92,6 +92,7 @@ Notación: **U** = unidad (P=persona, H=hogar). Todos ponderados por `FEX_C18` s
 ### Vivienda  *(unidad: HOGAR — jefe `P6050==1`)*
 | Indicador | Variable(s) | U | Cálculo |
 |---|---|---|---|
+| **Viviendas / Hogares (conteo)** | `P6050`,`HOGAR` | Vivienda/Hogar | Viviendas = `Σ FEX/n_meses` de jefes del hogar primario (`P6050==1 & HOGAR==1`, 1 por DIRECTORIO); Hogares = jefes (`P6050==1`) |
 | Tenencia de la vivienda | `P5090` | H | `Σ FEX/n_meses` por categoría, **solo jefes** |
 | Servicios públicos | `P4030S1/S2/S3/S5` | H | `% de hogares con "Sí"` por servicio (solo jefes) |
 | Material de paredes | `P4010` | H | `Σ FEX/n_meses` por categoría (jefes) |

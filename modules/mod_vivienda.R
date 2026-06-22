@@ -53,17 +53,16 @@ viviendaServer <- function(id, ctx) {
     output$kpis <- renderUI({
       d <- filtrar("tipo_vivienda", ctx())
       if (!nrow(d)) return(NULL)
-      tot <- sum(d$personas)
+      tot <- sum(d$personas)   # nº de hogares (jefes)
       propia <- sum(d[tenencia_vivienda %in% c("Propia, pagada", "Propia, pagando"), personas])
+      u <- filtrar("conteo_unidades", ctx())
       dc <- filtrar("condiciones_hogar", ctx())
       acue <- dc[servicio == "acueducto", porcentaje]
-      ds <- filtrar("sanitario", ctx())
-      alc <- if (nrow(ds)) sum(ds[sanitario_tipo == "Inodoro a alcantarillado", personas]) / sum(ds$personas) * 100 else NA
       kpi_row(
+        kpi_box("Viviendas", fmt_num(if (nrow(u)) u$viviendas else NA), "promedio mensual"),
         kpi_box("Hogares", fmt_num(tot), "promedio mensual"),
         kpi_box("Vivienda propia", fmt_pct(propia / tot * 100), "pagada o pagando"),
-        kpi_box("Con acueducto", fmt_pct(acue)),
-        kpi_box("Inodoro a alcantarillado", fmt_pct(alc))
+        kpi_box("Con acueducto", fmt_pct(acue))
       )
     })
 

@@ -27,6 +27,7 @@ INDICADORES <- list(
   tipo_trabajo      = tipo_trabajo,
   rama_economica    = rama_economica,
   ingreso_sexo      = ingreso_sexo,
+  conteo_unidades   = conteo_unidades,
   tipo_vivienda     = tipo_vivienda,
   condiciones_hogar = condiciones_hogar,
   material_paredes  = material_paredes,

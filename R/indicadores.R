@@ -128,6 +128,18 @@ sanitario <- function(dt, depto = NULL) {
   conteo_ponderado(dt[!is.na(sanitario_tipo)], by = "sanitario_tipo")[order(-personas)]
 }
 
+# 9d. Conteo de unidades: viviendas (DIRECTORIO) y hogares
+#   Vivienda  = jefe del hogar primario (P6050==1 & HOGAR==1): 1 registro por DIRECTORIO.
+#   Hogar     = jefe de cada hogar (P6050==1).
+conteo_unidades <- function(dt, depto = NULL) {
+  dt <- .filtra(dt, depto)
+  np <- n_periodos(dt)
+  data.table(
+    viviendas = sum(dt[P6050 == 1 & HOGAR == 1, FEX_C18], na.rm = TRUE) / np,
+    hogares   = sum(dt[P6050 == 1, FEX_C18], na.rm = TRUE) / np
+  )
+}
+
 # 10. Acceso a salud
 acceso_salud <- function(dt, depto = NULL) {
   dt <- .filtra(dt, depto)
