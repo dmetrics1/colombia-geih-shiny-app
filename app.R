@@ -44,14 +44,14 @@ ui <- dashboardPage(
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
       tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=10"),
-      tags$script(HTML(
-        "$(document).on('click', '.sidebar-menu a', function(){ document.body.classList.remove('sidebar-open'); });"))
+      tags$script(HTML(paste(
+        "$(document).on('click', '.mobile-toggle', function(e){ e.preventDefault(); document.body.classList.toggle('sidebar-open'); });",
+        "$(document).on('click', '.sidebar-backdrop, .sidebar-menu a', function(){ document.body.classList.remove('sidebar-open'); });",
+        sep = "\n")))
     ),
-    # Móvil: botón hamburguesa + fondo para abrir/cerrar el menú (drawer)
-    tags$a(class = "mobile-toggle", title = "Menú",
-           onclick = "document.body.classList.toggle('sidebar-open')", icon("bars")),
-    div(class = "sidebar-backdrop",
-        onclick = "document.body.classList.remove('sidebar-open')"),
+    # Móvil: botón hamburguesa + fondo (drawer). El toque lo maneja el script de arriba.
+    tags$a(class = "mobile-toggle", href = "#", title = "Menú", icon("bars")),
+    div(class = "sidebar-backdrop"),
     conditionalPanel(
       condition = "input.tabs != 'inicio'",
     div(class = "card-panel filtros",
