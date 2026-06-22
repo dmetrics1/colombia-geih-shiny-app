@@ -98,3 +98,10 @@ afiliacion_salud <- function(dt, depto = NULL) {
   dt <- .filtra(dt, depto)
   conteo_ponderado(dt[!is.na(afiliacion_salud)], by = "afiliacion_salud")[order(-personas)]
 }
+
+# 12. Motivos de migración (P3386; aplica a la población migrante)
+motivos_migracion <- function(dt, depto = NULL) {
+  dt <- .filtra(dt, depto)
+  conteo_ponderado(dt[!is.na(motivo_migracion) & motivo_migracion != ""],
+                   by = "motivo_migracion")[order(-personas)]
+}

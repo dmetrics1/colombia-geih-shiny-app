@@ -27,7 +27,8 @@ INDICADORES <- list(
   tipo_vivienda     = tipo_vivienda,
   condiciones_hogar = condiciones_hogar,
   acceso_salud      = acceso_salud,
-  afiliacion_salud  = afiliacion_salud
+  afiliacion_salud  = afiliacion_salud,
+  motivos_migracion = motivos_migracion
 )
 
 acc <- setNames(vector("list", length(INDICADORES)), names(INDICADORES))
