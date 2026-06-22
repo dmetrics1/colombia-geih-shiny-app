@@ -11,6 +11,7 @@ suppressMessages({
 })
 
 source("R/plot_theme.R")
+source("R/helpers.R")
 
 # Datos pre-agregados (0.29 MB) — generados por preparacion/agregar.R
 AGG    <- readRDS("agregados.rds")
@@ -29,3 +30,5 @@ filtrar <- function(indic, ctx) {
 
 # Módulos de la app
 source("modules/mod_demografia.R")
+source("modules/mod_educacion.R")
+source("modules/mod_laboral.R")

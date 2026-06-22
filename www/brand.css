@@ -152,7 +152,10 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 .kpi .kpi-label{color:var(--t-muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;}
 .kpi .kpi-value{color:var(--cyan);font-size:30px;font-weight:800;line-height:1.1;margin-top:4px;}
 .kpi .kpi-delta{font-size:12px;font-weight:600;margin-top:2px;}
+.kpi .kpi-sub{color:var(--t-muted);font-size:11px;margin-top:5px;}
 .kpi .up{color:var(--accent);} .kpi .down{color:#F87171;}
+.kpi-row{margin-bottom:4px;}
+.kpi-row .kpi{margin-bottom:22px;}
 
 /* Inputs --------------------------------------------------------------- */
 .form-control,.selectize-input,

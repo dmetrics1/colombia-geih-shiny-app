@@ -7,6 +7,7 @@
 demografiaUI <- function(id) {
   ns <- NS(id)
   tagList(
+    uiOutput(ns("kpis")),
     fluidRow(
       column(7, div(class = "card-panel",
                     div(class = "card-title", "Pirámide poblacional"),
@@ -25,6 +26,17 @@ demografiaUI <- function(id) {
 
 demografiaServer <- function(id, ctx) {
   moduleServer(id, function(input, output, session) {
+
+    # KPIs
+    output$kpis <- renderUI({
+      d <- filtrar("sexo", ctx())
+      if (!nrow(d)) return(NULL)
+      kpi_row(
+        kpi_box("Población", fmt_num(sum(d$personas)), "promedio mensual"),
+        kpi_box("Hombres", fmt_pct(d[sexo == "Hombre", pct])),
+        kpi_box("Mujeres", fmt_pct(d[sexo == "Mujer", pct]))
+      )
+    })
 
     # Pirámide poblacional (hombres a la derecha, mujeres a la izquierda)
     output$piramide <- renderPlotly({

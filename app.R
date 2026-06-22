@@ -18,8 +18,10 @@ ui <- dashboardPage(
     div(class = "sb-section", "Navegación"),
     sidebarMenu(
       id = "tabs",
-      menuItem("Demografía", tabName = "demografia", icon = icon("users"))
-      # Educación, Mercado laboral, Vivienda, Salud, Migración, Tendencias, Datos -> siguiente
+      menuItem("Demografía", tabName = "demografia", icon = icon("users")),
+      menuItem("Educación", tabName = "educacion", icon = icon("graduation-cap")),
+      menuItem("Mercado laboral", tabName = "laboral", icon = icon("briefcase"))
+      # Vivienda, Salud, Migración, Tendencias, Datos -> siguiente
     ),
     div(class = "sidebar-footer",
         div(class = "sb-actions",
@@ -37,7 +39,7 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=4")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=5")
     ),
     div(class = "card-panel filtros",
         div(class = "panel-head",
@@ -58,7 +60,9 @@ ui <- dashboardPage(
                 actionButton("limpiar", "Limpiar", icon = icon("eraser"), class = "btn-limpiar")))
     ),
     tabItems(
-      tabItem(tabName = "demografia", demografiaUI("demo"))
+      tabItem(tabName = "demografia", demografiaUI("demo")),
+      tabItem(tabName = "educacion", educacionUI("edu")),
+      tabItem(tabName = "laboral", laboralUI("lab"))
     )
   )
 )
@@ -100,6 +104,8 @@ server <- function(input, output, session) {
   })
 
   demografiaServer("demo", ctx)
+  educacionServer("edu", ctx)
+  laboralServer("lab", ctx)
 }
 
 shinyApp(ui, server)
