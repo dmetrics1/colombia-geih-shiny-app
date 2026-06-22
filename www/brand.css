@@ -43,12 +43,13 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 .main-sidebar,.left-side{background:var(--s1)!important; border-right:1px solid var(--card-border);}
 
 /* Menú estilo "píldora" redondeada (ocupa el medio y scrollea si es largo) */
-.sidebar-menu{padding:6px 0; flex:1 1 auto; overflow-y:auto; overflow-x:hidden;}
-.sidebar-menu>li{margin:5px 12px;}
+.sidebar-menu{padding:2px 0; flex:1 1 auto; overflow-y:auto; overflow-x:hidden;}
+.sidebar-menu::-webkit-scrollbar{width:0px;}
+.sidebar-menu>li{margin:3px 12px;}
 .sidebar-menu>li>a{
-  color:var(--t-muted)!important; font-weight:600; font-size:14.5px;
-  border-radius:12px!important; padding:12px 14px!important;
-  display:flex; align-items:center; gap:12px;
+  color:var(--t-muted)!important; font-weight:600; font-size:14px;
+  border-radius:11px!important; padding:9px 14px!important;
+  display:flex; align-items:center; gap:11px;
   border:1px solid transparent!important; transition:all .15s ease;
 }
 .sidebar-menu>li>a .fa,.sidebar-menu>li>a .glyphicon,.sidebar-menu>li>a svg{
@@ -64,16 +65,16 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 
 /* Cabecera de marca: logo solo arriba, texto centrado debajo */
 .sb-brand{display:flex; flex-direction:column; align-items:center; text-align:center;
-  gap:4px; padding:24px 16px 16px;}
-.sb-logo{width:62px; max-width:62px; opacity:.97; margin-bottom:8px;}
-.sb-title{color:var(--t-title); font-weight:800; font-size:17px; line-height:1.2;}
-.sb-tag{color:var(--t-muted); font-size:10.5px; letter-spacing:2.5px; text-transform:uppercase; margin-top:2px;}
-.sb-divider{height:1px; background:var(--card-border); margin:6px 18px;}
-.sb-section{color:var(--t-muted); font-size:11px; font-weight:700; letter-spacing:2px;
-  text-transform:uppercase; padding:10px 22px 6px;}
+  gap:2px; padding:16px 16px 8px;}
+.sb-logo{width:52px; max-width:52px; opacity:.97; margin-bottom:5px;}
+.sb-title{color:var(--t-title); font-weight:800; font-size:16px; line-height:1.15;}
+.sb-tag{color:var(--t-muted); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; margin-top:1px;}
+.sb-divider{height:1px; background:var(--card-border); margin:3px 18px;}
+.sb-section{color:var(--t-muted); font-size:10.5px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; padding:7px 22px 3px;}
 
 /* Footer: fila de botones (LinkedIn, GitHub, modo) — siempre al fondo */
-.sidebar-footer{flex:0 0 auto; margin-top:auto; padding:14px 18px 18px; background:var(--s1);
+.sidebar-footer{flex:0 0 auto; margin-top:auto; padding:12px 16px 14px; background:var(--s1);
   border-top:1px solid var(--card-border);}
 .sb-actions{display:flex; gap:10px; justify-content:space-between;}
 .sb-act{flex:1; height:44px; display:flex; align-items:center; justify-content:center;
