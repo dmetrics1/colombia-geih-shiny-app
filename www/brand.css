@@ -17,10 +17,7 @@ body,.wrapper,.content-wrapper,.right-side{
   background:var(--bg)!important; color:var(--t-body);
   font-family:var(--font)!important;
 }
-.content-wrapper{background:
-  radial-gradient(1200px 600px at 80% -10%, rgba(6,182,212,.08), transparent 60%),
-  radial-gradient(900px 500px at -10% 10%, rgba(37,99,235,.10), transparent 55%),
-  var(--bg)!important;}
+.content-wrapper{background:var(--bg)!important;}
 *{font-family:var(--font);}
 h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 
@@ -96,6 +93,7 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 .main-sidebar{
   position:fixed!important;
   top:16px!important; left:16px!important;
+  padding-top:0!important;            /* AdminLTE dejaba ~101px para el header (ya no existe) */
   height:calc(100vh - 32px)!important;
   min-height:0!important; max-height:calc(100vh - 32px)!important;
   border-radius:22px!important;
@@ -109,9 +107,11 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
   display:flex!important; flex-direction:column; position:relative;}
 /* El contenido sube (no hay header) y respeta el panel flotante */
 .content-wrapper,.right-side{
-  margin-left:266px!important; margin-top:0!important; padding-top:16px!important;
+  margin-left:266px!important; margin-top:0!important; padding-top:0!important;
   min-height:100vh;
 }
+/* La tarjeta de filtros arranca al mismo nivel que el sidebar (y=16) */
+.content-wrapper > .content,.content{padding:16px 16px 16px 0!important;}
 .main-sidebar .sidebar-footer{border-radius:0 0 22px 22px;}
 
 /* Botón de colapsar dentro del sidebar */
@@ -166,10 +166,27 @@ h1,h2,h3,h4,h5{color:var(--t-title);font-weight:700;}
 .selectize-input>.item,.selectize-input>input{color:var(--t-body)!important;}
 .control-label,label{color:var(--t-body)!important; font-weight:600;}
 
-/* Fila de filtros compacta (4 en una línea) */
-.filtros .form-group{margin-bottom:0!important;}
-.filtros .shiny-input-container{width:100%!important;}
-.filtros .control-label{font-size:13px; margin-bottom:4px;}
+/* --- Tarjeta de filtros estilo "panel" --------------------------------- */
+.panel-head{margin-bottom:12px;}
+.panel-title{color:var(--t-title); font-weight:800; font-size:26px; margin:2px 0 6px; line-height:1.1;}
+.panel-context{color:var(--t-muted); font-size:13px;}
+.panel-context b{color:var(--t-body);}
+.filtros-label{color:var(--t-muted); font-size:11px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:6px 0 10px;}
+
+/* Fila de filtros (flex: 4 dropdowns + Limpiar) */
+.filtros-row{display:flex; gap:14px; align-items:flex-end; flex-wrap:wrap;}
+.filtros-row > div{flex:1 1 0; min-width:165px;}
+.filtros-row .filtro{width:100%;}
+.filtros .filtro .form-group{margin-bottom:0!important;}
+.filtros .filtro .shiny-input-container{width:100%!important;}
+.filtros .filtro .control-label{font-size:12.5px; color:var(--t-muted); margin-bottom:6px; font-weight:600;}
+.filtro-clear{flex:0 0 auto!important; min-width:auto!important;}
+.btn-limpiar{background:var(--s2)!important; color:var(--t-muted)!important;
+  border:1px solid var(--card-border)!important; border-radius:10px!important;
+  height:38px; padding:0 18px; font-weight:600; transition:all .15s ease;}
+.btn-limpiar:hover{color:var(--cyan)!important; border-color:rgba(6,182,212,.45)!important;
+  background:var(--s3)!important;}
 .selectize-control .selectize-input:after{border-color:var(--t-muted) transparent transparent!important;}
 
 /* Menú desplegable de opciones (el que no se veía) */

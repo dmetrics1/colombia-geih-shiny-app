@@ -37,25 +37,36 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=4")
     ),
     div(class = "card-panel filtros",
-        div(class = "card-title", "Filtros"),
-        fluidRow(
-          column(3, selectInput("anio", "Año:", choices = ANIOS, selected = max(ANIOS))),
-          column(3, selectInput("nivel", "Nivel:", choices = c("Nacional", "Departamental"))),
-          column(3, selectInput("migracion", "Población:",
-                                choices = c("Todos", "Solo venezolanos"))),
-          column(3, conditionalPanel(
-            condition = "input.nivel == 'Departamental'",
-            selectInput("depto", "Departamento:", choices = DEPTOS, selected = "Magdalena")))
-        )
+        div(class = "panel-head",
+            h2(class = "panel-title", textOutput("seccion_titulo", inline = TRUE)),
+            div(class = "panel-context", textOutput("contexto", inline = TRUE))),
+        div(class = "filtros-label", "Filtros"),
+        div(class = "filtros-row",
+            div(class = "filtro", selectInput("anio", "Año", choices = ANIOS, selected = max(ANIOS))),
+            div(class = "filtro", selectInput("nivel", "Nivel territorial",
+                                              choices = c("Nacional", "Departamental"))),
+            div(class = "filtro", selectInput("migracion", "Población",
+                                              choices = c("Todos", "Solo venezolanos"))),
+            conditionalPanel(
+              condition = "input.nivel == 'Departamental'",
+              div(class = "filtro", selectInput("depto", "Ubicación",
+                                                choices = DEPTOS, selected = "Magdalena"))),
+            div(class = "filtro-clear",
+                actionButton("limpiar", "Limpiar", icon = icon("eraser"), class = "btn-limpiar")))
     ),
     tabItems(
       tabItem(tabName = "demografia", demografiaUI("demo"))
     )
   )
 )
+
+TITULOS_SECCION <- c(demografia = "Demografía", educacion = "Educación",
+                     laboral = "Mercado laboral", vivienda = "Vivienda",
+                     salud = "Salud", migracion = "Migración", tendencias = "Tendencias",
+                     datos = "Datos")
 
 server <- function(input, output, session) {
   ctx <- reactive({
@@ -64,6 +75,28 @@ server <- function(input, output, session) {
       geo      = if (input$nivel == "Nacional") "Nacional" else input$depto,
       migrante = if (input$migracion == "Todos") "Todos" else "Venezolano"
     )
+  })
+
+  # Título de la sección activa
+  output$seccion_titulo <- renderText({
+    nm <- input$tabs
+    if (is.null(nm) || !nm %in% names(TITULOS_SECCION)) "Demografía" else TITULOS_SECCION[[nm]]
+  })
+
+  # Línea de contexto dinámica
+  output$contexto <- renderText({
+    c <- ctx()
+    pob <- if (c$migrante == "Todos") "Todos" else "Solo migración venezolana"
+    paste0("Caracterización GEIH · DANE     |     Año: ", c$anio,
+           "     |     Contexto: ", c$geo, "     |     Población: ", pob)
+  })
+
+  # Botón Limpiar: restablece filtros
+  observeEvent(input$limpiar, {
+    updateSelectInput(session, "anio", selected = max(ANIOS))
+    updateSelectInput(session, "nivel", selected = "Nacional")
+    updateSelectInput(session, "migracion", selected = "Todos")
+    updateSelectInput(session, "depto", selected = "Magdalena")
   })
 
   demografiaServer("demo", ctx)
