@@ -29,6 +29,7 @@ filtrar <- function(indic, ctx) {
 }
 
 # Módulos de la app
+source("modules/mod_inicio.R")
 source("modules/mod_demografia.R")
 source("modules/mod_educacion.R")
 source("modules/mod_laboral.R")

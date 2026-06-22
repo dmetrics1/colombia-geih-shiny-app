@@ -18,10 +18,11 @@ ui <- dashboardPage(
     div(class = "sb-section", "Navegación"),
     sidebarMenu(
       id = "tabs",
+      menuItem("Inicio", tabName = "inicio", icon = icon("house")),
       menuItem("Demografía", tabName = "demografia", icon = icon("users")),
       menuItem("Educación", tabName = "educacion", icon = icon("graduation-cap")),
       menuItem("Mercado laboral", tabName = "laboral", icon = icon("briefcase")),
-      menuItem("Vivienda", tabName = "vivienda", icon = icon("house")),
+      menuItem("Vivienda", tabName = "vivienda", icon = icon("building")),
       menuItem("Salud", tabName = "salud", icon = icon("heart-pulse")),
       menuItem("Migración", tabName = "migracion", icon = icon("plane-arrival")),
       menuItem("Datos", tabName = "datos", icon = icon("table"))
@@ -42,8 +43,10 @@ ui <- dashboardPage(
       tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
       tags$link(rel = "stylesheet",
                 href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=8")
+      tags$link(rel = "stylesheet", type = "text/css", href = "brand.css?v=9")
     ),
+    conditionalPanel(
+      condition = "input.tabs != 'inicio'",
     div(class = "card-panel filtros",
         div(class = "panel-head",
             h2(class = "panel-title", textOutput("seccion_titulo", inline = TRUE)),
@@ -61,8 +64,9 @@ ui <- dashboardPage(
                                                 choices = DEPTOS, selected = "Magdalena"))),
             div(class = "filtro-clear",
                 actionButton("limpiar", "Limpiar", icon = icon("eraser"), class = "btn-limpiar")))
-    ),
+    )),
     tabItems(
+      tabItem(tabName = "inicio", inicioUI("ini")),
       tabItem(tabName = "demografia", demografiaUI("demo")),
       tabItem(tabName = "educacion", educacionUI("edu")),
       tabItem(tabName = "laboral", laboralUI("lab")),
@@ -110,6 +114,7 @@ server <- function(input, output, session) {
     updateSelectInput(session, "depto", selected = "Magdalena")
   })
 
+  inicioServer("ini")
   demografiaServer("demo", ctx)
   educacionServer("edu", ctx)
   laboralServer("lab", ctx)
